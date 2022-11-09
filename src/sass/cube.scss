@@ -1,0 +1,32 @@
+.cube-section{
+    height:40vh;
+    display: flex;
+    justify-content: space-evenly;
+   // align-items: center;
+   background-color: rgb(229, 229, 231);
+   position: relative;
+
+.swiper {
+  
+
+    //position: absolute;
+    //left: 50%;
+    //top: 50%;
+   // margin-left: -150px;
+    margin-top: -50px;
+  }
+  
+  .swiper-slide {
+   // background-position: center;
+    //background-size: cover;
+    border-radius: 30px;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }}
+.cube{
+    max-height:200px;
+}
+
