@@ -34,7 +34,7 @@ function Products() {
 
     <div className='product-section'>
         <motion.h1 animate={{ x: 500 }} transition={{ duration: 1.2 }}  >
-            PRODUCT SECTION
+            PRODUCT SECTIONs
         </motion.h1>
     <div className='products'>
        
