@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
+import HomePage from './pages/HomePage';
+import "./App.scss";
+import AllProducts from './pages/AllProducts';
+import { BrowserRouter, Switch, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from 'framer-motion';
+
 
 function App() {
+
+const location = useLocation();
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <AnimatePresence>
+    <Switch  >
+      <Route path='/' exact>
+        <HomePage/>
+      </Route>
+      <Route path='/all-products' exact>
+        <AllProducts/>
+      </Route>
+
+    </Switch>
+    </AnimatePresence>
+
+
+</BrowserRouter>
+
   );
 }
 
-export default App;
+export default App

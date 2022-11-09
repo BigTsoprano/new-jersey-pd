@@ -1,0 +1,19 @@
+.hero-section{
+    background:linear-gradient(180deg,#000000,transparent 100%);
+//background:linear-gradient(20deg,#505050,transparent 10%);
+background-color: #181818;
+height: 85vh;
+.hero-image{
+
+    background-image: url(/images/njpd-hero-img.png); 
+    background-size: 700px;
+    background-repeat :no-repeat;
+    background-position: 0px bottom;
+
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+  }
+}
