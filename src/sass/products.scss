@@ -48,17 +48,18 @@ height: auto;
   .swiper-slide img {
     //display: block;
     padding-top: 10px;
-    width: 45%;
+    width: 35%;
     height: auto;
   }
 }
 
 .pricebox{
-
+    padding: 20px;
     height: 300px;
  
     
       .swiper-content{
+          padding-top: 20px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -67,4 +68,15 @@ height: auto;
           display: flex;
           flex-direction: row;
       }
+      .swiper-box{
+          h1{
+              font-size: 38px !important;
+              color:rgb(0, 150, 57);
+              letter-spacing: 0.1px;
+              font-weight: 600;
+              font-style: italic;
+              text-align: center;
+          }
+      }
+
 }

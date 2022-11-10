@@ -21,6 +21,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import Fade from '@mui/material/Fade';
+
 
 
 
@@ -61,15 +63,17 @@ function NavBar(props) {
 
     setState({ ...state, [anchor]: open });
   };
-
+  const [checked, setChecked] = React.useState(false);
   const list = (anchor) => (
-    <Box
+    <Box 
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List>
+          
+
+      <List  >
         {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
@@ -81,7 +85,7 @@ function NavBar(props) {
           </ListItem>
         ))}
       </List>
-      <Divider />
+      <Divider  />
       <List>
         {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -106,7 +110,8 @@ function NavBar(props) {
      
         <div>
           {['left'].map((anchor) => (
-        <React.Fragment key={anchor}>
+          <Fade in={checked}>
+            <React.Fragment key={anchor} >
              <IconButton
           size="large"
           edge="start"
@@ -122,10 +127,12 @@ function NavBar(props) {
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            
           >
             {list(anchor)}
           </Drawer>
         </React.Fragment>
+          </Fade>
       ))}
        </div>
         
