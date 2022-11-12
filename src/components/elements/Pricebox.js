@@ -1,15 +1,100 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import Button from '@mui/material/Button';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { styled } from '@mui/material/styles';
+//import Box from '@mui/material/Box';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+//import Stack from '@mui/material/Stack';
+import Slide from '@mui/material/Slide';
+import { useStateValue } from "../cart/StateProvider";
+
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
+//import Typography from '@mui/material/Typography';
+
+
+function TransitionUp(props) {
+  return <Slide {...props} direction="up" />;
+}
+
+const BootstrapButton = styled(Button)({
+  boxShadow: 'none',
+  textTransform: 'none',
+
+  padding: '10px 30px',
+  //border: '1px solid',
+  lineHeight: 1.5,
+  backgroundColor: '#181818',
+  borderRadius: 'none',
+ 
+
+  '&:hover': {
+    backgroundColor: '#009B4E',
+    boxShadow: 'none',
+    borderRadius: '30px'
+  },
+  '&:active': {
+    boxShadow: 'none',
+    backgroundColor: '#009B4E',
+  },
+  '&:focus': {
+    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  },
+});
 
 function Pricebox(priceboxItem) {
-    const { price, image, title, id } = priceboxItem;
+    const { price, image, title, id, strain } = priceboxItem;
 
+    const [{ basket }, dispatch] = useStateValue([]);
+
+    const addToBasket = () => {
+      dispatch({
+        type: 'ADD_TO_BASKET',
+        item: {
+          id:id,
+          title:title,
+          price:price
+        
+    
+        },
+    
+      });
+    };
+
+    const [open, setOpen] = React.useState(false);
+    const [transition, setTransition] = React.useState(undefined);
+  
+    const handleClick = (Transition) => () => {
+      setTransition(() => Transition);
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
 
   return (
   <div className='pricebox'>
+    <div className='pricebox-strain'>
+      <p>{strain}</p>
+    </div>
    <div className='swiper-box'  >
-       <h1>{title}</h1>
+       <h1 style={{
+         whiteSpace:'nowrap'
+       }}>{title}</h1>
+       <div className='learn_more' >
+  
+      <Button variant="outlined">
+        Open success snackbar
+      </Button>
+      
+        </div>
+        
 <div className='swiper-content'>
 <motion.img whileHover={{ scale: 1.1 }} src={image} alt=''/>
 <div className='swiper-price'>
@@ -17,8 +102,34 @@ function Pricebox(priceboxItem) {
 <p>{price}</p>
 </div>
          </div>
-         <Button size='large' style={{backgroundColor:'#181818', display:'flex', margin:'0px auto'}} variant="contained"><h3>ADD TO CART</h3></Button>
-
+         <motion.div whileTap={{ scale: .9}}  transition={{delay: .1}} onClick={handleClick(TransitionUp)} className='pricebox-button'>
+         <BootstrapButton variant="contained" disableRipple size='large'  onClick={addToBasket} style={{
+          
+           display:'flex', 
+           margin:'0px auto',
+  
+            }} startIcon={<AddShoppingCartIcon />} >
+              <h3 
+            style={{
+            fontFamily: 'futura-pt, sans-serif',
+            fontStyle:'italic',
+            fontWeight:'650'
+            
+            }}>ADD TO CART</h3>
+            </BootstrapButton>
+            <Snackbar
+          
+        open={open}
+        onClose={handleClose}
+        TransitionComponent={transition}
+        message="I love snacks"
+        key={transition ? transition.name : ''}
+      >
+         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+          successfully added to cart!
+        </Alert>
+      </Snackbar>
+            </motion.div>
     </div>
     </div>
   );

@@ -53,8 +53,8 @@ function Products() {
      
         }}
         loop={true}
-        autoplay={true}
-        pagination={true}
+        autoplay={false}
+        pagination={false}
         modules={[EffectCoverflow, Pagination, Autoplay]}
         className="mySwiper"
 
@@ -65,11 +65,11 @@ function Products() {
 
       
        <Pricebox
-       id='123456'
-       title='sour diesel'
+       id={123456}
+       title='Sour Diesel'
        price={11.99}
        image="sour_diesel.png"
-
+       strain='sativa'
        />
           
          
@@ -77,10 +77,11 @@ function Products() {
         </div>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
             <Pricebox
-            id='123457'
-            title='this is other title'
+            id={123457}
+            title='Grand Daddy Purp'
             price={12.99}
             image='sour_diesel.png'
+            strain='sativa'
             />
         </SwiperSlide>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
@@ -89,6 +90,7 @@ function Products() {
             title='this is other title'
             price={12.99}
             image='sour_diesel.png'
+            strain='indica'
             />        </SwiperSlide>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
         <Pricebox
@@ -96,25 +98,60 @@ function Products() {
             title='this is other title'
             price={12.99}
             image='sour_diesel.png'
+            strain='hybrid'
             />        </SwiperSlide>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
+        <Pricebox
+            id={12345734}
+            title='this is other title'
+            price={12.99}
+            image='sour_diesel.png'
+            strain='sativa'
+            />        </SwiperSlide>
+        <SwiperSlide style={{
+          borderRadius:'20px', 
+          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
+          }}>
         <Pricebox
             id='123457'
             title='this is other title'
             price={12.99}
             image='sour_diesel.png'
+            strain='sativa'
             />        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+        <SwiperSlide style={{
+          borderRadius:'20px', 
+          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
+          }}>
+        <Pricebox
+            id='123457'
+            title='this is other title'
+            price={12.99}
+            image='sour_diesel.png'
+            strain='sativa'
+            />        </SwiperSlide>
+        <SwiperSlide style={{
+          borderRadius:'20px', 
+          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
+          }}>
+        <Pricebox
+            id='123457'
+            title='this is other title'
+            price={12.99}
+            image='sour_diesel.png'
+            strain='sativa'
+            />        </SwiperSlide>
+        <SwiperSlide style={{
+          borderRadius:'20px', 
+          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
+          }}>
+        <Pricebox
+            id='123457'
+            title='this is other title'
+            price={12.99}
+            image='sour_diesel.png'
+            strain='sativa'
+            />
         </SwiperSlide>
       </Swiper>
 

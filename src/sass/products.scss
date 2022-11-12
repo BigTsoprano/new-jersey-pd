@@ -18,7 +18,7 @@
 
 
 .product-section{
-    height:70vh;
+    height:90vh;
    
     background-color: rgb(229, 229, 231);
     font-family: futura-pt, sans-serif;
@@ -27,6 +27,7 @@
 
 .products{
 height: auto;
+
 .swiper {
     width: 100%;
     padding-top: 20px;
@@ -55,28 +56,46 @@ height: auto;
 
 .pricebox{
     padding: 20px;
-    height: 300px;
+    height: auto;
  
     
-      .swiper-content{
-          padding-top: 20px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-      }
-      .swiper-price{
-          display: flex;
-          flex-direction: row;
-      }
+     
       .swiper-box{
           h1{
-              font-size: 38px !important;
+              font-size: 32px !important;
               color:rgb(0, 150, 57);
               letter-spacing: 0.1px;
               font-weight: 600;
               font-style: italic;
               text-align: center;
+              -webkit-text-stroke-width: 1px;
+              -webkit-text-stroke-color: #009B4E;
           }
+          .swiper-content{
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .swiper-price{
+            display: flex;
+            flex-direction: row;
+            padding-top: 20px;
+            padding-bottom: 20px;
+           
+        }
       }
 
 }
+.pricebox-strain{
+    background-color: #D1D1D3;
+    border-radius: 5px;
+    width: 50px;
+    height: auto;
+    p{
+        text-align: center;
+    }
+}
+.learn_more{
+    
+   }

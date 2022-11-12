@@ -101,12 +101,18 @@ function NavBar(props) {
     </Box>
   );
 
+ 
+
   return (
-      <div style={{position:'fixed', width: '-webkit-fill-available', zIndex:'999'}} >
+      <div className='all-navbar' 
+      style={{position:'fixed',
+       width: '-webkit-fill-available',
+        zIndex:'999'}} >
     <Box  sx={{ flexGrow: 1 }}>
 
     <AppBar position="static">
       <StyledToolbar>
+  
      
         <div>
           {['left'].map((anchor) => (
@@ -142,11 +148,11 @@ function NavBar(props) {
           component="div"
           sx={{ flexGrow: 1, alignSelf: 'center' }}
         >
-          <div   style={{display:'flex', flexDirection:'row', justifyContent:'center'}}>
-          <h4 style={{fontFamily:'futura-pt, sans-serif', fontWeight:'550', color:'#FFC80F'}}>
-          NewJersey
+          <div className='navbar-title'>
+          <h4 >
+             NewJersey
           </h4>
-          <p style={{fontFamily:'futura-pt, sans-serif', fontWeight:'550', fontStyle:'italic', fontSize:'18px'}}>PotDelivery</p>
+          <p>PotDelivery</p>
           </div>
         </Typography>
         <IconButton size="large" aria-label="search" color="inherit">
