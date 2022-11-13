@@ -11,10 +11,10 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import PropTypes from 'prop-types';
-//import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
+//import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -22,7 +22,9 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import Fade from '@mui/material/Fade';
-
+import { ClassNames } from '@emotion/react';
+//import { makeStyles } from '@mui/styles';
+import SideBar from './SideBar';
 
 
 
@@ -41,106 +43,42 @@ function NavBar(props) {
     alignItems: 'center',
     paddingTop: theme.spacing(0),
     paddingBottom: theme.spacing(0),
+    boxShadow: 'none !important',
     // Override media queries injected by theme.mixins.toolbar
+    backgroundColor:'#009B4E',
     '@media all': {
      
-      backgroundColor:'#009B4E',
-      boxShadow: '0 10px 50px 0 rgb(63 2 176 / 40%)',
+     // boxShadow: '0 10px 50px 0 rgb(63 2 176 / 40%)',
+   
     },
   }));
 
 
 
-  const [state, setState] = React.useState({
-   
-    left: false,
-   
-  });
-  const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    }
-
-    setState({ ...state, [anchor]: open });
-  };
-  const [checked, setChecked] = React.useState(false);
-  const list = (anchor) => (
-    <Box 
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
-    >
-          
-
-      <List  >
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider  />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
-
  
+  const [checked, setChecked] = React.useState(false);
+
+  const handleChange = () => {
+    setChecked((prev) => !prev);
+  };
+ 
+
+  
 
   return (
       <div className='all-navbar' 
       style={{position:'fixed',
        width: '-webkit-fill-available',
-        zIndex:'999'}} >
-    <Box  sx={{ flexGrow: 1 }}>
+        zIndex:'999', boxShadow:'none'}} >
+    <Box  sx={{ flexGrow: 1 }}  >
 
-    <AppBar position="static">
+    <AppBar      elevation={0}
+>
       <StyledToolbar>
   
      
-        <div>
-          {['left'].map((anchor) => (
-          <Fade in={checked}>
-            <React.Fragment key={anchor} >
-             <IconButton
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="open drawer"
-          sx={{ mr: 2 }}
-        >
-  <MenuIcon onClick={toggleDrawer(anchor, true)} > 
-          {anchor}
-          </MenuIcon>
-          </IconButton>
-          <Drawer 
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
-            
-          >
-            {list(anchor)}
-          </Drawer>
-        </React.Fragment>
-          </Fade>
-      ))}
-       </div>
+      <SideBar/>
+     
         
         <Typography
           variant="h5"

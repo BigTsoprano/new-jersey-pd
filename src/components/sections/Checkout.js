@@ -123,7 +123,7 @@ function Checkout({ setShowCheckout }) {
   return (
     
 
-    <Drawer open={toggleDrawer(true)} anchor={'bottom'}>
+    <Drawer open={toggleDrawer(true)} anchor={'bottom'}  BackdropProps={{ invisible: true }}>
 <div className='all-checkout' 
 style={{backgroundColor:'#009B4E', 
 height:'auto',
