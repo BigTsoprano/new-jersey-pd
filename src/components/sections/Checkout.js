@@ -28,7 +28,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Drawer from '@mui/material/Drawer';
 
-
+import UserdataForm from '../elements/UserdataForm.js';
 import { Swiper, SwiperSlide } from "swiper/react";
 //import "swiper/css/pagination";
 //import { Pagination } from "swiper";
@@ -211,6 +211,8 @@ marginBottom:'0px'  }}>
                         id={item.id}
                         title={item.title}
                         price={item.price}
+                        image={item.image}
+                        quantity={item.quantity}
                             />
                             
                             
@@ -224,11 +226,14 @@ marginBottom:'0px'  }}>
             </div>
         
 </div>
-
+<div style={{textAlign:'center'}}>
+    <h2>fill this form</h2>
+    <UserdataForm/>
+</div>
 
 
         <div style={{
-            marginTop:'-15px',
+            marginTop:'15px',
             
                 display:'flex', 
                 flexDirection:'column', 

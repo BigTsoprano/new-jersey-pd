@@ -59,7 +59,6 @@ function Products() {
         className="mySwiper"
 
       >
-   <div style={{}}>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}} >
         
 
@@ -70,11 +69,11 @@ function Products() {
        price={11.99}
        image="sour_diesel.png"
        strain='sativa'
+       quantity={3.5}
        />
           
          
         </SwiperSlide>
-        </div>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
             <Pricebox
             id={123457}
@@ -82,6 +81,8 @@ function Products() {
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
+            quantity={4.5}
+
             />
         </SwiperSlide>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>

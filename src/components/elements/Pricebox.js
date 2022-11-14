@@ -48,7 +48,7 @@ const BootstrapButton = styled(Button)({
 });
 
 function Pricebox(priceboxItem) {
-    const { price, image, title, id, strain } = priceboxItem;
+    const { price, image, title, id, strain, quantity } = priceboxItem;
 
     const [{ basket }, dispatch] = useStateValue([]);
 
@@ -58,7 +58,10 @@ function Pricebox(priceboxItem) {
         item: {
           id:id,
           title:title,
-          price:price
+          price:price,
+          image:image,
+          quantity:quantity
+
         
     
         },
@@ -101,6 +104,7 @@ function Pricebox(priceboxItem) {
 <small>$</small>
 <p>{price}</p>
 </div>
+       <p>{quantity}</p>
          </div>
          <motion.div whileTap={{ scale: .9}}  transition={{delay: .1}} onClick={handleClick(TransitionUp)} className='pricebox-button'>
          <BootstrapButton variant="contained" disableRipple size='large'  onClick={addToBasket} style={{

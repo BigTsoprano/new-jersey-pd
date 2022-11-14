@@ -1,6 +1,7 @@
 //import { WorkOutline } from '@mui/icons-material';
 import {useEffect, useState} from 'react';
 import Textuserdata from '../elements/Textuserdata';
+import UserdataForm from '../elements/UserdataForm';
 
 
 
@@ -32,6 +33,7 @@ const fetchUserdatas = async () => {
 
         ))}
     </div>
+    <UserdataForm/>
     </div>
   );
 }
