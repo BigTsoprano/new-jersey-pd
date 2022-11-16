@@ -1,21 +1,27 @@
 //import { WorkOutline } from '@mui/icons-material';
 import {useEffect, useState} from 'react';
+
 import Textuserdata from '../elements/Textuserdata';
 import UserdataForm from '../elements/UserdataForm';
+import { useUserdataContext } from '../../hooks/useUserdataContext';
 
 
 
 
 function Pricetest() {
-const [userdatas, setUserdatas] = useState(null);
-    useEffect(() => {
+//const [userdatas, setUserdatas] = useState(null);
 
-const fetchUserdatas = async () => {
+const {userdata, dispatch} = useUserdataContext()
+
+
+
+    useEffect(() => {
+    const fetchUserdatas = async () => {
     const response = await fetch('/api/Userdata')
     const json = await response.json()
 
         if (response.ok) {
-            setUserdatas(json)
+            dispatch({type: 'SET_USERDATA', payload: json})
         }  
         }
         fetchUserdatas()
@@ -28,7 +34,7 @@ const fetchUserdatas = async () => {
         backgroundColor: '#ffffff'
     }}>
         <div>
-        {userdatas && userdatas.map((userdata) => (
+        {userdata && userdata.map((userdata) => (
            <Textuserdata key={userdata._id} userdata={userdata}/>
 
         ))}

@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { useUserdataContext } from '../../hooks/useUserdataContext';
 
 function UserdataForm() {
+
+    const {dispatch} = useUserdataContext()
 
     const [title, setTitle] = useState('')
     const [error, setError] = useState(null)
@@ -28,6 +31,7 @@ function UserdataForm() {
             setTitle('')
             setError(null)
             console.log('new title added', json)
+            dispatch({type: 'CREATE_USERDATA', payload: json})
         }
     }
 
