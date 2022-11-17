@@ -46,11 +46,31 @@ const createUser = async (req, res) => {
 }
 
 
+// delete a user
+
+const deleteUserdata = async (req, res) => {
+    const { id } = req.params
+  
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+      return res.status(400).json({error: 'No such userdata'})
+    }
+  
+    const userdata = await Userdata.findOneAndDelete({_id: id})
+  
+    if(!userdata) {
+      return res.status(400).json({error: 'No such user'})
+    }
+  
+    res.status(200).json(userdata)
+  }
+
+
 
  // update a user
 
 module.exports = {
     getUserdatas,
     getUserdata,
-    createUser
+    createUser,
+    deleteUserdata
 }

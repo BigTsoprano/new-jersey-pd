@@ -1,8 +1,12 @@
+
+//636d758e743f2bb3908f44d6
+
 const express = require('express')
 const {
     createUser,
     getUserdatas,
     getUserdata,
+    deleteUserdata
 } = require('../controllers/userdataController')
 
 const router = express.Router()
@@ -19,9 +23,7 @@ router.post('/', createUser)
 
 
 //DELETE a user
-router.delete('/:id', (req,res) => {
-    res.json({mssg: 'DELETE a workout'})
-})
+router.delete('/:id', deleteUserdata)
 
 // UPDATE a user
 router.patch('/:id', (req, res) => {

@@ -19,7 +19,7 @@ app.use((req, res, next) =>{
 })
 
 
-app.use('/api/Userdata', userdataRoute)
+app.use('/api/Userdata/', userdataRoute)
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
