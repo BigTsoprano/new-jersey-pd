@@ -48,7 +48,7 @@ const BootstrapButton = styled(Button)({
 });
 
 function Pricebox(priceboxItem) {
-    const { price, image, title, id, strain, quantity } = priceboxItem;
+    const { price, image, name, id, strain, quantity } = priceboxItem;
 
     const [{ basket }, dispatch] = useStateValue([]);
 
@@ -57,7 +57,7 @@ function Pricebox(priceboxItem) {
         type: 'ADD_TO_BASKET',
         item: {
           id:id,
-          title:title,
+          name:name,
           price:price,
           image:image,
           quantity:quantity
@@ -89,7 +89,7 @@ function Pricebox(priceboxItem) {
    <div className='swiper-box'  >
        <h1 style={{
          whiteSpace:'nowrap'
-       }}>{title}</h1>
+       }}>{name}</h1>
        <div className='learn_more' >
   
       <Button variant="outlined">

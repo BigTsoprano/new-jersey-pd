@@ -16,7 +16,8 @@ const Img = styled('img')({
   });
   
 
-function CheckoutProduct({ id, title, price, image, quantity}) {
+function CheckoutProduct({ id, name, price, image, quantity}) {
+
   const [{ basket }, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
@@ -48,7 +49,7 @@ return (
         <Grid item xs container direction="column" spacing={2}>
           <Grid item xs>
            
-            {title}
+            {name}
          
           
             <Typography variant="body2" color="text.secondary">

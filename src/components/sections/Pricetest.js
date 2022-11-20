@@ -2,7 +2,6 @@
 import {useEffect, useState} from 'react';
 
 import Textuserdata from '../elements/Textuserdata';
-import UserdataForm from '../elements/UserdataForm';
 import { useUserdataContext } from '../../hooks/useUserdataContext';
 
 
@@ -33,13 +32,17 @@ const {userdata, dispatch} = useUserdataContext()
         position:'relative',
         backgroundColor: '#ffffff'
     }}>
+        <h1 style={{
+            textAlign:'center',
+            paddingBottom: '40px'
+
+        }}>User Order data</h1>
         <div>
         {userdata && userdata.map((userdata) => (
            <Textuserdata key={userdata._id} userdata={userdata}/>
 
         ))}
-    </div>
-    <UserdataForm/>
+     </div>
     </div>
   );
 }

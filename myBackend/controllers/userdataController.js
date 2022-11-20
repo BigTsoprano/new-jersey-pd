@@ -15,7 +15,7 @@ const getUserdata = async (req, res) => {
 const { id } = req.params
 
 if (!mongoose.Types.ObjectId.isValid(id)) {
-return res.status(404).json({error: 'no such workout'})
+return res.status(404).json({error: 'no such user'})
 
 }
 
@@ -33,10 +33,10 @@ if (!userdata) {
 
  //create new user
 const createUser = async (req, res) => {
-    const {title} = req.body
+    const {title, number, street, email, zip, county, notes} = req.body
 
     try{
-        const userdata = await Userdata.create({title})
+        const userdata = await Userdata.create({title, number, street, email, zip, county, notes})
         res.status(200).json(userdata)
     } catch (error) {
         res.status(400).json({error: error.message})

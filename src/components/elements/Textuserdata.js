@@ -18,10 +18,27 @@ const { dispatch } = useUserdataContext()
     }
 
     return(
-        <div className="userdata-title">
+        <div className="userdata-title" 
+            style={{
+                display: 'flex',
+                justifyContent:'space-evenly'
+                }}>
+<div style={{display:'flex', flexDirection:'column'}}>
             <h1>{userdata.title}</h1>
+            <h2>{userdata.number}</h2>
+            <p>{userdata.email}</p>
+            </div>
+            <div>
+            <h3>{userdata.street}</h3>
+            <h3>{userdata.zip}</h3>
+            <h3>{userdata.county}</h3>
+            </div>
+            <p>{userdata.notes}</p>
             <p>{userdata.createdAt}</p>
-            <button onClick={handleClick} >delete</button>
+
+            <button onClick={handleClick} >
+                delete
+            </button>
         </div>
     );
 }

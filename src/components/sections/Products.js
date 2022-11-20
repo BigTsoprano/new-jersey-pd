@@ -1,23 +1,17 @@
 import {Link} from 'react-router-dom';
+import React, { useRef, useState } from "react";
+
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import DownloadTwoToneIcon from '@mui/icons-material/DownloadTwoTone';
+
 import { motion } from "framer-motion";
 
-import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
-//import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-//import "swiper/css/bundle";
 import "swiper/css/autoplay";
-
-
-
-// import required modules
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 import Pricebox from '../elements/Pricebox';
@@ -26,8 +20,6 @@ import Pricebox from '../elements/Pricebox';
 
 
 function Products() {
-
- 
 
 
   return (
@@ -65,7 +57,7 @@ function Products() {
       
        <Pricebox
        id={123456}
-       title='Sour Diesel'
+       name='Sour Diesel'
        price={11.99}
        image="sour_diesel.png"
        strain='sativa'
@@ -77,7 +69,7 @@ function Products() {
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
             <Pricebox
             id={123457}
-            title='Grand Daddy Purp'
+            name='Grand Daddy Purp'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
@@ -88,7 +80,7 @@ function Products() {
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
         <Pricebox
             id='123457'
-            title='this is other title'
+            name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='indica'
@@ -96,7 +88,7 @@ function Products() {
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
         <Pricebox
             id='123457'
-            title='this is other title'
+            name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='hybrid'
@@ -104,7 +96,7 @@ function Products() {
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
         <Pricebox
             id={12345734}
-            title='this is other title'
+            name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
@@ -115,7 +107,7 @@ function Products() {
           }}>
         <Pricebox
             id='123457'
-            title='this is other title'
+            name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
@@ -126,7 +118,7 @@ function Products() {
           }}>
         <Pricebox
             id='123457'
-            title='this is other title'
+            name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
@@ -137,7 +129,7 @@ function Products() {
           }}>
         <Pricebox
             id='123457'
-            title='this is other title'
+            name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
@@ -148,7 +140,7 @@ function Products() {
           }}>
         <Pricebox
             id='123457'
-            title='this is other title'
+            name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
@@ -161,10 +153,11 @@ function Products() {
 </div>
 
 
-        <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className='all-products-button'>
-<Stack direction="row" style={{
+  <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className='all-products-button'>
+      <Stack direction="row" 
+            style={{
     backgroundColor:'none !important'
-}}>
+                  }}>
 
 <Button  endIcon={<DownloadTwoToneIcon size="large" />}>
     

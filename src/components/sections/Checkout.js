@@ -1,16 +1,14 @@
 import React from 'react'
 
 import Drawer from '@mui/material/Drawer';
-import Subtotal from '../cart/Subtotal';
 import CancelIcon from '@mui/icons-material/Cancel';
 import IconButton from '@mui/material/IconButton';
 
+
 import { useStateValue } from "../cart/StateProvider";
-import CheckoutProduct from '../cart/CheckoutProduct.js';
 
 import UserdataForm from '../elements/UserdataForm.js';
 
-import { Swiper, SwiperSlide } from "swiper/react";
 //import "swiper/css/pagination";
 //import { Pagination } from "swiper";
 
@@ -34,6 +32,12 @@ function Checkout({ setShowCheckout }) {
           };
 
       
+
+
+
+
+
+
        
   return (
     
@@ -102,79 +106,9 @@ function Checkout({ setShowCheckout }) {
                     textAlign:'center', 
                     color:'#ffc80f'}}>Checkout</h1>
             
-            <div className='checkout-item'>
-
-                <div className="checkout__left">
-                     {basket?.length === 0 ? (
-                         <div className='checkout__shopping'>
-                        <h2>Your Shopping Cart Is Empty</h2>
-                            </div>
-                    
-                                      ) : (
-                  
-                    <div className='checkout-swiper' >
-{/*<Slider  {...settings} >*/}
-<Swiper
-        slidesPerView={2}
-        spaceBetween={30}
-    
-        className="mySwiper"
-      >
-                    {basket.map(item => (
-          <SwiperSlide>
-                       
-                        <CheckoutProduct 
-                        id={item.id}
-                        title={item.title}
-                        price={item.price}
-                        image={item.image}
-                        quantity={item.quantity}
-                            />
-                            
-                            
-                     </SwiperSlide>
-                            ))}
-                            {/*</Slider>*/}
-                            </Swiper>
-                    </div>
-                    
-                )}
-            </div>
-        
-</div>
-<div style={{textAlign:'center'}}>
-    <h2>fill this form!</h2>
-    <UserdataForm/>
-</div>
+           <div><UserdataForm/></div>
 
 
-        <div style={{
-            marginTop:'15px',
-            
-                display:'flex', 
-                flexDirection:'column', 
-                justifyContent:'center', 
-                alignItems:'center'
-            }} 
-            className='sub_pay'>
-
-        {basket.length > 0 && (
-                
-                <div 
-                    className="checkout__right">
-
-                    <div className='subtotal-checkout'>
-                    <Subtotal />
-                    </div>
-
-
-  
-                
-     
-                    </div>
-            )}              
-
-</div>
         </div>
         </Drawer>
 
