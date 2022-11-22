@@ -30,7 +30,12 @@ const userdataSchema = new Schema({
     notes: {
         type: String,
         required: true
+    },
+    name: {
+        type: String,
+        
     }
+ 
  
     
 

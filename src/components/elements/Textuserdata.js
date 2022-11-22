@@ -32,6 +32,7 @@ const { dispatch } = useUserdataContext()
             <h3>{userdata.street}</h3>
             <h3>{userdata.zip}</h3>
             <h3>{userdata.county}</h3>
+            <h1>{userdata.name}</h1>
             </div>
             <p>{userdata.notes}</p>
             <p>{userdata.createdAt}</p>

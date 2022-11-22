@@ -22,6 +22,7 @@ function UserdataForm() {
     const [title, setTitle] = useState('')
     const [error, setError] = useState(null)
 
+
     const handleSubmit = async (e) => {
         e.preventDefault()
             
@@ -74,18 +75,15 @@ spaceBetween={30}
 
 className="mySwiper"
 >
-        {basket.map(item => (
+        {basket.map(userdata => (
 <SwiperSlide>
            
             <CheckoutProduct 
-            id={item.id}
-            name={item.name}
-            price={item.price}
-            image={item.image}
-            quantity={item.quantity}
-          
-
-
+            name={userdata.name}
+            price={userdata.price}
+            image={userdata.image}
+            quantity={userdata.quantity}
+      
                 />
                 
                 
@@ -160,6 +158,7 @@ defaultValue="Leave us a note!"
 onChange={(e) => setNotes(e.target.value)}
 value={notes}
 />
+
 <button>add title</button>
 </Box>
 </div>

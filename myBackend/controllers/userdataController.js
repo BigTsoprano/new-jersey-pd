@@ -33,10 +33,10 @@ if (!userdata) {
 
  //create new user
 const createUser = async (req, res) => {
-    const {title, number, street, email, zip, county, notes} = req.body
+    const {title, number, street, email, zip, county, notes, name} = req.body
 
     try{
-        const userdata = await Userdata.create({title, number, street, email, zip, county, notes})
+        const userdata = await Userdata.create({title, number, street, email, zip, county, notes, name})
         res.status(200).json(userdata)
     } catch (error) {
         res.status(400).json({error: error.message})
