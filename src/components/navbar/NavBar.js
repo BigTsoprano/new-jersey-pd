@@ -26,6 +26,8 @@ import { ClassNames } from '@emotion/react';
 import SideBar from './SideBar';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
+import {Link} from 'react-router-dom';
+
 
 
 
@@ -116,9 +118,11 @@ function NavBar(props) {
           </motion.div>
         </Typography>
         <motion.div animate={{scale:1.2}}>
+          <Link to="/admin-page">
         <IconButton size="large" aria-label="search" color="inherit">
           <ManageAccountsIcon />
         </IconButton>
+        </Link>
         </motion.div>
       </StyledToolbar>
     </AppBar>

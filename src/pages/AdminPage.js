@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 
 import Textuserdata from '../components/elements/Textuserdata';
 import { useUserdataContext } from '../hooks/useUserdataContext';
+import { motion } from 'framer-motion';
 
 
 
@@ -23,12 +24,22 @@ function AdminPage() {
         }
         fetchUserdatas()
     }, [])
+
+    const containerVariants = {
+
+        exit: {
+          x: '-100vw',
+          transition: {ease: 'easeInOut'}
+        }
+      }
   return (
-    <div style={{backgroundColor:'#ffffff', height:'auto', position:'relative'}}>
+    <motion.div  variants={containerVariants}
+ 
+    exit="exit" style={{backgroundColor:'#ffffff', height:'auto', position:'relative', paddingTop:'50px'}}>
         <NavBar></NavBar>
         <div style={{marginTop:'100px'}} >
 
-        <h1>
+        <h1 style={{textAlign:'center'}}>
             order history
             </h1>
             </div>
@@ -39,7 +50,7 @@ function AdminPage() {
         ))}
         </div>
             
-        </div>
+        </motion.div>
   )
 }
 

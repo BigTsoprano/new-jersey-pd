@@ -83,7 +83,7 @@ function Pricebox(priceboxItem) {
     
 
   return (
-  <motion.div  
+  <motion.div 
   
   className='pricebox'>
     <motion.div  initial={{scale:0}}
