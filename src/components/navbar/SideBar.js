@@ -7,6 +7,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
+import {Link} from 'react-router-dom';
+
 
 const MyBox = styled(Box)({    
         backgroundColor: '#009B4E',
@@ -28,6 +30,26 @@ function SideBar() {
     
         setState({ ...state, [anchor]: open });
       };
+
+      const container = {
+        hidden: { opacity: 1, scale: 0 },
+        visible: {
+          opacity: 1,
+          scale: 1,
+          transition: {
+            delayChildren: 0.3,
+            staggerChildren: 0.2
+          }
+        }
+      };
+      
+      const item = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+          y: 0,
+          opacity: 1
+        }
+      };
   
   return (
 
@@ -45,18 +67,39 @@ function SideBar() {
   >
 <MenuIcon onClick={toggleDrawer(anchor, true)} > 
     </MenuIcon>
-    </IconButton>      <Drawer
+    </IconButton>      
+    <Drawer
+   
         anchor={anchor}
         open={state[anchor]}
         onClose={toggleDrawer(anchor, false)}
       >
+       
    <MyBox 
-          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 , minHeight:'100vh'}}
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
         >
+
+          <motion.ul 
+           className="container"
+           variants={container}
+           initial="hidden"
+           animate="visible"
+          style={{fontSize:'24px', fontWeight:'550', display:'flex', flexDirection:'column', paddingLeft:'30px', paddingTop:'40px'}}>
+            <motion.li className="item" variants={item} style={{paddingTop:'10px'}}>
+            <Link to='/' >Home</Link>
+            </motion.li>
+            <motion.li className="item" variants={item} style={{paddingTop:'10px'}}> 
+            <Link to='/all-products' >All products</Link>
+</motion.li>
+            <motion.li className="item" variants={item} style={{paddingTop:'10px'}}>
+            <a  to='/accordions' >FAQ</a>
+            </motion.li>
+          </motion.ul>
             </MyBox>
+            
       </Drawer>
     </React.Fragment>
   ))}

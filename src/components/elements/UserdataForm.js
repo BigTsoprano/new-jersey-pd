@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useUserdataContext } from '../../hooks/useUserdataContext';
 //mport { Streetview } from '@mui/icons-material';
 import { useStateValue } from "../cart/StateProvider";
-import CheckoutProduct from '../cart/CheckoutProduct.js';
+import CheckoutProduct from '../cart/CheckoutProduct';
 import { Swiper, SwiperSlide } from "swiper/react";
 import Subtotal from '../cart/Subtotal';
 
@@ -21,12 +21,18 @@ function UserdataForm() {
     const [number, setNumber] = useState('')
     const [title, setTitle] = useState('')
     const [error, setError] = useState(null)
+    const [arrayBasket, setArrayBasket] = useState({})    
 
+
+
+    useEffect(() => {
+        setArrayBasket(basket)
+    }, [basket])
 
     const handleSubmit = async (e) => {
         e.preventDefault()
             
-        const userdata = {title, number, street, email, zip, county, notes}
+        const userdata = {title, number, street, email, zip, county, notes, arrayBasket}
 
         const response = await fetch('/api/Userdata', {
             method: 'POST',
@@ -41,6 +47,7 @@ function UserdataForm() {
             setError(json.error)
         }
         if (response.ok) {
+           
             setTitle('')
             setNumber('')
             setStreet('')
@@ -49,6 +56,7 @@ function UserdataForm() {
             setCounty('')
             setNotes('')
             setError(null)
+            setArrayBasket({})
             console.log('new title added', json)
             dispatch({type: 'CREATE_USERDATA', payload: json})
         }
@@ -75,18 +83,19 @@ spaceBetween={30}
 
 className="mySwiper"
 >
-        {basket.map(userdata => (
+        {basket.map(item => (
 <SwiperSlide>
            
             <CheckoutProduct 
-            name={userdata.name}
-            price={userdata.price}
-            image={userdata.image}
-            quantity={userdata.quantity}
-      
+            name={item.name}
+            price={item.price}
+            image={item.image}
+            quantity={item.quantity}
+            onChange={(e) => setArrayBasket(e.target.value) }
+            value={arrayBasket}
                 />
                 
-                
+            
          </SwiperSlide>
                 ))}
                 {/*</Slider>*/}

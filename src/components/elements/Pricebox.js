@@ -80,16 +80,23 @@ function Pricebox(priceboxItem) {
     const handleClose = () => {
       setOpen(false);
     };
+    
 
   return (
-  <div className='pricebox'>
-    <div className='pricebox-strain'>
+  <motion.div  
+  
+  className='pricebox'>
+    <motion.div  initial={{scale:0}}
+  whileInView={{scale:1}}
+  viewport={{ once: true }} transition={{ duration: .5, type:'spring'}} className='pricebox-strain'>
       <p>{strain}</p>
-    </div>
+    </motion.div>
    <div className='swiper-box'  >
-       <h1 style={{
+       <motion.h1  initial={{scale:0}}
+  whileInView={{scale:1}}
+  viewport={{ once: true }} transition={{ duration: .5, type:'spring', delay:.3}}  style={{
          whiteSpace:'nowrap'
-       }}>{name}</h1>
+       }}>{name}</motion.h1>
        <div className='learn_more' >
   
       <Button variant="outlined">
@@ -97,6 +104,19 @@ function Pricebox(priceboxItem) {
       </Button>
       
         </div>
+
+        <motion.div 
+  whileInView={{  y:0}}
+  transition={{
+    type: "spring",
+    stiffness: 60,
+    damping: 20,
+    delay: .8,
+    duration:.4 
+  }}
+  viewport={{ once: true }} 
+ 
+  initial={{y: 25}}  > 
         
 <div className='swiper-content'>
 <motion.img whileHover={{ scale: 1.1 }} src={image} alt=''/>
@@ -106,7 +126,7 @@ function Pricebox(priceboxItem) {
 </div>
        <p>{quantity}</p>
          </div>
-         <motion.div whileTap={{ scale: .9}}  transition={{delay: .1}} onClick={handleClick(TransitionUp)} className='pricebox-button'>
+         <motion.div whileTap={{ scale: .8}} whileHover={{scale:.94}}  transition={{delay: .1}} onClick={handleClick(TransitionUp)} className='pricebox-button'>
          <BootstrapButton variant="contained" disableRipple size='large'  onClick={addToBasket} style={{
           
            display:'flex', 
@@ -134,8 +154,9 @@ function Pricebox(priceboxItem) {
         </Alert>
       </Snackbar>
             </motion.div>
+            </motion.div>
     </div>
-    </div>
+    </motion.div>
   );
 }
 

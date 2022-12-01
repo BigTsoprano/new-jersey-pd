@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {useStateValue} from "./StateProvider";
+import {useStateValue} from "../cart/StateProvider";
 import IconButton from '@mui/material/IconButton';
 
 const Img = styled('img')({

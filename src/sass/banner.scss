@@ -1,5 +1,58 @@
-.banner-section{
-    height: 70vh;
-    background-color: #000000;
+.banner-wrap{
+    background-color: #181818;
     position: relative;
+    width: 100%;
+    height: 70vh;
+    margin-top:-70px;
+
+
 }
+.banner {
+    width: 85%;
+    margin: 0 auto;
+    height: 70vh;
+    color: #ffffff !important;
+    text-align: center;
+  z-index: 90 !important;
+    background-color: #181818;
+    background-image: url(/images/njpd-deal.png);
+    background-repeat: no-repeat;
+    background-position: right 60px;
+    background-size: contain;
+    position: relative;
+    //background: #06AF67;
+    //background:linear-gradient(rgba(0,135,63),transparent);
+      //background-color: #06AF67;
+  h3{
+    padding-top:30px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 80px;
+  font-size: 50px !important;
+  font-style: italic;
+  flex-direction: row;
+  }
+  p{
+    display: flex;
+  justify-content: flex-start;
+  padding-left: 80px;
+  font-size: 24px;
+  text-align: left;
+  text-shadow: .5px .5px 1px #292929;
+  
+  font-weight: 550;
+  }
+  .banner-button{
+    display:flex;
+    justify-content: flex-start;
+    padding-left: 120px;
+  }
+  }
+  .banner-title{
+  padding-top: 50px;
+  //width:60%;
+  display: flex;
+  //align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  }

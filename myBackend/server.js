@@ -1,3 +1,4 @@
+
 require('dotenv').config()
 
 
@@ -6,7 +7,7 @@ const express = require('express')
 const userdataRoute = require('./routes/Userdatas')
 const mongoose = require('mongoose')
 
-//express app (any name)
+//express.js
 const app = express()
 
 app.use(express.json())

@@ -30,7 +30,8 @@ const {userdata, dispatch} = useUserdataContext()
     <div className='pricetest-section' style={{
         height:'90vh',
         position:'relative',
-        backgroundColor: '#ffffff'
+        backgroundColor: '#ffffff',
+ 
     }}>
         <h1 style={{
             textAlign:'center',
@@ -38,10 +39,12 @@ const {userdata, dispatch} = useUserdataContext()
 
         }}>User Order data</h1>
         <div>
+            <div className='pricetest_box' style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
         {userdata && userdata.map((userdata) => (
            <Textuserdata key={userdata._id} userdata={userdata}/>
 
         ))}
+        </div>
      </div>
     </div>
   );

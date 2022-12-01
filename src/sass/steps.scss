@@ -1,0 +1,32 @@
+.steps_section{
+    background-color: #F7F7F8;
+    position:relative;
+    height: auto;
+
+}
+
+.step_one{
+    height:20vh;
+    width: 50vh;
+    padding: 40px;
+    border-radius: 30px;
+
+}
+.step_two{
+    height:20vh;
+    width: 50vh;
+    padding: 40px;
+}
+.step_three{
+    height:20vh;
+    width: 50vh;
+    
+    padding: 40px;
+}
+.steps_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    padding-top: 40px;    
+    padding-bottom: 80px;
+}

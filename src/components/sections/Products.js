@@ -18,23 +18,22 @@ import Pricebox from '../elements/Pricebox';
 
 
 
-
 function Products() {
 
 
   return (
 
     <div className='product-section'>
-        <motion.h1 animate={{ x: 500 }} transition={{ duration: 1.2 }}  >
-            PRODUCT SECTIONs
+        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif'}} animate={{ x: 500 }} transition={{ duration: 1.2 }} style={{padding:'30px'}}  >
+            OUR FAVORITES
         </motion.h1>
-    <div className='products'>
+    <motion.div  className='products'>
        
 <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={"4"}
+        slidesPerView={"3"}
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -51,12 +50,12 @@ function Products() {
         className="mySwiper"
 
       >
+        
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}} >
         
 
       
        <Pricebox
-       id={123456}
        name='Sour Diesel'
        price={11.99}
        image="sour_diesel.png"
@@ -68,7 +67,6 @@ function Products() {
         </SwiperSlide>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
             <Pricebox
-            id={123457}
             name='Grand Daddy Purp'
             price={12.99}
             image='sour_diesel.png'
@@ -79,23 +77,26 @@ function Products() {
         </SwiperSlide>
         <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
         <Pricebox
-            id='123457'
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='indica'
             />        </SwiperSlide>
-        <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
+        <SwiperSlide 
+        style={{
+          borderRadius:'20px', 
+          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
         <Pricebox
-            id='123457'
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='hybrid'
             />        </SwiperSlide>
-        <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
+        <SwiperSlide 
+        style={{
+          borderRadius:'20px', 
+          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
         <Pricebox
-            id={12345734}
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
@@ -106,7 +107,6 @@ function Products() {
           boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
           }}>
         <Pricebox
-            id='123457'
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
@@ -117,7 +117,6 @@ function Products() {
           boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
           }}>
         <Pricebox
-            id='123457'
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
@@ -128,7 +127,6 @@ function Products() {
           boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
           }}>
         <Pricebox
-            id='123457'
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
@@ -139,7 +137,6 @@ function Products() {
           boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
           }}>
         <Pricebox
-            id='123457'
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
@@ -150,7 +147,7 @@ function Products() {
 
 
 
-</div>
+</motion.div>
 
 
   <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className='all-products-button'>

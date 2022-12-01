@@ -6,46 +6,74 @@ import Banner from '../components/sections/Banner';
 import Herosection from '../components/sections/Herosection';
 import Products from '../components/sections/Products';
 import CubeProducts from '../components/sections/CubeProducts';
-import Pricetest from '../components/sections/Pricetest';
-
-import Carticon from '../components/cart/Carticon';
-
+//import Pricetest from '../components/sections/Pricetest';
+//import Carticon from '../components/cart/Carticon';
+import Ads from '../components/sections/Ads';
+import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
+import Accordions from '../components/sections/Accordions';
+import Footer from '../components/sections/Footer';
+import Steps from '../components/sections/Steps';
+import { motion } from 'framer-motion';
 
 
 function HomePage() {
+  const containerVariants = {
+ 
+    exit: {
+      x: '-100vw',
+      transition: {ease: 'easeInOut'}
+    }
+  }
+return (
 
-  
-  return (
-<>
-<main>
+<motion.div   variants={containerVariants}
 
-<Carticon/>
+    exit="exit" >
+
+
+
+{/*<Carticon/>*/}
+
 <NavBar/>
 
     <Element name='section-home'>
-    <ReactCursorPosition>
+      <ReactCursorPosition>
         <Herosection/>
-        </ReactCursorPosition> 
+      </ReactCursorPosition> 
     </Element>
+
     <Element name='section-banner'>
-      <Banner/>
+        <Banner/>
     </Element>
-    <Element name='section-cube'>
-      <CubeProducts/>
+    <Element name='section-steps'>
+    <Steps/>
     </Element>
+
+  { /* <Element name='section-cube'>
+        <CubeProducts/>
+    </Element>*/}
+
     <Element name='section-product'>
-      <Products/>
+        <Products/>
     </Element>
-    <Element name='section-pricetest'>
-      <Pricetest/>
+    
+    <Element name='section-ads'>
+      <Ads/>
     </Element>
-   
+    <Element name='section-accordions'>
+      <Accordions/>
+    </Element>
+    <Element name='section-footer'>
+    <Footer/>
+    </Element>
+    
+   <SwipeableEdgeDrawer/>
 
 
-</main>
 
-</>
-  )
+
+</motion.div>
+  );
 }
 
 export default HomePage

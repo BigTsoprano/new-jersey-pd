@@ -9,7 +9,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Slide from '@mui/material/Slide';
-import useScrollTrigger from '@mui/material/useScrollTrigger';
 import PropTypes from 'prop-types';
 import { motion } from "framer-motion";
 import Drawer from '@mui/material/Drawer';
@@ -25,6 +24,20 @@ import Fade from '@mui/material/Fade';
 import { ClassNames } from '@emotion/react';
 //import { makeStyles } from '@mui/styles';
 import SideBar from './SideBar';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
+
+
+
+function HideOnScroll({ children }) {
+ const trigger = useScrollTrigger();
+
+ return(
+  <Slide appear={false}  direction={"down"} in={!trigger}>
+    {children}
+  </Slide>
+ );}
 
 
 
@@ -38,12 +51,16 @@ import SideBar from './SideBar';
 
   
 function NavBar(props) {
+
+  
     
     const StyledToolbar = styled(Toolbar)(({ theme }) => ({
     alignItems: 'center',
     paddingTop: theme.spacing(0),
     paddingBottom: theme.spacing(0),
     boxShadow: 'none !important',
+    transition: 'top 0.3s',
+    top:'0',
     // Override media queries injected by theme.mixins.toolbar
     backgroundColor:'#009B4E',
     '@media all': {
@@ -66,18 +83,21 @@ function NavBar(props) {
   
 
   return (
-      <div className='all-navbar' 
-      style={{position:'fixed',
-       width: '-webkit-fill-available',
-        zIndex:'999', boxShadow:'none'}} >
-    <Box  sx={{ flexGrow: 1 }}  >
+    <HideOnScroll>
+  
 
-    <AppBar      elevation={0}
+    <AppBar  style={{position:'fixed',
+       width: '-webkit-fill-available',
+        zIndex:'999', 
+        boxShadow:'none',
+      
+        }}    elevation={0}
 >
       <StyledToolbar>
   
-     
+     <motion.div animate={{scale:1.2}}>
       <SideBar/>
+      </motion.div>
      
         
         <Typography
@@ -86,29 +106,24 @@ function NavBar(props) {
           component="div"
           sx={{ flexGrow: 1, alignSelf: 'center' }}
         >
-          <div className='navbar-title'>
+          <motion.div   initial={{x:'-100vw'}} animate={{x:0}}
+  transition={{duration: .5, type:'spring', stiffness: 50}}
+  className='navbar-title'>
           <h4 >
              NewJersey
           </h4>
           <p>PotDelivery</p>
-          </div>
+          </motion.div>
         </Typography>
+        <motion.div animate={{scale:1.2}}>
         <IconButton size="large" aria-label="search" color="inherit">
-          <SearchIcon />
+          <ManageAccountsIcon />
         </IconButton>
-        <IconButton
-          size="large"
-          aria-label="display more actions"
-          edge="end"
-          color="inherit"
-        >
-          <MoreIcon />
-        </IconButton>
+        </motion.div>
       </StyledToolbar>
     </AppBar>
 
-  </Box>
-  </div>
+  </HideOnScroll>
   );
 }
 
