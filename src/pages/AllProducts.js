@@ -29,7 +29,24 @@ function AllProducts() {
            <h1 style={{textAlign:'center', padding:'40px'}}>
             hersldafjklasdj
             </h1>
-            <div style={{display:'flex', justifyContent:'space-evenly', flexWrap:'wrap', }}>
+            <div style={{display:'flex', justifyContent:'space-around'}}>
+            <div style={{height:'100px', padding:'50px'}}>
+              <button style={{height:'50px', width:'60px'}}>
+Flowers
+              </button>
+            </div>
+            <div style={{height:'100px', padding:'50px'}}>
+              <button style={{height:'50px', width:'60px'}}>
+Flowers
+              </button>
+            </div>
+            <div style={{height:'100px', padding:'50px'}}>
+              <button style={{height:'50px', width:'60px'}}>
+Flowers
+              </button>
+            </div>
+            </div>
+            <div style={{paddingTop:'50px',display:'flex', justifyContent:'space-evenly', flexWrap:'wrap', }}>
               <div className='products-box' style={{height:'auto', width:'300px'}}>
             <Pricebox
             name='this is other title'
