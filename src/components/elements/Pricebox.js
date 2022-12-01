@@ -26,17 +26,17 @@ const BootstrapButton = styled(Button)({
   boxShadow: 'none',
   textTransform: 'none',
 
-  padding: '10px 30px',
+  padding: '15px 30px',
   //border: '1px solid',
   lineHeight: 1.5,
   backgroundColor: '#181818',
-  borderRadius: 'none',
+  borderRadius: '30px',
  
 
   '&:hover': {
     backgroundColor: '#009B4E',
     boxShadow: 'none',
-    borderRadius: '30px'
+    borderRadius: '40px'
   },
   '&:active': {
     boxShadow: 'none',

@@ -23,7 +23,7 @@ function Products() {
 
   return (
 
-    <div className='product-section'>
+    <div className='product-section' >
         <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif'}} animate={{ x: 500 }} transition={{ duration: 1.2 }} style={{padding:'30px'}}  >
             OUR FAVORITES
         </motion.h1>
@@ -44,7 +44,8 @@ function Products() {
      
         }}
         loop={true}
-        autoplay={false}
+        autoplay={{delay: 5000,
+          disableOnInteraction: true}}
         pagination={false}
         modules={[EffectCoverflow, Pagination, Autoplay]}
         className="mySwiper"

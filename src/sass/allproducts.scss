@@ -2,14 +2,32 @@
     background-color: #F7F7F8;
     position: relative;
     padding-top: 100px;
-    height:200vh;
+    height:auto;
 }
 .all_products_section{
   
 }
 .products-box{
-    border: 2px solid #000000;
+    box-shadow: 1px 3px 7px 2px rgba(57, 63, 72, 0.3);
+    border-radius: 30px;
+    height: auto;
+    width: 260px;
     img{
         width:50%;
+    }
+}
+.all_products_btn{
+    height:50px;
+    padding:10px;
+    white-space: nowrap;
+    width: 200px;
+}
+.all_products_flowers{
+    height:auto;
+    padding:10px;
+    white-space: nowrap;
+    width: 200px;
+    h2{
+        font-style: italic;
     }
 }
