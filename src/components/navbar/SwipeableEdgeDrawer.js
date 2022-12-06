@@ -1,4 +1,4 @@
-import * as React from 'react';
+import  React, {useRef} from 'react';
 import PropTypes from 'prop-types';
 import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
@@ -49,24 +49,37 @@ function SwipeableEdgeDrawer(props) {
   const container = window !== undefined ? () => window().document.body : undefined;
   const [{ basket }] = useStateValue();
 
+
+React.useEffect(() => {
+  document.addEventListener("mousedown", (event) => {
+    if (!menuRef.current.contains(event.target)) {
+    setOpen(false);
+    }
+  });
+});
+
+let menuRef = useRef();
+
   return (
-    <Root>
+    <Root onClick={toggleDrawer(true)} ref={menuRef}>
       <CssBaseline />
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
             height: `calc(75% - ${drawerBleeding}px)`,
             overflow: 'visible',
+            backgroundColor:'#009B4E'
           },
         }}
       />
-    
+    <div  >
       <SwipeableDrawer
         container={container}
         anchor="bottom"
+        
         open={open}
         onClose={toggleDrawer(false)}
-        onOpen={toggleDrawer(true)}
+        onOpen={toggleDrawer( true)}
         swipeAreaWidth={drawerBleeding}
         disableSwipeToOpen={false}
         ModalProps={{
@@ -81,11 +94,10 @@ function SwipeableEdgeDrawer(props) {
             borderTopLeftRadius: 8,
             borderTopRightRadius: 8,
             boxShadow: '5px 0px 0px 1px rgba(57, 63, 72, 0.3)',
-
+           
             visibility: 'visible',
             right: 0,
             left: 0,
-            pointerEvents: "all",
             
 
           }}
@@ -93,6 +105,7 @@ function SwipeableEdgeDrawer(props) {
         >
             <motion.div whileHover={{scale: 1.1}}>
           <Puller />
+          
           </motion.div>
           <Box sx={{ p: 2}}>
               <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', margin:'0px 80px 0px 15%', alignItems:'center'}}>
@@ -110,6 +123,7 @@ function SwipeableEdgeDrawer(props) {
   initial={{y: 100}}  >
               <h2 style={{fontWeight:'700', fontStyle:'italic', fontFamily:'futura-pt, sans-serif', color:'#ffc80f'}}>CHECKOUT</h2>
           </motion.div>
+          
           <motion.div   initial={{ scale: 0 }}
   animate={{ rotate: 0, scale: 1.5, y:0}}
   transition={{
@@ -126,19 +140,29 @@ function SwipeableEdgeDrawer(props) {
           </Box>
           
         </StyledBox>
-        
+       
         <StyledBox
           sx={{
             px: 2,
             pb: 2,
+            
             height: '100%',
+            width:'80%',
             overflow: 'auto',
+            backgroundColor:'#ffffff',
+            margin:'0 auto',
+            marginTop:'60px',
+            paddingTop:'20px',
+            borderRadius:'30px'
           }}
+          
         >
+          
 <UserdataForm/>
         
         </StyledBox>
       </SwipeableDrawer>
+      </div>
     </Root>
   );
 }

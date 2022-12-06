@@ -4,7 +4,7 @@ import React, { useRef, useState } from "react";
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import DownloadTwoToneIcon from '@mui/icons-material/DownloadTwoTone';
-
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -61,7 +61,9 @@ function Products() {
        price={11.99}
        image="sour_diesel.png"
        strain='sativa'
-       quantity={3.5}
+       quantity='1/8 oz. or 3.5 grams'
+      thc='18%'
+      cbd='0%'
        />
           
          
@@ -72,7 +74,7 @@ function Products() {
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
-            quantity={4.5}
+            quantity='1/4'
 
             />
         </SwiperSlide>
@@ -151,21 +153,23 @@ function Products() {
 </motion.div>
 
 
-  <motion.div whileHover={{ scale: 1.2 }} whileTap={{ scale: 0.8 }} className='all-products-button'>
+  <motion.div whileHover={{ scale: 1 }} whileTap={{ scale: 0.9 }} className='all-products-button'>
       <Stack direction="row" 
             style={{
     backgroundColor:'none !important'
                   }}>
 
-<Button  endIcon={<DownloadTwoToneIcon size="large" />}>
+<Button  endIcon={<NavigateNextIcon style={{color:'#000000',textDecoration:'none'}} size="large" />}>
     
         <Link className='link-products' 
         style={{
-            fontSize:'28px',
+          color:'#000000',
             fontStyle:'italic',
+            textDecoration:'underline'
             }} 
-            to='/all-products' >
-View all products!
+            to='/all-products' ><h3>
+All products
+</h3>
 </Link>
 </Button>
 </Stack>

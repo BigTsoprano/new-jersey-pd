@@ -13,6 +13,7 @@ import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
 import Accordions from '../components/sections/Accordions';
 import Footer from '../components/sections/Footer';
 import Steps from '../components/sections/Steps';
+import Category from '../components/sections/Category';
 import { motion } from 'framer-motion';
 
 
@@ -56,6 +57,9 @@ return (
     <Element name='section-product'>
         <Products/>
     </Element>
+    <Element name='section-category'>
+      <Category/>
+    </Element>
     
     <Element name='section-ads'>
       <Ads/>
@@ -63,6 +67,7 @@ return (
     <Element name='section-accordions'>
       <Accordions/>
     </Element>
+    
     <Element name='section-footer'>
     <Footer/>
     </Element>

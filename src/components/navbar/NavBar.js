@@ -92,6 +92,7 @@ function NavBar(props) {
        width: '-webkit-fill-available',
         zIndex:'999', 
         boxShadow:'none',
+        backgroundColor: '#009B4E'
       
         }}    elevation={0}
 >
@@ -114,7 +115,7 @@ function NavBar(props) {
           <h4 >
              NewJersey
           </h4>
-          <p>PotDelivery</p>
+          <p>POTDELIVERY</p>
           </motion.div>
         </Typography>
         <motion.div animate={{scale:1.2}}>

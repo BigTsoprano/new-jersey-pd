@@ -10,6 +10,8 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import SpaIcon from '@mui/icons-material/Spa';
 import LinearProgress from '@mui/material/LinearProgress';
+import CookieIcon from '@mui/icons-material/Cookie';
+
 
 
 
@@ -36,30 +38,110 @@ function AllProducts() {
     >
         <NavBar/>
         <div className='all-products-main'>
-           <h1 style={{textAlign:'center', padding:'40px'}}>
-            ALL PRODUCTS
-            </h1>
-            <div style={{display:'flex', justifyContent:'space-around'}}>
+           <div style={{display:'flex', justifyContent:'center' ,padding:'30px'}}>
+            <Button className='all_products_main'  onClick={() => setUrl('http://localhost:3000/njpd')} >
+            show All products
+              </Button>
+              </div>
+            <div style={{display:'flex', justifyContent:'space-evenly'}}>
               <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start'}}>
-          <div style={{paddingBottom:'15px'}}>
-            <Button style={{backgroundColor:'#009B4E'}} size="large" variant="contained" className='all_products_flowers'  onClick={() => setUrl('http://localhost:3000/njpd?type=flower')} >
+          <motion.div  whileHover={{scale:1.05}} whileTap={{scale:1}} style={{paddingBottom:'15px'}}>
+            <Button style={{backgroundColor:'#000000'}} size="large" variant="contained" className='all_products_flowers'  onClick={() => setUrl('http://localhost:3000/njpd?type=flower')} >
                 
                 <SpaIcon/><h2>All flowers</h2>
                               </Button>
-                              </div>
+                              </motion.div>
                               <ButtonGroup   orientation="vertical" style={{backgroundColor:'#ffffff'}} variant="contained" size="large" aria-label="outlined primary button group">
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
               <Button style={{backgroundColor:'#9C4E00'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=sativa')} >
                 
             <h3>sativa </h3>
               </Button>
+              </motion.div>
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
               <Button style={{backgroundColor:'#4E009C'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=indica')}>
       <h3>indica</h3>              </Button>
-<Button   className='all_products_btn' ><h3>Hybrid</h3></Button>
+      </motion.div>
+      <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+<Button style={{backgroundColor:'#009B4E'}}  className='all_products_btn' ><h3>Hybrid</h3></Button>
+</motion.div>
 </ButtonGroup>
 </div>
-              <button className='all_products_main' onClick={() => setUrl('http://localhost:3000/njpd')} >
-            All products
-              </button>
+             <div> 
+             <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start'}}>
+          <motion.div  whileHover={{scale:1.05}} whileTap={{scale:1}} style={{paddingBottom:'15px'}}>
+            <Button style={{backgroundColor:'#000000'}} size="large" variant="contained" className='all_products_flowers'  onClick={() => setUrl('http://localhost:3000/njpd?type=flower')} >
+                
+                <CookieIcon/><h2>Edibles</h2>
+                              </Button>
+                              </motion.div>
+                              <ButtonGroup   orientation="vertical" style={{backgroundColor:'#ffffff'}} variant="contained" size="large" aria-label="outlined primary button group">
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+              <Button style={{backgroundColor:'#9C4E00'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=sativa')} >
+                
+            <h3>Chocolates </h3>
+              </Button>
+              </motion.div>
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+              <Button style={{backgroundColor:'#4E009C'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=indica')}>
+      <h3>Gummies</h3>              </Button>
+      </motion.div>
+      <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+<Button style={{backgroundColor:'#009B4E'}}  className='all_products_btn' ><h3>Cookies</h3></Button>
+</motion.div>
+</ButtonGroup>
+</div>
+             </div>
+             <div>
+             <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start'}}>
+          <motion.div  whileHover={{scale:1.05}} whileTap={{scale:1}} style={{paddingBottom:'15px'}}>
+            <Button style={{backgroundColor:'#000000'}} size="large" variant="contained" className='all_products_flowers'  onClick={() => setUrl('http://localhost:3000/njpd?type=flower')} >
+                
+                <SpaIcon/><h2>Concentrates</h2>
+                              </Button>
+                              </motion.div>
+                              <ButtonGroup   orientation="vertical" style={{backgroundColor:'#ffffff'}} variant="contained" size="large" aria-label="outlined primary button group">
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+              <Button style={{backgroundColor:'#9C4E00'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=sativa')} >
+                
+            <h3>sativa </h3>
+              </Button>
+              </motion.div>
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+              <Button style={{backgroundColor:'#4E009C'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=indica')}>
+      <h3>indica</h3>              </Button>
+      </motion.div>
+      <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+<Button style={{backgroundColor:'#009B4E'}}  className='all_products_btn' ><h3>Hybrid</h3></Button>
+</motion.div>
+</ButtonGroup>
+</div>
+             </div>
+             <div>
+             <div style={{display:'flex', flexDirection:'column', alignItems:'flex-start'}}>
+          <motion.div  whileHover={{scale:1.05}} whileTap={{scale:1}} style={{paddingBottom:'15px'}}>
+            <Button style={{backgroundColor:'#000000'}} size="large" variant="contained" className='all_products_flowers'  onClick={() => setUrl('http://localhost:3000/njpd?type=flower')} >
+                
+                <SpaIcon/><h2>Other</h2>
+                              </Button>
+                              </motion.div>
+                              <ButtonGroup   orientation="vertical" style={{backgroundColor:'#ffffff'}} variant="contained" size="large" aria-label="outlined primary button group">
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+              <Button style={{backgroundColor:'#9C4E00'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=sativa')} >
+                
+            <h3>sativa </h3>
+              </Button>
+              </motion.div>
+              <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+              <Button style={{backgroundColor:'#4E009C'}} className='all_products_btn'  onClick={() => setUrl('http://localhost:3000/njpd?strain=indica')}>
+      <h3>indica</h3>              </Button>
+      </motion.div>
+      <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}}>
+<Button style={{backgroundColor:'#009B4E'}}  className='all_products_btn' ><h3>Hybrid</h3></Button>
+</motion.div>
+</ButtonGroup>
+</div>
+             </div>
             </div>
             <div style={{display:'flex', justifyContent:'space-evenly', flexWrap:'wrap', paddingTop:'30px', flexDirection:'row', margin:'40px'}}>
 

@@ -106,7 +106,7 @@ function Checkout({ setShowCheckout }) {
                     textAlign:'center', 
                     color:'#ffc80f'}}>Checkout</h1>
             
-           <div><UserdataForm/></div>
+           <div ><UserdataForm style={{width:'50%'}}/></div>
 
 
         </div>

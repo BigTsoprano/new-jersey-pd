@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { styled } from '@mui/material/styles';
 //import Box from '@mui/material/Box';
@@ -9,8 +11,10 @@ import MuiAlert from '@mui/material/Alert';
 //import Stack from '@mui/material/Stack';
 import Slide from '@mui/material/Slide';
 import { useStateValue } from "../cart/StateProvider";
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import Rating from '@mui/material/Rating';
 
-
+import InfoIcon from '@mui/icons-material/Info';
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
@@ -26,11 +30,11 @@ const BootstrapButton = styled(Button)({
   boxShadow: 'none',
   textTransform: 'none',
 
-  padding: '15px 30px',
+  padding: '20px 10px',
   //border: '1px solid',
   lineHeight: 1.5,
   backgroundColor: '#181818',
-  borderRadius: '30px',
+  borderRadius: '60px',
  
 
   '&:hover': {
@@ -48,7 +52,7 @@ const BootstrapButton = styled(Button)({
 });
 
 function Pricebox(priceboxItem) {
-    const { price, image, name, id, strain, quantity } = priceboxItem;
+    const { price, image, name, id, strain, quantity, thc, cbd } = priceboxItem;
 
     const [{ basket }, dispatch] = useStateValue([]);
 
@@ -86,61 +90,84 @@ function Pricebox(priceboxItem) {
   <motion.div 
   
   className='pricebox'>
-    <motion.div  initial={{scale:0}}
+ 
+   <div className='swiper-box'  >
+<div style={{display:'flex', flexDirection:'row', justifyContent:'space-between' }}>
+   <motion.h2  initial={{scale:0}}
+  whileInView={{scale:1}}
+  viewport={{ once: true }} transition={{ duration: .5, type:'spring', delay:.3}}  style={{
+         whiteSpace:'nowrap'
+       }}>{name}</motion.h2>
+       <motion.div initial={{scale:1}} whileInView={{scale: 1.3}} whileHover={{scale: 1.5}} whileTap={{scale:1.3}}>
+  <IconButton  >
+     <InfoIcon style={{color:'#292929'}} size='large'/>
+     </IconButton>
+     </motion.div>
+     </div>
+   <div className='swiper-content'>
+   
+<motion.img whileHover={{ scale: 1.1 }} src={image} alt=''/>
+
+<div className='swiper-price'>
+<motion.div style={{marginBottom:'10px'}} initial={{scale:0}}
   whileInView={{scale:1}}
   viewport={{ once: true }} transition={{ duration: .5, type:'spring'}} className='pricebox-strain'>
       <p>{strain}</p>
     </motion.div>
-   <div className='swiper-box'  >
-       <motion.h1  initial={{scale:0}}
-  whileInView={{scale:1}}
-  viewport={{ once: true }} transition={{ duration: .5, type:'spring', delay:.3}}  style={{
-         whiteSpace:'nowrap'
-       }}>{name}</motion.h1>
-       <div className='learn_more' >
-  
-      <Button variant="outlined">
-        Open success snackbar
-      </Button>
+    <div style={{display:'flex', flexDirection:'row'}}>
+<h4 style={{color:'#292929'}}>THC {thc}</h4>
+<h4 style={{paddingLeft:'10px'}}>CBD {cbd}</h4>
+</div>
+<div>
+  <button style={{backgroundColor:'rgb(78, 0, 156)', color:'#ffffff', borderRadius:'0px', border:'none'}}>relaxing</button>
+  <button style={{backgroundColor:'rgb(156, 78, 0)', color:'#ffffff', borderRadius:'0px', border:'none'}}>energizing</button>
+
+</div>
+  <div style={{}}>
+  <Rating name="no-value" precision={0.5} value={null} /> 
+   </div>
+</div>
+</div>
+         </div>
+       
+    
       
-        </div>
+<div style={{display:'flex', justifyContent: 'space-between'}}>
+  <div style={{ width:'60%', display:'flex', justifyContent:'flex-end', flexDirection:'column', alignItems:'flex-start'}}>
+  <p style={{whiteSpace:'nowrap'}}>{quantity} </p>
+<div style={{display:'flex', flexDirection:'row', alignItems:'flex-end'}}>
+<medium>$</medium>
+<h3>{price}</h3>
+</div>
+
+</div>
+<div >
 
         <motion.div 
-  whileInView={{  y:0}}
+  whileInView={{  x:0, opacity:1}}
   transition={{
     type: "spring",
     stiffness: 60,
     damping: 20,
     delay: .8,
-    duration:.4 
+    duration:.2 
   }}
   viewport={{ once: true }} 
  
-  initial={{y: 25}}  > 
+  initial={{x: '-20vw', opacity:0}}  > 
         
-<div className='swiper-content'>
-<motion.img whileHover={{ scale: 1.1 }} src={image} alt=''/>
-<div className='swiper-price'>
-<small>$</small>
-<p>{price}</p>
-</div>
-       <p>{quantity}</p>
-         </div>
+ 
+       
          <motion.div whileTap={{ scale: .8}} whileHover={{scale:.94}}  transition={{delay: .1}} onClick={handleClick(TransitionUp)} className='pricebox-button'>
          <BootstrapButton variant="contained" disableRipple size='large'  onClick={addToBasket} style={{
           
            display:'flex', 
-           margin:'0px auto',
+       
   
-            }} startIcon={<AddShoppingCartIcon />} >
-              <h3 
-            style={{
-            fontFamily: 'futura-pt, sans-serif',
-            fontStyle:'italic',
-            fontWeight:'650'
-            
-            }}>ADD TO CART</h3>
-            </BootstrapButton>
+            }}  >
+      <ShoppingCartCheckoutIcon size='large' />
+      </BootstrapButton>
+
             <Snackbar
           
         open={open}
@@ -155,6 +182,8 @@ function Pricebox(priceboxItem) {
       </Snackbar>
             </motion.div>
             </motion.div>
+ 
+  </div>
     </div>
     </motion.div>
   );

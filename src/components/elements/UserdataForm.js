@@ -65,7 +65,7 @@ function UserdataForm() {
   return (
       <Box onSubmit={handleSubmit}
 >
-    <div className='checkout-item'>
+    <div className='checkout-item' >
 
     <div className="checkout__left">
          {basket?.length === 0 ? (
@@ -110,26 +110,22 @@ className="mySwiper"
 <Box
 
 component="form"
-sx={{ display: 'flex', flexWrap: 'wrap' }}
+sx={{ display: 'flex', flexWrap: 'wrap', flexDirection:'column' }}
 noValidate
 autoComplete="on"
 style={{
-display:'flex'
+
 }}
 >
 
-
+<div>
 <TextField id="outlined-basic" label="Full Name" variant="outlined"  
 style={{padding:'10px'}} 
 onChange={(e) => setTitle(e.target.value) }
 value={title}
 />
 
-<TextField id="outlined-basic" label="Street" variant="outlined"
-style={{padding:'10px'}} 
-onChange={(e) => setStreet(e.target.value)}
-value={street}
-/>
+
 
 
 
@@ -139,6 +135,17 @@ style={{padding:'10px'}}
 onChange={(e) => setNumber(e.target.value) }
 value={number}
 />
+<TextField id="outlined-basic" label="Email" variant="outlined"
+style={{padding:'10px'}} 
+onChange={(e) => setEmail(e.target.value)}
+value={email} />
+</div>
+<div>
+<TextField id="outlined-basic" label="Street" variant="outlined"
+style={{padding:'10px'}} 
+onChange={(e) => setStreet(e.target.value)}
+value={street}
+/>
 
 <TextField id="outlined-basic" label="Zip code" variant="outlined"
 style={{padding:'10px'}}   
@@ -146,16 +153,15 @@ onChange={(e) => setZip(e.target.value)}
 value={zip}
 />
 
-<TextField id="outlined-basic" label="Email" variant="outlined"
-style={{padding:'10px'}} 
-onChange={(e) => setEmail(e.target.value)}
-value={email} />
+
 
 <TextField id="outlined-basic" label="County" variant="outlined" 
 style={{padding:'10px'}} 
 onChange={(e) => setCounty(e.target.value)}
 value={county}
 />
+</div>
+<div>
 <TextField
 sx={{ m: 1, width: '45ch' }}
 id="outlined-multiline-static"
@@ -167,6 +173,7 @@ defaultValue="Leave us a note!"
 onChange={(e) => setNotes(e.target.value)}
 value={notes}
 />
+</div>
 
 <button>add title</button>
 </Box>

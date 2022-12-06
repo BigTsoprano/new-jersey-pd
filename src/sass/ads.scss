@@ -2,29 +2,32 @@
 .ads_section{
     background-color: #F7F7F8;
     position: relative;
-    height: auto;
+   height: auto;
+
  
 }
 .all_ads{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 .ads_one{
     height: 60vh;
-  width: 95vh;
+  width: 50%;
   background-color:#009B4E;
   background-image: url(/images/ads_one.png); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
+.ads_one_background{
+
+}
 .ads_two{
     height: 60vh;
-    width: 95vh;
+    width: 50%;
     background-image: url(/images/ads_two.png);
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
   background-position: center;
 }

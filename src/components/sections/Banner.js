@@ -15,7 +15,7 @@ export default function Banner () {
                 padding: '6px 12px',
                 border: '3px solid',
                 lineHeight: 1.5,
-                backgroundColor: '#000000',
+                backgroundColor: '#009B4E',
                 borderColor: '#009B4E',
                 boxShadow: 'none',
                 borderRadius:'40px',
