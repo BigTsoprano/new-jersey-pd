@@ -13,6 +13,8 @@ import Slide from '@mui/material/Slide';
 import { useStateValue } from "../cart/StateProvider";
 import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 import Rating from '@mui/material/Rating';
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/styles.css';
 
 import InfoIcon from '@mui/icons-material/Info';
 const Alert = React.forwardRef(function Alert(props, ref) {
@@ -26,30 +28,6 @@ function TransitionUp(props) {
   return <Slide {...props} direction="up" />;
 }
 
-const BootstrapButton = styled(Button)({
-  boxShadow: 'none',
-  textTransform: 'none',
-
-  padding: '20px 10px',
-  //border: '1px solid',
-  lineHeight: 1.5,
-  backgroundColor: '#181818',
-  borderRadius: '60px',
- 
-
-  '&:hover': {
-    backgroundColor: '#009B4E',
-    boxShadow: 'none',
-    borderRadius: '40px'
-  },
-  '&:active': {
-    boxShadow: 'none',
-    backgroundColor: '#009B4E',
-  },
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-  },
-});
 
 function Pricebox(priceboxItem) {
     const { price, image, name, id, strain, quantity, thc, cbd } = priceboxItem;
@@ -144,43 +122,31 @@ function Pricebox(priceboxItem) {
 <div >
 
         <motion.div 
-  whileInView={{  x:0, opacity:1}}
+  whileInView={{  scale:1}}
   transition={{
     type: "spring",
-    stiffness: 60,
-    damping: 20,
+   
     delay: .8,
-    duration:.2 
+    
   }}
   viewport={{ once: true }} 
  
-  initial={{x: '-20vw', opacity:0}}  > 
+  initial={{scale:0}}  > 
         
  
        
-         <motion.div whileTap={{ scale: .8}} whileHover={{scale:.94}}  transition={{delay: .1}} onClick={handleClick(TransitionUp)} className='pricebox-button'>
-         <BootstrapButton variant="contained" disableRipple size='large'  onClick={addToBasket} style={{
+        <motion.div whileTap={{scale:.9}} onClick={addToBasket}>
+         <AwesomeButton type="secondary"  style={{
           
-           display:'flex', 
+           
        
   
             }}  >
       <ShoppingCartCheckoutIcon size='large' />
-      </BootstrapButton>
-
-            <Snackbar
-          
-        open={open}
-        onClose={handleClose}
-        TransitionComponent={transition}
-        message="I love snacks"
-        key={transition ? transition.name : ''}
-      >
-         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
-          successfully added to cart!
-        </Alert>
-      </Snackbar>
-            </motion.div>
+      </AwesomeButton>
+      </motion.div>
+           
+           
             </motion.div>
  
   </div>

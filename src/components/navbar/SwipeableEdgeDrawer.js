@@ -108,7 +108,7 @@ let menuRef = useRef();
           
           </motion.div>
           <Box sx={{ p: 2}}>
-              <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', margin:'0px 80px 0px 15%', alignItems:'center'}}>
+              <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', margin:'0px 80px 0px 33px', alignItems:'center'}}>
 
          
           <motion.div   initial={{ scale: 0 }}
@@ -132,6 +132,7 @@ let menuRef = useRef();
     damping: 20,
     delay: 1.2 
   }}
+  style={{paddingRight:'2px'}}
  
   initial={{y: 100}}>
           <h2 style={{color:'#ffffff'}}>{basket?.length}🛒</h2>

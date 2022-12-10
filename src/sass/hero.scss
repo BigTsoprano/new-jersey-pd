@@ -1,20 +1,73 @@
 .hero-section{
-  background:linear-gradient(180deg,#000000,transparent 100%);
+  background:linear-gradient(180deg,#181818,transparent 100%);
   //background:linear-gradient(20deg,#505050,transparent 10%);
   
-    background-color: #181818;
-height: 95vh;
+    background-color: #000000;
+height: 90vh;
 width: 120%;
+
+}
 .hero-image{
 
-    background-image: url(/images/njpd-hero-img.png); 
-    background-size: 700px;
-    background-repeat :no-repeat;
-    background-position: 0px bottom;
-    position: fixed;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
+  background-image: url(/images/njpd-hero-img.png); 
+  background-size: 650px;
+  background-repeat :no-repeat;
+  background-position: right center;
+  position: fixed;
+  top: 0;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+.hero-slogans{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: relative !important;
+  height: 100%;
+  margin-top: 40px;
+  width:'50%';
+  padding-left: 100px;
+  h1{
+    color:#ffffff;
+    font-style: italic;
+    font-size: 39px;
+    -webkit-text-stroke-width: 1.1px;
+    -webkit-text-stroke-color: #fff;
+  }
+  h2{
+    margin-top:-8px;
+    color:#ffffff;
+    font-style: italic;
+    font-size: 36px;
+    -webkit-text-stroke-width: .5px;
+    -webkit-text-stroke-color: #fff;
+  }
+  h3{
+    font-style: italic;
+    font-size: 24px;
+  }
+  h4{
+    font-weight: 450;
+  }
+  p{
+    color:#FFEF0F;
+    font-size: 24px;
+    font-weight: 550;
+    font-style: italic !important;
+  }
+  label {
+    margin-bottom: 0;
+    font-weight: 700;
+    font-size: 22px !important;
+    color: #ffffff;
+    text-shadow: -2px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -2px #000000;
+    font-style: normal;
+    //text-shadow: 0px 0px 7px #ffffff;
+
+    &::after {
+      content: attr(value);
+
+    }
   }
 }

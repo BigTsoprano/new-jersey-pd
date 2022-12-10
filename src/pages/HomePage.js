@@ -15,7 +15,8 @@ import Footer from '../components/sections/Footer';
 import Steps from '../components/sections/Steps';
 import Category from '../components/sections/Category';
 import { motion } from 'framer-motion';
-
+import Gmaps from '../components/sections/Gmaps';
+import Reviews from '../components/sections/Reviews';
 
 function HomePage() {
   const containerVariants = {
@@ -49,6 +50,8 @@ return (
     <Element name='section-steps'>
     <Steps/>
     </Element>
+   
+   
 
   { /* <Element name='section-cube'>
         <CubeProducts/>
@@ -59,14 +62,26 @@ return (
     </Element>
     <Element name='section-category'>
       <Category/>
-    </Element>
-    
+      </Element>
     <Element name='section-ads'>
       <Ads/>
+    </Element>
+    <Element name='section-review'>
+      <Reviews/>
     </Element>
     <Element name='section-accordions'>
       <Accordions/>
     </Element>
+    
+    
+      <Element name='section-gmaps'>
+<Gmaps/>
+  
+    </Element>
+  
+ 
+    
+   
     
     <Element name='section-footer'>
     <Footer/>

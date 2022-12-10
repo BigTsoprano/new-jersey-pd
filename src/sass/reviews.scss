@@ -1,0 +1,150 @@
+.reviews-section{
+    position: relative;
+    height: 70vh;
+    padding-top: 80px;
+    background-color: #E5E5E7;
+    .swiper {
+        user-select: none;
+        box-sizing: border-box;
+        overflow: hidden;
+        width: 100%;
+      
+        height: 300px;
+      
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 86%;
+        height: 100%;
+        color: #000;
+        overflow: hidden;
+        position: relative;
+        box-sizing: border-box;
+        box-shadow: 1px 3px 7px 2px rgba(57, 63, 72, 0.3);
+      
+        background-color: #ffffff;
+      
+        border-radius: 8px;
+      }
+      
+      .swiper-slide-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+        box-sizing: border-box;
+        padding: 24px 24px;
+      
+        align-items: flex-start;
+        justify-content: flex-end;
+      }
+      
+      .swiper-slide-title {
+        font-size: 21px;
+        font-weight: bold;
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 1);
+      }
+      
+      .swiper-slide-image {
+        position: absolute;
+        object-fit: cover;
+      
+        left: 0%;
+        top: 0%;
+        width: 100%;
+        height: 100%;
+      
+        z-index: 0;
+      }
+      
+      @media (min-width: 768px) {
+        .swiper {
+          width: 100%;
+      
+          height: 300px;
+      
+          padding-top: 0px;
+          padding-bottom: 0px;
+        }
+        .swiper-slide {
+          width: 33%;
+          height: 80%;
+          border-radius: 8px;
+        }
+        .swiper-slide-content {
+          padding: 24px 24px;
+        }
+      }
+
+.swiper-carousel {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .swiper-carousel .swiper-slide {
+    position: relative;
+  }
+ 
+}
+.reviewbox{
+   height: 90%;
+   width: 100%;
+   margin:40px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+}
+.review_avatar{
+text-align: center;
+}
+.review_name{
+    text-align: center;
+}
+.review_stars{
+    text-align: center;
+}
+.review_description{
+    height:20vh;
+}
+.aws-btn {
+    --button-default-height: 66px;
+   // --button-default-font-size: 24px;
+    --button-default-border-radius: 30px;
+    --button-horizontal-padding: 33px;
+    --button-raise-level: 6px;
+    --button-hover-pressure: 1.25;
+    --transform-speed: 0.15s;
+    --button-primary-color: #0AA558;
+    --button-primary-color-dark: #005508;
+    --button-primary-color-light: #000000;
+    --button-primary-color-hover: #009b4e;
+    --button-primary-color-active: #009b4e;
+    --button-primary-border: 1px solid transparent;
+    --button-secondary-color: #fbfbfb;
+    --button-secondary-color-dark: #3a3a3a;
+    --button-secondary-color-light: #3a3a3a;
+    --button-secondary-color-hover: #eeeeee;
+    --button-secondary-color-active: #e2e2e2;
+    --button-secondary-border: 1px solid #3a3a3a;
+    --button-anchor-color: #ffe727;
+    --button-anchor-color-dark: #212121;
+    --button-anchor-color-light: #97735d;
+    --button-anchor-color-hover: #ffe727;
+    --button-anchor-color-active: #ffe727;
+    --button-anchor-border: 2px solid #876753;
+    --button-danger-color: #733086;
+    --button-danger-color-dark: #431c4e;
+    --button-danger-color-light: #77cd38;
+    --button-danger-color-hover: #6d2d7e;
+    --button-danger-color-active: #632973;
+    --button-danger-border: none;
+  }

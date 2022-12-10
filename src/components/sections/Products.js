@@ -1,10 +1,9 @@
 import {Link} from 'react-router-dom';
 import React, { useRef, useState } from "react";
-
-import Button from '@mui/material/Button';
+import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import Button from '@mui/joy/Button';
 import Stack from '@mui/material/Stack';
-import DownloadTwoToneIcon from '@mui/icons-material/DownloadTwoTone';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+
 import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,6 +14,8 @@ import "swiper/css/autoplay";
 import { EffectCoverflow, Pagination, Autoplay } from "swiper";
 
 import Pricebox from '../elements/Pricebox';
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/styles.css';
 
 
 
@@ -24,8 +25,8 @@ function Products() {
   return (
 
     <div className='product-section' >
-        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif'}} animate={{ x: 500 }} transition={{ duration: 1.2 }} style={{padding:'30px'}}  >
-            OUR FAVORITES
+        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'28px'}} animate={{ x: 500 }} transition={{ duration: 1.2 }}  >
+            FAVORITES
         </motion.h1>
     <motion.div  className='products'>
        
@@ -153,27 +154,24 @@ function Products() {
 </motion.div>
 
 
-  <motion.div whileHover={{ scale: 1 }} whileTap={{ scale: 0.9 }} className='all-products-button'>
-      <Stack direction="row" 
-            style={{
-    backgroundColor:'none !important'
-                  }}>
-
-<Button  endIcon={<NavigateNextIcon style={{color:'#000000',textDecoration:'none'}} size="large" />}>
-    
-        <Link className='link-products' 
+  
+      
+   <Link className='link-products' 
         style={{
-          color:'#000000',
-            fontStyle:'italic',
-            textDecoration:'underline'
+        
             }} 
-            to='/all-products' ><h3>
-All products
+            to='/all-products' >
+              <div className='pricebox-button'>
+<AwesomeButton type="secondary" after={<KeyboardArrowRight />} color="success">
+    
+     <h3>
+Browse all products
 </h3>
+
+</AwesomeButton>
+</div>
 </Link>
-</Button>
-</Stack>
-</motion.div>
+
 </div>
   );
 }
