@@ -34,7 +34,7 @@ function Herobox() {
          </Typed>
        </p>
        </div>
-       <div  style={{paddingTop:'10px'}}>
+       <div className='hero_btn' style={{paddingTop:'10px'}}>
        <AwesomeButton type="primary" style={{}} >
          <h3 style={{padding: '0 15px'}}>SHOP NOW!</h3>
          </AwesomeButton>

@@ -87,9 +87,9 @@ function Category() {
       defaultValue="All"
       overlay
       name="platform"
-      
+      className='radio_group_icons'
       sx={{
-        flexDirection: 'row',
+        
         gap: 5,
         [`& .${radioClasses.checked}`]: {
           [`& .${radioClasses.action}`]: {
@@ -126,8 +126,9 @@ function Category() {
        flexDirection: 'column',
        alignItems: 'center',
        gap: 1.5,
-       p: 2,
-       minWidth: 150,
+       p: 1,
+       minWidth: 120,
+       maxHeight: 110
      }}
      onClick={() => setUrl('http://localhost:3000/njpd')}
    >
@@ -147,8 +148,9 @@ function Category() {
             flexDirection: 'column',
             alignItems: 'center',
             gap: 1.5,
-            p: 2,
-            minWidth: 150,
+            p: 1,
+            minWidth: 120,
+            maxHeight: 110
           }}
         >
           <Radio value='Flowers' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
@@ -167,8 +169,9 @@ function Category() {
        flexDirection: 'column',
        alignItems: 'center',
        gap: 1.5,
-       p: 2,
-       minWidth: 150,
+       p: 1,
+       minWidth: 120,
+       maxHeight: 110
      }}
    >
      <Radio value='Edibles' checkedIcon={<CheckCircleRoundedIcon  style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
@@ -187,8 +190,9 @@ function Category() {
        flexDirection: 'column',
        alignItems: 'center',
        gap: 1.5,
-       p: 2,
-       minWidth: 150,
+       p: 1,
+       minWidth: 120,
+       maxHeight: 110
      }}
    >
      <Radio value='Concentrates' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
@@ -207,8 +211,9 @@ function Category() {
        flexDirection: 'column',
        alignItems: 'center',
        gap: 1.5,
-       p: 2,
-       minWidth: 150,
+       p: 1,
+       minWidth: 120,
+       maxHeight: 110
      }}
    >
      <Radio value='Other' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}}/>} />
@@ -222,7 +227,7 @@ function Category() {
 
 {isPending && <div style={{width:'100%'}}><LinearProgress /></div>}
         {error && <div>{error}</div>}
-        <div style={{margin:'0 88px'}}>
+        <div className='cat_swiper' >
 <Swiper
         slidesPerView={4}
         spaceBetween={10}

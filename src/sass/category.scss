@@ -35,110 +35,30 @@
       
     
 }
+.radio_group_icons{
+    flex-direction: row  !important;
+    display: flex;
+    flex-wrap: wrap;
+    
+  
+}
 .category_list{
+    height: auto;
     //padding-top: 60px;
     display: flex;
-    flex-direction: row;
+    //flex-direction: row;
     justify-content: center;
+    
    // width:83%;
     margin: 0 80px;
-    padding-bottom: 90px;
+    padding-bottom: 40px;
     h3{
         color: #ffffff;
         //margin-top: 15px;
         font-style: italic;
        // font-size: 28px;
     }
-.shop_all{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding:20px;
-    align-items: center;
-    background-color: #292929;
-    height:20vh;
-    width:24vh;
-    margin:10px;
-    border-radius: 20px;
-    box-shadow: 2px 4px 10px 4px rgba(57, 63, 72, 0.3);
 
-}
-.shop_all:hover{
-
-    background-color: #000000;
-}
-
-.category_flowers{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding:20px;
-    align-items: center;
-    height:20vh;
-    width:24vh;
-    background-color: #292929;
-        margin:10px;
-    border-radius: 20px;
-    box-shadow: 2px 4px 10px 4px rgba(57, 63, 72, 0.3);
-}
-.category_flowers:hover{
-
-    background-color: #009B4E;
-}
-.category_edibles{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding:20px;
-    align-items: center;
-    height:20vh;
-    margin:10px;
-    width:24vh;
-    background-color: #292929;
-        border-radius: 20px;
-    box-shadow: 2px 4px 10px 4px rgba(57, 63, 72, 0.3);
-
-}
-.category_edibles:hover{
- 
-    background-color: #9C4E00;
-}
-.category_concentrates{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding:20px;
-    align-items: center;
-    height:20vh;
-    width:24vh;
-    background-color: #292929;
-        margin:10px;
-    border-radius: 20px;
-    box-shadow: 2px 4px 10px 4px rgba(57, 63, 72, 0.3);
-
-}
-.category_concentrates:hover{
-    
-    background-color: #9B009B;
-}
-.category_misc{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding:20px;
-    align-items: center;
-    height:20vh;
-    width:24vh;
-    background-color: #292929;
-        margin:10px;
-    border-radius: 20px;
-    box-shadow: 2px 4px 10px 4px rgba(57, 63, 72, 0.3);
-
-}
-.category_misc:hover{
-
-    background-color: #004D9B;
-}
 }
 .products-box2{
    
@@ -147,4 +67,7 @@
     img{
         width:50%;
     }
+}
+.cat_swiper{
+    margin:0 88px;
 }

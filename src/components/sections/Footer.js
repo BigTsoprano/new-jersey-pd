@@ -5,10 +5,10 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import EmailIcon from '@mui/icons-material/Email';
-import TextField from '@mui/material/TextField';
+import TextField from '@mui/joy/TextField';
 import { motion } from 'framer-motion';
-import Button from '@mui/material/Button';
-
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/styles.css';
 
 function Footer() {
   return (
@@ -28,40 +28,35 @@ function Footer() {
         <div className='footer_two'>
           <div className='footer_two_group'>
             <div className='footer_resource'>
-              <h5>Resources</h5>
+              <h5>RESOURCES</h5>
               <ul>
-                <li>Home page</li>
-                <li>About us</li>
-                <li>All products</li>
-                <li>FaQ</li>
-                <li>Terms and conditions</li>
+                <li>HOME</li>
+                <li>ABOUT US</li>
+                <li>ALL PRODUCTS</li>
+                <li>FAQ</li>
+                <li>TERMS AND CONDITIONS</li>
               </ul>
               </div>
               <div className='footer_contact'>
-                <h5>Contact</h5>
+                <h5>CONTACT</h5>
                 <ul>
                   <li>(201)328-7539</li>
                   <li>support@newjerseypd.com</li>
-                  <li>log-in/sign-up</li>
+                  <li>LOGIN/SIGNUP</li>
                 </ul>
               </div>
           </div>
         </div>
         <div className='footer_three'>
-            <div>
-          <h4><EmailIcon/> Stay up to date with our specials!</h4>
-
-            </div>
+        
 <div className='footer_special'>
-            <div >
-            <TextField id="standard-basic" label="Enter email address" variant="standard" sx={{ background: '#ffffff', width:'100%' }} />
-
+            <div style={{paddingBottom:'30px'}} >
+            <EmailIcon/> 
+            <TextField label="Stay up to date with our specials!" size="lg" placeholder="Enter email address" variant="outlined" sx={{  width:'100%' }}/>
             </div>
-    <div style={{paddingTop:'20px'}}>
-    <Button style={{ backgroundColor:'#009B4E', borderRadius:'40px'}} variant="contained" >
-  <h3 style={{padding:'5px', fontStyle:'italic'}}>ORDER DELIVERY</h3>
-</Button>
-    </div>
+    <AwesomeButton style={{ backgroundColor:'#009B4E', borderRadius:'40px'}} variant="contained" >
+  <h3 style={{ fontStyle:'italic'}}>CLICK TO SIGN UP</h3>
+</AwesomeButton>
     </div>
             </div>
       </div>

@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: row;
     
-    align-items: center;
+    
     padding: 40px 0px;
    // border-radius: 300px;
    // margin-top: -28%;
@@ -25,7 +25,7 @@
     //padding: 40px 40px 40px 40px;
     border-radius: 30px;
   
-    margin: 40px;
+    //margin: 40px;
 }
 //#47FF0F
 //#FFD219
@@ -33,7 +33,7 @@
    // height:30vh;
     //width: 20vh;
     //padding: 40px 40px 40px 40px;
-    margin: 40px;
+    //margin: 40px;
 
     border-radius: 30px;
 }
@@ -42,7 +42,7 @@
     //width: 20vh;
     
    // padding: 40px 40px 40px 40px;
-    margin: 40px 0px 40px 40px;
+   // margin: 40px 0px 40px 40px;
     border-radius: 30px;
 }
 .steps_title{
@@ -99,8 +99,9 @@ p{
 }
 .steps_wrap{
     display: flex;
-    flex-direction: row !important;
-    justify-content:space-around;
+    flex-direction: row ;
+    justify-content:space-between;
+    align-items: center;
     //margin-right: auto;
     //align-items: center;
    // margin-top: 100px;
@@ -114,6 +115,7 @@ p{
     margin: 0 90px;
     display: flex;
     width: 100%;
+    align-items: center;
    //justify-content: space-between;
    // flex-direction: row !important;
 }

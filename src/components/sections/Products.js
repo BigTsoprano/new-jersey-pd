@@ -11,7 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import { EffectCoverflow, Pagination, Autoplay } from "swiper";
+import { EffectCoverflow, Pagination} from "swiper";
 
 import Pricebox from '../elements/Pricebox';
 import { AwesomeButton } from 'react-awesome-button';
@@ -25,7 +25,7 @@ function Products() {
   return (
 
     <div className='product-section' >
-        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'28px'}} animate={{ x: 500 }} transition={{ duration: 1.2 }}  >
+        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'28px', textAlign:'center'}} >
             FAVORITES
         </motion.h1>
     <motion.div  className='products'>
@@ -34,7 +34,7 @@ function Products() {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={"3"}
+     
         coverflowEffect={{
           rotate: 50,
           stretch: 0,
@@ -45,11 +45,24 @@ function Products() {
      
         }}
         loop={true}
-        autoplay={{delay: 5000,
-          disableOnInteraction: true}}
+
         pagination={false}
-        modules={[EffectCoverflow, Pagination, Autoplay]}
+        modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          
+          },
+          768: {
+            slidesPerView: 1,
+           
+          },
+          1024: {
+            slidesPerView: 3,
+            
+          }
+        }}
 
       >
         

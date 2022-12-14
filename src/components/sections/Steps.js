@@ -16,30 +16,30 @@ function Steps() {
         </div>
        <div className='underline-steps'><h2> for cannabis</h2><h5>delivery</h5></div>
         
-        <p style={{width:'45vh', padding:'10px 0'}}>Order online and pick up at store or have your product deliveried for a small fee</p>
+        <p style={{padding:'10px 0'}}>Order online and pick up at store or have your product deliveried for a small fee</p>
        
         </div>
       
        <div className='steps_wrap'>
         
             <div className='step_one'>
-              <motion.div initial={{scale:1.1}} >
-              <Button style={{backgroundColor:'#FFEF0F'}} >
+              <motion.div className='steps_icon'initial={{scale:1.1}}whileHover={{x:'3vw'}} >
+              <IconButton style={{backgroundColor:'#FFEF0F'}} >
                 
                 <ShoppingCartOutlinedIcon size='large'/>
-                </Button>
+                </IconButton>
                 </motion.div>
               <h3 style={{whiteSpace:'nowrap',fontStyle:'italic'}}> TO CART</h3>
             {/*<p style={{paddingTop:'9px'}}>Explore and browse our store for your favorite cannabis products in every categlory</p>*/}
             </div>
             <div className='step_two'>
-            <motion.div initial={{scale:1.1}} whileHover={{x:'3vw'}}>
+            <motion.div className='steps_icon' initial={{scale:1.1}} whileHover={{x:'3vw'}}>
               <IconButton style={{backgroundColor:'#33EB00'}} variant="solid"><CreditScoreOutlinedIcon/> </IconButton>
               </motion.div>
               <h3 style={{fontStyle:'italic'}}>CHECKOUT</h3>
             </div>
             <div className='step_three'>
-            <motion.div initial={{scale:1.1}} whileHover={{x:'3vw'}}>
+            <motion.div className='steps_icon' initial={{scale:1.1}} whileHover={{x:'3vw'}}>
               <IconButton style={{backgroundColor:'#FFD219'}} variant="solid">
             <LocalShippingOutlinedIcon size='large'/> 
             </IconButton>

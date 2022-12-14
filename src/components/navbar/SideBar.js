@@ -8,6 +8,8 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
 import {Link} from 'react-router-dom';
+import CancelIcon from '@mui/icons-material/Cancel';
+
 
 
 const MyBox = styled(Box)({    
@@ -76,18 +78,22 @@ function SideBar() {
       >
        
    <MyBox 
-          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 , minHeight:'100vh'}}
+          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 500 , minHeight:'100vh'}}
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
         >
-
+          <div style={{margin: '20px 0px 0px 20px'}} onClick={toggleDrawer(anchor, false)}>
+            <IconButton color='error'>
+          <CancelIcon sx={{fontSize: 30}}/>
+          </IconButton>
+          </div>
           <motion.ul 
            className="container"
            variants={container}
            initial="hidden"
            animate="visible"
-          style={{fontSize:'24px', fontWeight:'550', display:'flex', flexDirection:'column', paddingLeft:'30px', paddingTop:'40px'}}>
+          style={{fontSize:'24px', fontWeight:'550', display:'flex', flexDirection:'column', paddingLeft:'90px', paddingTop:'10px'}}>
             <motion.li className="item" variants={item} style={{paddingTop:'10px'}}>
             <Link to='/' >Home</Link>
             </motion.li>

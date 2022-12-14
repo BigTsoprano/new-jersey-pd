@@ -15,7 +15,7 @@ export default function Banner () {
     <motion.div className='banner' initial={{scale:0}} whileInView={{scale:1}} viewport={{ once: true }} transition={{type:'tween',  duration: .5, delay:.2}}>
       <div style={{display:'flex', justifyContent:'center' ,flexDirection:' column'}}>
       <div className='banner-title' >
-   <h3>MONTHLY SPECIALS!</h3>
+   <h3 style={{whiteSpace:'nowrap'}}>MONTHLY SPECIALS!</h3>
    <div >
    <p style={{textAlign:'left' , paddingTop:'20px'}}>Offer a pack( 20pc) of gummies and 7 grams</p>
    <p style={{textAlign:'left',paddingTop:'5px' }}>of cannabis flower for $49.99</p>

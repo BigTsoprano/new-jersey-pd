@@ -18,8 +18,10 @@ function Ads() {
 <div className='ads_one_background'></div>
   </motion.div>
         <motion.div initial={{x:'10vw'}}   whileInView={{x:0}}
-  viewport={{ once: true }} transition={{ type: 'tween', duration: .4, delay: .8 }}   className='ads_two'><motion.div  style={{position:'absolute', top:'75%', right:'50%',}}> <AwesomeButton  type='primary' >
-  <h3 style={{fontStyle:'italic'}}>ORDER DELIVERY</h3>
+  viewport={{ once: true }} transition={{ type: 'tween', duration: .4, delay: .8 }}   className='ads_two'>
+    <motion.div className='ads_two_button'> 
+    <AwesomeButton  type='primary' >
+  <h3 style={{fontStyle:'italic', whiteSpace:'nowrap'}}>ORDER DELIVERY</h3>
 </AwesomeButton></motion.div></motion.div> 
         </div>
         </div>

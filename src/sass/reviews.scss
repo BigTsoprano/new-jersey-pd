@@ -1,8 +1,12 @@
 .reviews-section{
     position: relative;
-    height: 70vh;
-    padding-top: 80px;
+    height: 65vh;
     background-color: #E5E5E7;
+    h1{
+      text-align: center;
+      padding-top: 60px;
+      padding-bottom: 30px;
+    }
     .swiper {
         user-select: none;
         box-sizing: border-box;
@@ -18,7 +22,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 86%;
+        width: 85%;
         height: 100%;
         color: #000;
         overflow: hidden;

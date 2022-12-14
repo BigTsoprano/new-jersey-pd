@@ -12,7 +12,7 @@ class Gmaps extends Component{
         <div className='gmap_map'>
         <Map
         google = {this.props.google}
-        style={{width:'60%', height:'90%', left:'0', right:'0', marginRight:'auto', marginLeft:'auto'}}
+        style={{width:'50%', height:'100%',  marginLeft:'auto'}}
         zoom={10}
         initialCenter={{
           lat: 40.330388,

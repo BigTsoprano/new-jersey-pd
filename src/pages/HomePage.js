@@ -17,6 +17,7 @@ import Category from '../components/sections/Category';
 import { motion } from 'framer-motion';
 import Gmaps from '../components/sections/Gmaps';
 import Reviews from '../components/sections/Reviews';
+import Byebanner from '../components/sections/Byebanner';
 
 function HomePage() {
   const containerVariants = {
@@ -80,7 +81,9 @@ return (
     </Element>
   
  
-    
+    <Element name='section-byebanner'>
+      <Byebanner/>
+    </Element>
    
     
     <Element name='section-footer'>
