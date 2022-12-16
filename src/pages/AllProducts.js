@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import NavBar from '../components/navbar/NavBar';
 //import Products from '../components/sections/Products';
 import { motion } from 'framer-motion';
@@ -17,8 +17,23 @@ import CookieIcon from '@mui/icons-material/Cookie';
 
 function AllProducts() {
 
-  const [url, setUrl] = useState('http://localhost:3000/njpd')
-  const { data: products, isPending, error } = useFetch(url) 
+  // const [url, setUrl] = useState('http://localhost:3000/njpd')
+  // const { data: products, isPending, error } = useFetch(url) 
+
+  const [products1, setProducts1] = useState(null)
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch('http://localhost:4000/Product')
+      const json = await response.json()
+
+      if (response.ok) {
+        setProducts1(json)
+      }
+    }
+
+    fetchProducts()
+  }, [])
 
   const containerVariants = {
 
@@ -30,7 +45,12 @@ function AllProducts() {
 
   return (
 <section className='section-wrapper'>
-    <motion.div 
+
+    {products1 && products1.map((product) => (
+      <p key={product.id}>{product.name}</p>
+    ))}
+
+    {/* <motion.div 
     className='all_products_section'
     variants={containerVariants}
  
@@ -164,7 +184,7 @@ function AllProducts() {
                </div>
             <SwipeableEdgeDrawer/>
         </motion.div>
-        <Footer/>
+        <Footer/> */}
         </section>
   );
 }
