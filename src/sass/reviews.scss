@@ -1,7 +1,8 @@
 .reviews-section{
     position: relative;
     height: 65vh;
-    background-color: #E5E5E7;
+    background-color: #F0F4F8;
+    z-index: 2;
     h1{
       text-align: center;
       padding-top: 60px;
@@ -31,7 +32,7 @@
         box-shadow: 1px 3px 7px 2px rgba(57, 63, 72, 0.3);
       
         background-color: #ffffff;
-      
+     // border: solid 3px #000;
         border-radius: 8px;
       }
       
@@ -120,20 +121,20 @@ text-align: center;
     height:20vh;
 }
 .aws-btn {
-    --button-default-height: 66px;
+    --button-default-height: 56px;
    // --button-default-font-size: 24px;
-    --button-default-border-radius: 30px;
-    --button-horizontal-padding: 33px;
+    --button-default-border-radius: 5px;
+    --button-horizontal-padding: 20px;
     --button-raise-level: 6px;
     --button-hover-pressure: 1.25;
     --transform-speed: 0.15s;
-    --button-primary-color: #0AA558;
-    --button-primary-color-dark: #005508;
+    --button-primary-color: #3B13A8;
+    --button-primary-color-dark: #181818;
     --button-primary-color-light: #000000;
     --button-primary-color-hover: #009b4e;
     --button-primary-color-active: #009b4e;
-    --button-primary-border: 1px solid transparent;
-    --button-secondary-color: #fbfbfb;
+    --button-primary-border: 3px solid transparent;
+    --button-secondary-color: #3B13A8;
     --button-secondary-color-dark: #3a3a3a;
     --button-secondary-color-light: #3a3a3a;
     --button-secondary-color-hover: #eeeeee;

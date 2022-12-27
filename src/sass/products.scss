@@ -13,55 +13,32 @@
 .product-section{
     height:auto;
    
-    background-color: #f7f7f8;
+    background-color: #F0F4F8;
     font-family: futura-pt, sans-serif;
     font-style: italic;
     position: relative;
     padding-top: 30px;
     width:100%;
     padding-bottom: 70px;
+    z-index: 2;
+    h3{
+      font-size: 20px;
+    }
+
    
 }
 
 .products{
 height: auto;
 width: 100%;
-.aws-btn {
-    --button-default-height: 73px;
-    --button-default-font-size: 14px;
-    --button-default-border-radius: 30px;
-    --button-horizontal-padding: 22px;
-    --button-raise-level: 5px;
-    --button-hover-pressure: 4;
-    --transform-speed: 0.185s;
-    --button-primary-color: #ffe727;
-    --button-primary-color-dark: #141414;
-    --button-primary-color-light: #fbfbfb;
-    --button-primary-color-hover: #2d2d2d;
-    --button-primary-color-active: #212121;
-    --button-primary-border: 2px solid #3a3a3a;
-    --button-secondary-color: rgb(251,239,16);
-    --button-secondary-color-dark: #3a3a3a;
-    --button-secondary-color-light: #3a3a3a;
-    --button-secondary-color-hover: #FBC810;
-    --button-secondary-color-active: #e2e2e2;
-    --button-secondary-border: 2px solid #3a3a3a;
-    --button-anchor-color: #ffe727;
-    --button-anchor-color-dark: #212121;
-    --button-anchor-color-light: #97735d;
-    --button-anchor-color-hover: #ffe727;
-    --button-anchor-color-active: rgb(251,239,16);
-    --button-anchor-border: 2px solid #876753;
-    --button-danger-color: #733086;
-    --button-danger-color-dark: #431c4e;
-    --button-danger-color-light: #77cd38;
-    --button-danger-color-hover: #6d2d7e;
-    --button-danger-color-active: #632973;
-    --button-danger-border: none;
-  }
+
 
 .swiper {
-   margin: 0 45px;
+display: flex;
+justify-content: center;
+   //margin-right: 40px;
+   width: 85%;
+   //right:1.5%;
     padding-top: 20px;
     padding-bottom: 20px;
   }
@@ -70,66 +47,89 @@ width: 100%;
   .swiper-slide {
    // background-position: center;
    // background-size: contain;
-   
-    //width: 300px;
+  max-width: 380px;
    // height: 300px;
     //border: solid 5px #000000;
     background-color: #Fff;
-    //border: solid 3px #000000;
+   // border: solid 3px #000000;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    //max-height: 42vh;
+    //box-shadow: 10px 10px 0px #000000;
+    .pricebox_header{
+      //margin-top: -5px;
+      //box-shadow: 1px 1px 3px 1px rgba(57, 63, 72, 0.3);
+
+      //border-bottom: solid 3px #000000;
+    }
   }
   
   .swiper-slide img {
     //display: block;
-    padding-top: 10px;
-    width: 35%;
-    height: auto;
+    padding-top: 0px;
+    width: 90%;
+    //height: auto;
   }
 }
 
 .pricebox{
-    padding: 20px;
-    height: auto;
+   
+    height:350px;
+    //position: absolute;
+   // z-index: 25;
+    //width: 300px;
+    p{
+      font-size: 16px;
+    }
  
-    
+    h2{
+      font-size: 18px !important;
+      color:#102A43;
+      letter-spacing: 0.1px;
+      font-weight: 600;
+      //padding:10px;
+      font-style: italic;
+      //text-align: center;
+   
+  }
+  h3{
+    font-size: 20px;
+  }
+  h4{
+    font-size: 14px;
+  }
      
-      .swiper-box{
-          h2{
-              font-size: 29px !important;
-              color:rgb(0, 150, 57);
-              letter-spacing: 0.1px;
-              font-weight: 600;
-              font-style: italic;
-              //text-align: center;
-              -webkit-text-stroke-width: 1px;
-              -webkit-text-stroke-color: #009B4E;
-          }
+
+       
           .swiper-content{
-            padding-top: 0px;
+           width: 90%;
+           padding-left: 10px;
+           padding-right: 10px;
+           padding-top: 5px;
+           display: flex;
+           flex-direction: column;
            // padding-bottom: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
+           
             
         }
-        .swiper-price{
-            display: flex;
-            flex-direction: column;
-            padding-top: 10px;
-            padding-bottom: 0px;
-           
-        }
-      }
+   
+    
 
 }
 .pricebox-strain{
-    background-color: #D1D1D3;
+    background-color: #486581;
+    color:#F0F4F8;
+    
     border-radius: 5px;
     width: 50px;
     height: auto;
    // margin: 0 auto;
     p{
         text-align: center;
+        font-style:normal;
+        font-size: 14px;
+        font-weight: 550;
     }
 }
 .userdata-title{
@@ -137,28 +137,12 @@ width: 100%;
     border-radius: 20px;
 }
 .pricebox-button{
-    h3{
-        font-style: italic;
-    }
-    margin-left: 130px;
-    margin-top: 20px;
-    .aws-btn {
-        --button-default-height: 63px;
-        --button-default-font-size: 18px;
-        --button-default-border-radius: 30px;
-        --button-horizontal-padding: 22px;
-        --button-raise-level: 5px;
-        --button-hover-pressure: 2;
-        --transform-speed: 0.185s;
-       
-        --button-secondary-color: #fff;
-        --button-secondary-color-dark: #3a3a3a;
-        --button-secondary-color-light: #3a3a3a;
-        --button-secondary-color-hover: #E5E5E7;
-        --button-secondary-color-active: #e2e2e2;
-        --button-secondary-border: 2px solid #3a3a3a;
+  margin-left:90px;
    
-      }
+        font-style: italic;
+        color:#3B13A8;
+   
+ 
    // padding-bottom: 50px;
    //margin-top: -30px;
 }

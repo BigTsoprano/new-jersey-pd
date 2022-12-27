@@ -12,9 +12,15 @@ function Herosection() {
 
   return (
     <div className='hero-section'>
-<Herobox/>
-      <div className='hero-image'> </div>
-     
+        <div className='hero-image'> </div>
+      <div className='hero_backdrop'></div>
+
+<div>
+        <Herobox/>
+  
+    
+      </div>
+      
         </div>
   );
 }

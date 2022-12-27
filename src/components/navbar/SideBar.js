@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuSharpIcon from '@mui/icons-material/MenuSharp';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
@@ -13,8 +13,10 @@ import CancelIcon from '@mui/icons-material/Cancel';
 
 
 const MyBox = styled(Box)({    
-        backgroundColor: '#009B4E',
-        height: '100%'
+        backgroundColor: 'rgb(255, 210, 25)',
+        height: '90vh',
+        overflow:'auto',
+       
 });
 
 function SideBar() {
@@ -61,14 +63,14 @@ function SideBar() {
   {['left'].map((anchor) => (
     <React.Fragment key={anchor}>
     <IconButton
-    size="large"
+    className='icon_menu'
     edge="start"
-    color="inherit"
+   
     aria-label="open drawer"
     sx={{ mr: 2 }}
+    style={{marginLeft:'10px', boxShadow:'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset', backgroundColor:'#D9E2EC'}} 
   >
-<MenuIcon onClick={toggleDrawer(anchor, true)} > 
-    </MenuIcon>
+<MenuSharpIcon sx={{color:'#1D0EBE'}} onClick={toggleDrawer(anchor, true)} /> 
     </IconButton>      
     <Drawer
    
@@ -78,7 +80,7 @@ function SideBar() {
       >
        
    <MyBox 
-          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 500 , minHeight:'100vh'}}
+          sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 500 }}
           role="presentation"
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}

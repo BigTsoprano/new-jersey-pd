@@ -1,33 +1,66 @@
+.banner_all{
+  background-color: #F0F4F8;
+  // border: solid 3px #000000;
+  z-index: 2;
+
+   position: relative;
+   //width: 100%;
+   height: 35vh;
+}
+
+
 .banner-wrap{
-    background-color: #181818;
+    background-color: #F7C948;
+   // border: solid 3px #000000;
+
+
+border-radius: 20px;
     position: relative;
-    width: 100%;
-    height: 65vh;
-    margin-top:-70px;
+    top:-35%;
+    margin: 0 90px;
+    height: 40vh;
+    //margin-top:-70px;
     z-index: 12;
-    background-image: url(/images/njpd-deal.png);
+    background-image: url(/images/banner_ads2.png);
     background-repeat: no-repeat;
-    background-position: 105px 60px;
+    background-position: 110px 19px;
     background-size: contain;
     //padding-left: 50px;
     display:flex;
-    align-items: center;
-
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;    align-items: center;
+    justify-content: flex-end;
 
 }
+.banner_img{
+  position: relative;
+  bottom: 45%;
+  left: 35%;
+  z-index: 999;
+}
 .banner {
-    width: 100%;
+  background-color: #FCE588;
+
+  transition: all .3s ease;
+  position: relative;
+
+  z-index: 998;
+    //width: 100%;
+    //position: absolute;
+    //border: solid 1px #000;
     display: flex;
-    justify-content: flex-end;
+    padding-bottom: 20px;
     //margin: 0 auto;
    // height: auto;
-    color: #ffffff !important;
+    color: #000 !important;
     text-align: center;
   z-index: 9 !important;
     //background-color: #181818;
- 
+ //margin: 100px;
+ box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+
+ border-radius: 10px;
     position: relative;
-    margin-right: 90px;
+    margin-right: 100px;
     //background: #06AF67;
     //background:linear-gradient(rgba(0,135,63),transparent);
       //background-color: #06AF67;
@@ -35,30 +68,37 @@
    // padding-top:30px;
   display: flex;
   justify-content: flex-start;
-  padding-left: 80px;
-  font-size: 39px;
+  padding-left: 30px;
+  font-size: 18px;
+  padding-right: 10px;
   font-style: italic;
   flex-direction: row;
+  color:#102A43;
   }
   h2{
-    font-size: 24px;
+    font-size: 18px;
     font-style: italic;
-    padding: 5px 10px;
-    color:#292929;
+    //padding: 5px 10px;
+   
   }
   p{
     display: flex;
-  justify-content: flex-start;
-  padding-left: 80px;
-  font-size: 24px;
-  text-align: left;
-  text-shadow: .5px .5px 1px #292929;
+  //justify-content: flex-start;
+  padding: 0 20px;
+  font-size: 16px;
+  box-shadow: none;
+ // text-align: left;
+ color:#243B53;
   
   font-weight: 500;
   }
   .banner-button{
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+   
 h2{
-  font-size: 18px;
+  font-size: 16px;
   
 }
   }
@@ -70,4 +110,9 @@ h2{
   //align-items: center;
   flex-direction: column;
   margin-top: 20px;
+  }
+  .banner:hover{
+   // box-shadow: 5px 5px 0 #000 !important;
+   box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+      background-color: #FADB5F;
   }

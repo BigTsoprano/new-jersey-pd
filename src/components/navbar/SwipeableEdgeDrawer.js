@@ -1,4 +1,4 @@
-import  React, {useRef} from 'react';
+import  React from 'react';
 import PropTypes from 'prop-types';
 import { Global } from '@emotion/react';
 import { styled } from '@mui/material/styles';
@@ -50,18 +50,11 @@ function SwipeableEdgeDrawer(props) {
   const [{ basket }] = useStateValue();
 
 
-React.useEffect(() => {
-  document.addEventListener("mousedown", (event) => {
-    if (!menuRef.current.contains(event.target)) {
-    setOpen(false);
-    }
-  });
-});
 
-let menuRef = useRef();
+
 
   return (
-    <Root onClick={toggleDrawer(true)} ref={menuRef}>
+    <Root onClick={toggleDrawer(true)}  >
       <CssBaseline />
       <Global
         styles={{
@@ -72,11 +65,9 @@ let menuRef = useRef();
           },
         }}
       />
-    <div  >
       <SwipeableDrawer
         container={container}
         anchor="bottom"
-        
         open={open}
         onClose={toggleDrawer(false)}
         onOpen={toggleDrawer( true)}
@@ -101,7 +92,6 @@ let menuRef = useRef();
             
 
           }}
-          onClick={toggleDrawer(true)}
         >
             <motion.div whileHover={{scale: 1.1}}>
           <Puller />
@@ -163,7 +153,6 @@ let menuRef = useRef();
         
         </StyledBox>
       </SwipeableDrawer>
-      </div>
     </Root>
   );
 }

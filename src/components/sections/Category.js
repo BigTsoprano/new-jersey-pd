@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 //import { Pagination } from "swiper";
@@ -12,7 +12,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import { motion } from 'framer-motion';
 import LinearProgress from '@mui/material/LinearProgress';
 import Pricebox from '../elements/Pricebox';
-import { useFetch } from '../../hooks/useFetch';
+//import { useFetch } from '../../hooks/useFetch';
 import { AwesomeButton } from "react-awesome-button";
 import Avatar from '@mui/joy/Avatar';
 import FormLabel from '@mui/joy/FormLabel';
@@ -26,13 +26,36 @@ import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 
 function Category() {
-  const [url, setUrl] = useState('http://localhost:3000/njpd')
-  const { data: products, isPending, error } = useFetch(url) 
+
+
+
+  const [products1, setProducts1] = useState(null)
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const response = await fetch('/Product')
+      const json = await response.json()
+
+      if (response.ok) {
+        setProducts1(json)
+      }
+    }
+
+    fetchProducts()
+  }, [])
+  const renderProducts = () => {
+    return 
+  }
   return (
     <div className='category_section'>
       <h1>PRODUCT FILTER</h1>
     
-      <div className='category_list'>
+      <motion.div
+ 
+      initial={{  scale:1.2}}
+      transition={{duration:.6, delay:.4, type:'spring'}}
+      whileInView={{ scale:1}}
+      className='category_list'>
 
     {/*    <motion.div onClick={() => setUrl('http://localhost:3000/njpd')}  whileHover={{scale:1.14, rotate:5}} className='shop_all'>
           <motion.div  initial={{scale: 3.5}} className='shop_icon'>
@@ -90,7 +113,7 @@ function Category() {
       className='radio_group_icons'
       sx={{
         
-        gap: 5,
+        gap: 3,
         [`& .${radioClasses.checked}`]: {
           [`& .${radioClasses.action}`]: {
             inset: -1,
@@ -116,117 +139,120 @@ function Category() {
       
          <Sheet
      
-     variant="outlined"
+     variant="solid"
      sx={{
-       borderRadius: 'md',
-       border:'2px solid #000000',
-       bgcolor: '#292929',
-       boxShadow: 'sm',
+       borderRadius: '5px',
+       bgcolor: '#E12D39',
+      border:'none',
+
+       boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px',
        display: 'flex',
        flexDirection: 'column',
        alignItems: 'center',
-       gap: 1.5,
+       gap: 0,
        p: 1,
        minWidth: 120,
-       maxHeight: 110
+       maxHeight: 60
      }}
-     onClick={() => setUrl('http://localhost:3000/njpd')}
+     
    >
      <Radio value='All' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}}  />} />
-     <StorefrontIcon variant="soft" sx={{ fontSize: 40, color:'#E5E5E7' }} />
+     <StorefrontIcon variant="soft" sx={{ color:'#000' }} />
      <FormLabel ><h3>View all</h3></FormLabel>
    </Sheet>
         <Sheet
-     onClick={() => setUrl('http://localhost:3000/njpd?strain=indica')}
           variant="outlined"
           sx={{
-            borderRadius: 'md',
-            bgcolor: '#292929',
-            border:'2px solid #000000',
-            boxShadow: 'sm',
+            borderRadius: '5px',
+            bgcolor: '#E12D39',
+            boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
+            border:'none',
             display: 'flex',
-            flexDirection: 'column',
+         
             alignItems: 'center',
-            gap: 1.5,
+            gap: 0,
             p: 1,
             minWidth: 120,
-            maxHeight: 110
+            maxHeight: 60,
+      
+            flexDirection:'column'
           }}
         >
           <Radio value='Flowers' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
-          <SpaIcon variant="soft" sx={{ fontSize: 40, color:'#33EB00' }} />
+          <SpaIcon variant="soft" sx={{ color:'#33EB00' }} />
           <FormLabel ><h3>Flowers</h3></FormLabel>
         </Sheet>
         <Sheet
      
      variant="outlined"
      sx={{
-       borderRadius: 'md',
-       bgcolor: '#292929',
-       border:'2px solid #000000',
-       boxShadow: 'sm',
+       borderRadius: '0px',
+       bgcolor: '#E12D39',
+      border:'none',
+       boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
        display: 'flex',
        flexDirection: 'column',
        alignItems: 'center',
-       gap: 1.5,
+       gap: 0,
        p: 1,
        minWidth: 120,
-       maxHeight: 110
+       maxHeight: 60
      }}
    >
      <Radio value='Edibles' checkedIcon={<CheckCircleRoundedIcon  style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
-     <CookieIcon variant="soft" sx={{ fontSize: 40, color:'#EBB800' }} />
+     <CookieIcon variant="soft" sx={{  color:'#EBB800' }} />
      <FormLabel ><h3>Edibles</h3></FormLabel>
    </Sheet>
    <Sheet
      
      variant="outlined"
      sx={{
-       borderRadius: 'md',
-       bgcolor: '#292929',
-       border:'2px solid #000000',
-       boxShadow: 'sm',
+       borderRadius: '0px',
+       bgcolor: '#E12D39',
+      
+       boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
        display: 'flex',
        flexDirection: 'column',
        alignItems: 'center',
-       gap: 1.5,
+       justifyContent:'center',
+       gap: 0,
        p: 1,
        minWidth: 120,
-       maxHeight: 110
+       maxHeight: 60
      }}
    >
      <Radio value='Concentrates' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
-     <InvertColorsIcon variant="soft" sx={{ fontSize: 40, color:'#D61EFF' }} />
+     <InvertColorsIcon variant="soft" sx={{  color:'#D61EFF' }} />
      <FormLabel ><h3>Concentrates</h3></FormLabel>
    </Sheet>
    <Sheet
      
      variant="outlined"
      sx={{
-       borderRadius: 'md',
-       bgcolor: '#292929',
-       border:'2px solid #000000',
-       boxShadow: 'sm',
+       borderRadius: '0px',
+       bgcolor: '#E12D39',
+
+       boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
        display: 'flex',
        flexDirection: 'column',
        alignItems: 'center',
-       gap: 1.5,
+       gap: 0,
        p: 1,
        minWidth: 120,
-       maxHeight: 110
+       maxHeight: 60
      }}
    >
      <Radio value='Other' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}}/>} />
-     <CategoryIcon variant="soft" sx={{ fontSize: 40, color:'#00EBB8' }} />
-     <FormLabel ><h3>Other</h3></FormLabel>
+     <CategoryIcon variant="soft" sx={{  color:'#00EBB8' }} />
+     <FormLabel onClick={{}} ><h3>Other</h3></FormLabel>
    </Sheet>
   
     
     </RadioGroup>
-    </div>
+    </motion.div>
 
-{isPending && <div style={{width:'100%'}}><LinearProgress /></div>}
-        {error && <div>{error}</div>}
+
+     
         <div className='cat_swiper' >
 <Swiper
         slidesPerView={4}
@@ -250,21 +276,22 @@ function Category() {
     
         className="mySwiper"
       >
-          {products && products.map(product => (
-            <div style={{}}>
+          {products1 && products1.map((product) => 
+           
         <SwiperSlide>  
            <div className='products-box2' >
-        <Pricebox 
-         key={product.id}
-        name={product.name}
-        price={product.price}
-        image={product.image}
-        strain={product.strain}
-        /> 
+           <Pricebox 
+             key={product.id}
+            name={product.name}
+            price={product.price}
+            image={product.image}
+            strain={product.strain}
+            /> 
+  
       </div>
       </SwiperSlide>
-       </div>
-       ))}
+ 
+      )}
 
       </Swiper>
       </div>

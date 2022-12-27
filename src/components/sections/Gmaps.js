@@ -7,12 +7,15 @@ class Gmaps extends Component{
     const coords = { lat: 40.330388, lng: -73.981526 };
   return (
     <div className='gmap_section'>
-        <div className='gmap_wrapper'>
-        <div className='maps_content'><h2>Delivery locations</h2></div>
-        <div className='gmap_map'>
+        
+        <div className='maps_content'>
+          
+       
+       
         <Map
+        className='gmap_map'
         google = {this.props.google}
-        style={{width:'50%', height:'100%',  marginLeft:'auto'}}
+        style={{width:'100%', height:'100%'}}
         zoom={10}
         initialCenter={{
           lat: 40.330388,
@@ -32,8 +35,8 @@ class Gmaps extends Component{
           fillOpacity={0.2}
           />
         </Map>
-        </div>
-        
+  
+
         
         </div>
         </div>

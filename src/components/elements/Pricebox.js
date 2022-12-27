@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { motion } from 'framer-motion';
-import Button from '@mui/material/Button';
+import { motion, AnimatePresence } from "framer-motion";
+import Button from '@mui/joy/Button';
 import IconButton from '@mui/material/IconButton';
 
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { styled } from '@mui/material/styles';
 //import Box from '@mui/material/Box';
 import Snackbar from '@mui/material/Snackbar';
@@ -11,15 +10,12 @@ import MuiAlert from '@mui/material/Alert';
 //import Stack from '@mui/material/Stack';
 import Slide from '@mui/material/Slide';
 import { useStateValue } from "../cart/StateProvider";
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Rating from '@mui/material/Rating';
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+
 
 import InfoIcon from '@mui/icons-material/Info';
-const Alert = React.forwardRef(function Alert(props, ref) {
-  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+
 
 //import Typography from '@mui/material/Typography';
 
@@ -62,66 +58,92 @@ function Pricebox(priceboxItem) {
     const handleClose = () => {
       setOpen(false);
     };
+    const [variant, setVariant] = React.useState('plain');
+
+    const [isVisible, setVisible] = useState(false);
+  return (
+
+ 
     
 
-  return (
   <motion.div 
-  
-  className='pricebox'>
+  className='pricebox'
  
-   <div className='swiper-box'  >
-<div style={{display:'flex', flexDirection:'row', justifyContent:'space-between' }}>
-   <motion.h2  initial={{scale:0}}
+  >
+       <AnimatePresence mode="popLayout" initial={true}>
+        {isVisible && (
+            <motion.div
+            key="modal"
+                style={{
+                    width: '100%',
+                    height: '350px',
+                    borderRadius: 10,
+                    //position:'relative',
+                    zIndex:'26',
+                    backgroundColor: "#C4C6FF",
+
+                }}
+                initial={{ x:'50vw' }}
+                animate={{ x: 0 }}
+                transition={{ duration: .3, ease: 'easeIn'}}
+                exit={{ x: '50vw' }}
+            >
+              <button onClick={() => setVisible(false)} >close</button>
+              <div style={{display:'flex', flexDirection:'row'}}>
+<h4 style={{color:'#292929'}}>THC {thc}</h4>
+<h4 style={{paddingLeft:'10px'}}>CBD {cbd}</h4>
+</div>
+            </motion.div>
+        )}
+
+</AnimatePresence >
+
+ <div style={{display:'flex', flexDirection:'column'}}>
+ <div className='pricebox_img' style={{height:'250px', display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#E6E6FF'}}>
+      
+ <motion.img style={{width:'40%'}} whileHover={{ scale: 1.1 }} src={image} alt=''/>
+ </div>
+
+
+   <div className='swiper-content'>
+     <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+   <motion.div style={{marginBottom:'5px', display:'flex', flexDirection:'row', justifyContent:'space-between'}} initial={{scale:0}}
+  whileInView={{scale:1}}
+  viewport={{ once: true }} transition={{ duration: .5, type:'spring'}} className='pricebox-strain'>
+      <p>{strain}</p>
+  </motion.div>
+
+  <div style={{display:'flex', flexDirection:'row',marginTop:'0px'}}>
+<medium>$</medium>
+<h3>{price}</h3>
+
+</div>
+</div>
+
+   <div style={{display:'flex'}}>
+<motion.h2  initial={{scale:0}}
   whileInView={{scale:1}}
   viewport={{ once: true }} transition={{ duration: .5, type:'spring', delay:.3}}  style={{
          whiteSpace:'nowrap'
        }}>{name}</motion.h2>
-       <motion.div initial={{scale:1}} whileInView={{scale: 1.3}} whileHover={{scale: 1.5}} whileTap={{scale:1.3}}>
-  <IconButton  >
-     <InfoIcon style={{color:'#292929'}} size='large'/>
-     </IconButton>
-     </motion.div>
-     </div>
-   <div className='swiper-content'>
-   
-<motion.img whileHover={{ scale: 1.1 }} src={image} alt=''/>
-
-<div className='swiper-price'>
-<motion.div style={{marginBottom:'10px'}} initial={{scale:0}}
-  whileInView={{scale:1}}
-  viewport={{ once: true }} transition={{ duration: .5, type:'spring'}} className='pricebox-strain'>
-      <p>{strain}</p>
-    </motion.div>
-    <div style={{display:'flex', flexDirection:'row'}}>
-<h4 style={{color:'#292929'}}>THC {thc}</h4>
-<h4 style={{paddingLeft:'10px'}}>CBD {cbd}</h4>
-</div>
-<div>
-  <button style={{backgroundColor:'rgb(78, 0, 156)', color:'#ffffff', borderRadius:'0px', border:'none'}}>relaxing</button>
-  <button style={{backgroundColor:'rgb(156, 78, 0)', color:'#ffffff', borderRadius:'0px', border:'none'}}>energizing</button>
-
-</div>
-  <div style={{}}>
-  <Rating name="no-value" precision={0.5} value={null} /> 
-   </div>
-</div>
-</div>
-         </div>
-       
-    
       
-<div style={{display:'flex', justifyContent: 'space-between'}}>
-  <div style={{ width:'60%', display:'flex', justifyContent:'flex-end', flexDirection:'column', alignItems:'flex-start'}}>
-  <p style={{whiteSpace:'nowrap'}}>{quantity} </p>
-<div style={{display:'flex', flexDirection:'row', alignItems:'flex-end'}}>
-<medium>$</medium>
-<h3>{price}</h3>
-</div>
+       </div>
 
-</div>
-<div >
 
-        <motion.div 
+
+   
+<div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+<div style={{display:'flex', flexDirection:'column',}}>
+    <p style={{whiteSpace:'nowrap'}}>{quantity} </p>
+    <motion.div  style={{marginTop:'-10px'}}>
+<Button variant="plain" style={{color:'#486581'}} onClick={() => setVisible(!isVisible)} >
+Learn more
+     </Button>
+
+            </motion.div>
+    </div>
+
+    <motion.div 
   whileInView={{  scale:1}}
   transition={{
     type: "spring",
@@ -131,27 +153,39 @@ function Pricebox(priceboxItem) {
   }}
   viewport={{ once: true }} 
  
-  initial={{scale:0}}  > 
+  initial={{scale:0}}
+  style={{}}  > 
         
  
        
-        <motion.div whileTap={{scale:.9}} onClick={addToBasket}>
-         <AwesomeButton type="secondary"  style={{
+        
+        <Button  onClick={addToBasket} variant="solid" sx={{backgroundColor:'#1D0EBE', color:'#fff', marginTop:'-10px'}}>
           
-           
-       
   
-            }}  >
-      <ShoppingCartCheckoutIcon size='large' />
-      </AwesomeButton>
+      <AddShoppingCartIcon  style={{ fontSize:'20px' }}/><h4>add to cart</h4>
+    
+      </Button>
       </motion.div>
-           
-           
-            </motion.div>
- 
-  </div>
-    </div>
-    </motion.div>
+      </div>
+
+  {/*<div style={{}}>
+  <Rating name="no-value" precision={0.5} value={null} /> 
+   </div>*/}
+  
+
+         
+            </div>
+</div>
+     
+       
+    
+      
+
+
+
+
+</motion.div>
+
   );
 }
 

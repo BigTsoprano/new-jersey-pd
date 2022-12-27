@@ -1,13 +1,22 @@
 .category_section{
     position: relative;
     height: auto;
+    padding-top: 30px;
    padding-bottom:90px;
-    background-color: #f7f7f8;
+   background-color: #F0F4F8;
+    z-index: 2;
     h1{
         font-style: italic;
         text-align: center;
         padding:30px;
         font-size: 28px;
+    }
+    h3{
+        font-size: 18px;
+        font-weight: 550;
+
+        color: 
+        #102A43 !important;
     }
     .swiper {
         width: 100%;
@@ -20,10 +29,11 @@
         // height: 300px;
          //border: solid 5px #000000;
          background-color: #ffffff;
-         border-radius: 20px;
+         border-radius: 10px;
+         box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+
          
         /* Center slide text vertically */
-        
       }
       
       .swiper-slide img {
@@ -53,7 +63,7 @@
     margin: 0 80px;
     padding-bottom: 40px;
     h3{
-        color: #ffffff;
+        color: #000;
         //margin-top: 15px;
         font-style: italic;
        // font-size: 28px;
@@ -63,6 +73,7 @@
 .products-box2{
    
     height: auto;
+    //margin:10px;
 
     img{
         width:50%;
@@ -70,4 +81,6 @@
 }
 .cat_swiper{
     margin:0 88px;
+    padding: 10px 0;
+   // box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
 }

@@ -4,6 +4,7 @@ import Fade from '@mui/material/Fade';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Switch from '@mui/material/Switch';
 import Slide from '@mui/material/Slide';
+import Button from '@mui/joy/Button';
 
 
 
@@ -128,9 +129,22 @@ function Accordions() {
     <section id='accordions'>
     <div  className='q-a'>
     <div className="faq_container">
-      <motion.div in={open} onClick={handleOpen} onChange={handleClose}  whileHover={{ scale: 1.1 }} >
-       <button onClick={handleClick}  style={{paddingTop:'20px', paddingBottom:'20px'}} className="faq_button"  ><h2 >QUESTIONS?! CLICK HERE FOR ANSWERS!!</h2></button>
-       
+      <motion.div in={open} onClick={handleOpen} onChange={handleClose}  whileHover={{ scale: 1.0 }} >
+      <motion.div initial={{x:'-90vw'}} 
+        viewport={{once:false}}
+        whileInView={{x:0}}
+        transition={{duration:.4, type:'spring', delay:.1, stiffness: 50}}
+        className='bye_wrapper'>
+        <div className='bye_banner_wrap'>
+            <h1 style={{fontSize:'24px'}}>Have questions?! We got answers!</h1>
+            </div>
+            <div className='bye_banner_button'>
+<Button style={{backgroundColor:'#1D0EBE'}} size='lg' variant="solid" onClick={handleClick}>
+    <h3>LEARN MORE</h3>
+</Button>
+           
+        </div>
+        </motion.div>       
        </motion.div>
        </div>
        {/* <div className="spacer"></div> */}

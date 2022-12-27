@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import Button from '@mui/joy/Button';
 import Stack from '@mui/material/Stack';
-
 import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,8 +13,7 @@ import "swiper/css/autoplay";
 import { EffectCoverflow, Pagination} from "swiper";
 
 import Pricebox from '../elements/Pricebox';
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+
 
 
 
@@ -25,8 +23,8 @@ function Products() {
   return (
 
     <div className='product-section' >
-        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'28px', textAlign:'center'}} >
-            FAVORITES
+        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'32px', textAlign:'center', color:'#102A43'}} >
+            WEED RECOMMEND
         </motion.h1>
     <motion.div  className='products'>
        
@@ -66,7 +64,7 @@ function Products() {
 
       >
         
-        <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}} >
+        <SwiperSlide  >
         
 
       
@@ -82,17 +80,17 @@ function Products() {
           
          
         </SwiperSlide>
-        <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
+        <SwiperSlide style={{}}>
             <Pricebox
             name='Grand Daddy Purp'
             price={12.99}
-            image='sour_diesel.png'
+            image='grand_d.png'
             strain='sativa'
             quantity='1/4'
 
             />
         </SwiperSlide>
-        <SwiperSlide style={{borderRadius:'20px', boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
+        <SwiperSlide style={{}}>
         <Pricebox
             name='this is other title'
             price={12.99}
@@ -100,9 +98,7 @@ function Products() {
             strain='indica'
             />        </SwiperSlide>
         <SwiperSlide 
-        style={{
-          borderRadius:'20px', 
-          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
+       >
         <Pricebox
             name='this is other title'
             price={12.99}
@@ -110,49 +106,35 @@ function Products() {
             strain='hybrid'
             />        </SwiperSlide>
         <SwiperSlide 
-        style={{
-          borderRadius:'20px', 
-          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'}}>
+       >
         <Pricebox
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
             />        </SwiperSlide>
-        <SwiperSlide style={{
-          borderRadius:'20px', 
-          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
-          }}>
+        <SwiperSlide >
         <Pricebox
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
             />        </SwiperSlide>
-        <SwiperSlide style={{
-          borderRadius:'20px', 
-          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
-          }}>
+        <SwiperSlide >
         <Pricebox
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
             />        </SwiperSlide>
-        <SwiperSlide style={{
-          borderRadius:'20px', 
-          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
-          }}>
+        <SwiperSlide >
         <Pricebox
             name='this is other title'
             price={12.99}
             image='sour_diesel.png'
             strain='sativa'
             />        </SwiperSlide>
-        <SwiperSlide style={{
-          borderRadius:'20px', 
-          boxShadow:'1px 3px 7px 2px rgba(57, 63, 72, 0.3)'
-          }}>
+        <SwiperSlide >
         <Pricebox
             name='this is other title'
             price={12.99}
@@ -175,13 +157,19 @@ function Products() {
             }} 
             to='/all-products' >
               <div className='pricebox-button'>
-<AwesomeButton type="secondary" after={<KeyboardArrowRight />} color="success">
+<Button size='lg'  style={{
+        backgroundColor:'#D9E2EC',
+        fontStyle:'italic',
+        fontSize:'20px',
+        color:'#102A43',
+        boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px'
+      }}   variant='soft'>
     
-     <h3>
+     
 Browse all products
-</h3>
 
-</AwesomeButton>
+<KeyboardArrowRight />
+</Button>
 </div>
 </Link>
 

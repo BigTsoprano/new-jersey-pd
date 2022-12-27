@@ -9,20 +9,21 @@ function Ads() {
   return (
     <div className='ads_section'>
         <div className='all_ads'>
-        <motion.div 
-        initial={{x:'-10vw'}} 
-  whileInView={{x:0}}
-  viewport={{ once: true }} 
-  transition={{ type: 'tween', duration:.4, delay:.8 }}   
-  className='ads_one'>
-<div className='ads_one_background'></div>
-  </motion.div>
-        <motion.div initial={{x:'10vw'}}   whileInView={{x:0}}
-  viewport={{ once: true }} transition={{ type: 'tween', duration: .4, delay: .8 }}   className='ads_two'>
+        <motion.div viewport={{once:false}} initial={{x:'-10vw'}}   whileInView={{x:0}}
+  transition={{ type: 'tween', duration: .4, delay: .3 }}   className='ads_two'>
     <motion.div className='ads_two_button'> 
     <AwesomeButton  type='primary' >
-  <h3 style={{fontStyle:'italic', whiteSpace:'nowrap'}}>ORDER DELIVERY</h3>
+  <h3 style={{fontStyle:'italic', whiteSpace:'nowrap', fontSize:'18px'}}>ORDER DELIVERY</h3>
 </AwesomeButton></motion.div></motion.div> 
+        <motion.div 
+        initial={{x:'10vw'}} 
+  whileInView={{x:0}}
+  viewport={{once:false}}
+  transition={{ type: 'tween', duration:.4, delay:.3 }}   
+  className='ads_one'>
+
+  </motion.div>
+       
         </div>
         </div>
   )

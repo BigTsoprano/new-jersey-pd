@@ -13,6 +13,7 @@ import 'react-awesome-button/dist/styles.css';
 function Footer() {
   return (
     <div className='footer-section'>
+      <div className='footer_backdrop'></div>
       <div className='footer_three_sections'>
         <div className='footer_one'>
           <div className='footer_title'>
@@ -50,9 +51,9 @@ function Footer() {
         <div className='footer_three'>
         
 <div className='footer_special'>
-            <div style={{paddingBottom:'30px'}} >
+            <div style={{paddingBottom:'20px', display:'flex', flexDirection:'rox'}} >
             <EmailIcon/> 
-            <TextField label="Stay up to date with our specials!" size="lg" placeholder="Enter email address" variant="outlined" sx={{  width:'100%' }}/>
+            <TextField label="Stay up to date with our specials!" size="md" placeholder="Enter email address" variant="outlined" sx={{  width:'100%' }}/>
             </div>
     <AwesomeButton style={{ backgroundColor:'#009B4E', borderRadius:'40px'}} variant="contained" >
   <h3 style={{ fontStyle:'italic'}}>CLICK TO SIGN UP</h3>

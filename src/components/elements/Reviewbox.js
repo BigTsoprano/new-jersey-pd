@@ -10,7 +10,7 @@ const {name, review} = reviewItem;
   return (
     <div className='reviewbox'>
         <div className='review_avatar'>
-        <Avatar />
+        <Avatar src='review_1.png' />
         </div>
         <div className='review_name'>
         <h2>{name}</h2>

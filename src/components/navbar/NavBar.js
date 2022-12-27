@@ -1,16 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
+import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/material/Typography';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import Slide from '@mui/material/Slide';
 import PropTypes from 'prop-types';
-import { motion } from "framer-motion";
+import { motion  } from "framer-motion";
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 //import Divider from '@mui/material/Divider';
@@ -43,11 +43,6 @@ function HideOnScroll({ children }) {
 
 
 
-
-
-
-
-
   
 
 
@@ -63,14 +58,17 @@ function NavBar(props) {
     boxShadow: 'none !important',
     transition: 'top 0.3s',
     top:'0',
+    height:'10vh',
     // Override media queries injected by theme.mixins.toolbar
-    backgroundColor:'#009B4E',
+    background:'#18981D',
     '@media all': {
      
      // boxShadow: '0 10px 50px 0 rgb(63 2 176 / 40%)',
    
     },
   }));
+
+
 
 
 
@@ -90,15 +88,18 @@ function NavBar(props) {
 
     <AppBar  style={{position:'fixed',
        width: '-webkit-fill-available',
+       //margin: '0 90px',
         zIndex:'999', 
-        boxShadow:'none',
-        backgroundColor: '#009B4E'
+        //boxShadow:'5px 5px 0 #000000',
+        
+        borderBottom:'solid 1px #000',
+
       
         }}    elevation={0}
 >
       <StyledToolbar>
   
-     <motion.div animate={{scale:1.2}}>
+     <motion.div animate={{scale:1}}>
       <SideBar/>
       </motion.div>
      
@@ -115,13 +116,14 @@ function NavBar(props) {
           <h4 >
              NewJersey
           </h4>
-          <p>POTDELIVERY</p>
+          <p>PotDelivery</p>
           </motion.div>
         </Typography>
-        <motion.div animate={{scale:1.2}}>
+        <motion.div 	     
+            whileTap={{ backgroundColor: '#D9E2EC' }}>
           <Link to="/admin-page">
-        <IconButton size="large" aria-label="search" color="inherit">
-          <ManageAccountsIcon />
+        <IconButton  className='icon_admin' style={{ boxShadow:'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset', backgroundColor:'#D9E2EC'}}  aria-label="search" >
+          <ManageAccountsIcon style={{color:'#1D0EBE'}}/>
         </IconButton>
         </Link>
         </motion.div>

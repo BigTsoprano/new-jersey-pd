@@ -33,7 +33,7 @@ function AdminPage() {
         }
       }
   return (
-    <motion.div  variants={containerVariants}
+    <div  variants={containerVariants}
  
     exit="exit" style={{backgroundColor:'#ffffff', height:'auto', position:'relative', paddingTop:'50px'}}>
         <NavBar></NavBar>
@@ -50,7 +50,7 @@ function AdminPage() {
         ))}
         </div>
             
-        </motion.div>
+        </div>
   )
 }
 

@@ -65,12 +65,12 @@ function UserdataForm() {
   return (
       <Box onSubmit={handleSubmit}
 >
-    <div className='checkout-item' >
+    <div className='checkout-item' style={{margin:'0 25%', }} >
 
     <div className="checkout__left">
          {basket?.length === 0 ? (
              <div className='checkout__shopping'>
-            <h2>Your Shopping Cart Is Empty</h2>
+            <h2 style={{fontSize:'24px'}}>Your Shopping Cart Is Empty</h2>
                 </div>
         
                           ) : (
@@ -105,12 +105,12 @@ className="mySwiper"
     )}
 </div>
 
-<div style={{textAlign:'center'}}>
-<h2>fill this form!</h2>
+<div style={{display:'flex', flexDirection:'column', backgroundColor:'#F7F7F8', padding:'20px'  }}>
+<h2 style={{paddingBottom:'20px',fontSize:'18px'}}>fill this form!</h2>
 <Box
 
 component="form"
-sx={{ display: 'flex', flexWrap: 'wrap', flexDirection:'column' }}
+sx={{ display: 'flex', flexWrap: 'wrap', flexDirection:'column', overflow: 'auto !important' }}
 noValidate
 autoComplete="on"
 style={{
@@ -118,9 +118,9 @@ style={{
 }}
 >
 
-<div>
-<TextField id="outlined-basic" label="Full Name" variant="outlined"  
-style={{padding:'10px'}} 
+
+<TextField id="outlined-basic" size='sm' label="Full Name" variant="outlined"  
+style={{paddingBottom:'10px'}} 
 onChange={(e) => setTitle(e.target.value) }
 value={title}
 />
@@ -131,24 +131,23 @@ value={title}
 
 
 <TextField id="outlined-basic" label="Number" variant="outlined" 
-style={{padding:'10px'}}   
+style={{paddingBottom:'10px'}}   
 onChange={(e) => setNumber(e.target.value) }
 value={number}
 />
 <TextField id="outlined-basic" label="Email" variant="outlined"
-style={{padding:'10px'}} 
+style={{paddingBottom:'10px'}} 
 onChange={(e) => setEmail(e.target.value)}
 value={email} />
-</div>
-<div>
+
 <TextField id="outlined-basic" label="Street" variant="outlined"
-style={{padding:'10px'}} 
+style={{paddingBottom:'10px'}} 
 onChange={(e) => setStreet(e.target.value)}
 value={street}
 />
 
 <TextField id="outlined-basic" label="Zip code" variant="outlined"
-style={{padding:'10px'}}   
+style={{paddingBottom:'10px'}}   
 onChange={(e) => setZip(e.target.value)}
 value={zip}
 />
@@ -156,12 +155,11 @@ value={zip}
 
 
 <TextField id="outlined-basic" label="County" variant="outlined" 
-style={{padding:'10px'}} 
+style={{paddingBottom:'10px'}} 
 onChange={(e) => setCounty(e.target.value)}
 value={county}
 />
-</div>
-<div>
+
 <TextField
 sx={{ m: 1, width: '45ch' }}
 id="outlined-multiline-static"
@@ -173,7 +171,7 @@ defaultValue="Leave us a note!"
 onChange={(e) => setNotes(e.target.value)}
 value={notes}
 />
-</div>
+
 
 <button>add title</button>
 </Box>

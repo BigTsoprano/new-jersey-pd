@@ -1,67 +1,96 @@
 .hero-section{
-  background:linear-gradient(180deg,#181818,transparent 100%);
+  //background:linear-gradient(140deg,#33EB00,transparent 100%);
   //background:linear-gradient(20deg,#505050,transparent 10%);
-  
-    background-color: #000000;
-height: 90vh;
-width: 120%;
-
+  background-color: #18981D;
+//background-repeat: no-repeat;
+height: 110vh;
+position: relative;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+//border: solid 3px #000;
+//width: 120%;
+z-index: 1;
+.aws-btn {
+  --button-primary-color: #3B13A8;
 }
+}
+
+.hero_backdrop{
+  background:linear-gradient(0deg,#000,transparent 90%);
+  //background-color: #fff;      
+    position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index:2;
+  opacity: .4;
+}
+
 .hero-image{
 
-  background-image: url(/images/njpd-hero-img.png); 
-  background-size: 650px;
+  background-image: url(/images/hero_final3.png); 
+  background-size: contain;
   background-repeat :no-repeat;
-  background-position: right center;
+  background-position: center bottom;
   position: fixed;
-  top: 0;
+  top: 60px;
   bottom: 0px;
-  left: 0px;
+  left: 0;
   right: 0px;
+  z-index: 3;
 }
 .hero-slogans{
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   position: relative !important;
-  height: 100%;
-  margin-top: 40px;
-  width:'50%';
-  padding-left: 100px;
+  z-index: 5;
+  height: 90%;
+ // padding-top: 15px;
+ // width:50%;
+  //padding-left: 100px;
+  margin-left: 10%;
   h1{
-    color:#ffffff;
+    //color:#ffffff;
     font-style: italic;
-    font-size: 39px;
+    font-size: 45px;
+    color:#FAFEFF;
     -webkit-text-stroke-width: 1.1px;
-    -webkit-text-stroke-color: #fff;
+    word-spacing: 3px;
+    //padding-bottom: 10px;
+    //-webkit-text-stroke-color: #fff;
   }
   h2{
-    margin-top:-8px;
-    color:#ffffff;
+    margin-top:5px;
+    word-spacing: 3px;
+   //color:#ffffff;
     font-style: italic;
-    font-size: 36px;
+    font-size: 24px;
     -webkit-text-stroke-width: .5px;
-    -webkit-text-stroke-color: #fff;
+    //-webkit-text-stroke-color: #fff;
   }
   h3{
     font-style: italic;
-    font-size: 24px;
+    font-size: 20px;
+    color:#E3E3E4;
   }
   h4{
     font-weight: 450;
+    font-size: 18px;
+    color:#FFE5FF;
   }
   p{
-    color:#FFEF0F;
-    font-size: 24px;
+    color:rgb(255, 210, 25);
+    font-size: 18px;
     font-weight: 550;
     font-style: italic !important;
   }
   label {
     margin-bottom: 0;
     font-weight: 700;
-    font-size: 22px !important;
-    color: #ffffff;
-    text-shadow: -2px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -2px #000000;
+    font-size: 18px !important;
+    //color: #ffffff;
+    color:#fff;
+    //text-shadow: -2px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -2px #000000;
     font-style: normal;
     //text-shadow: 0px 0px 7px #ffffff;
 
