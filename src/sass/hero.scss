@@ -3,7 +3,7 @@
   //background:linear-gradient(20deg,#505050,transparent 10%);
   background-color: #18981D;
 //background-repeat: no-repeat;
-height: 110vh;
+height: 95vh;
 position: relative;
 box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
 //border: solid 3px #000;
@@ -27,14 +27,14 @@ z-index: 1;
 .hero-image{
 
   background-image: url(/images/hero_final3.png); 
-  background-size: contain;
+  background-size: 800px;
   background-repeat :no-repeat;
-  background-position: center bottom;
+  background-position: center center;
   position: fixed;
-  top: 60px;
-  bottom: 0px;
+  top: 0px;
+  bottom: 60px;
   left: 0;
-  right: 0px;
+  right: 10px;
   z-index: 3;
 }
 .hero-slogans{
@@ -52,10 +52,11 @@ z-index: 1;
   h1{
     //color:#ffffff;
     font-style: italic;
-    font-size: 45px;
+    font-size: 42px;
     color:#FAFEFF;
     -webkit-text-stroke-width: 1.1px;
     word-spacing: 3px;
+    text-shadow: .1em .1em 0 #102A43;
     //padding-bottom: 10px;
     //-webkit-text-stroke-color: #fff;
   }
@@ -99,4 +100,30 @@ z-index: 1;
 
     }
   }
+}
+.hero_main_text{
+  display:flex;
+  flex-direction:row;
+  position: fixed;
+  top: 22%;
+  right: 37%;
+
+}
+.hero_btn{
+  position: fixed;
+  bottom: 40%;
+  right: 40%;
+  z-index: 0;
+}
+.hero_reviews{
+  display:flex;
+  flex-direction: column;
+  position: fixed;
+  bottom:25%;
+  right:78%;
+}
+.hero_type{
+  position: fixed;
+  top:19%;
+  left:45%;
 }

@@ -76,7 +76,7 @@ function Pricebox(priceboxItem) {
             key="modal"
                 style={{
                     width: '100%',
-                    height: '350px',
+                    height: '100%',
                     borderRadius: 10,
                     //position:'relative',
                     zIndex:'26',
@@ -99,28 +99,15 @@ function Pricebox(priceboxItem) {
 </AnimatePresence >
 
  <div style={{display:'flex', flexDirection:'column'}}>
- <div className='pricebox_img' style={{height:'250px', display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#E6E6FF'}}>
+ <div className='pricebox_img' style={{height:'200px', display:'flex', alignItems:'center', justifyContent:'center', backgroundColor:'#E6E6FF'}}>
       
- <motion.img style={{width:'40%'}} whileHover={{ scale: 1.1 }} src={image} alt=''/>
+ <motion.img style={{width:'auto', maxHeight:'130px'}} whileHover={{ scale: 1.1 }} src={image} alt=''/>
  </div>
 
 
    <div className='swiper-content'>
      <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
-   <motion.div style={{marginBottom:'5px', display:'flex', flexDirection:'row', justifyContent:'space-between'}} initial={{scale:0}}
-  whileInView={{scale:1}}
-  viewport={{ once: true }} transition={{ duration: .5, type:'spring'}} className='pricebox-strain'>
-      <p>{strain}</p>
-  </motion.div>
-
-  <div style={{display:'flex', flexDirection:'row',marginTop:'0px'}}>
-<medium>$</medium>
-<h3>{price}</h3>
-
-</div>
-</div>
-
-   <div style={{display:'flex'}}>
+     <div style={{display:'flex'}}>
 <motion.h2  initial={{scale:0}}
   whileInView={{scale:1}}
   viewport={{ once: true }} transition={{ duration: .5, type:'spring', delay:.3}}  style={{
@@ -128,20 +115,30 @@ function Pricebox(priceboxItem) {
        }}>{name}</motion.h2>
       
        </div>
+   <motion.div style={{marginBottom:'5px', display:'flex', flexDirection:'row', justifyContent:'space-between'}} initial={{scale:0}}
+  whileInView={{scale:1}}
+  viewport={{ once: true }} transition={{ duration: .5, type:'spring'}} className='pricebox-strain'>
+      <p>{strain}</p>
+  </motion.div>
 
+ 
+</div>
+
+ 
+<p style={{whiteSpace:'nowrap'}}>{quantity} </p>
 
 
    
-<div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
-<div style={{display:'flex', flexDirection:'column',}}>
-    <p style={{whiteSpace:'nowrap'}}>{quantity} </p>
+<div style={{display:'flex', flexDirection:'row', justifyContent:'space-between', alignItems:'center', marginTop:'12px'}}>
+
+    
     <motion.div  style={{marginTop:'-10px'}}>
 <Button variant="plain" style={{color:'#486581'}} onClick={() => setVisible(!isVisible)} >
 Learn more
      </Button>
 
             </motion.div>
-    </div>
+    
 
     <motion.div 
   whileInView={{  scale:1}}
@@ -162,7 +159,7 @@ Learn more
         <Button  onClick={addToBasket} variant="solid" sx={{backgroundColor:'#1D0EBE', color:'#fff', marginTop:'-10px'}}>
           
   
-      <AddShoppingCartIcon  style={{ fontSize:'20px' }}/><h4>add to cart</h4>
+      ${price} <AddShoppingCartIcon  style={{ fontSize:'15px' }}/>
     
       </Button>
       </motion.div>
@@ -171,11 +168,11 @@ Learn more
   {/*<div style={{}}>
   <Rating name="no-value" precision={0.5} value={null} /> 
    </div>*/}
-  
+  </div>
 
          
             </div>
-</div>
+
      
        
     

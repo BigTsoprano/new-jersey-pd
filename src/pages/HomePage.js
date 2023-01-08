@@ -53,6 +53,9 @@ return (
     <Element name='section-steps'>
     <Steps/>
     </Element>
+    <Element name='section-product'>
+        <Products/>
+    </Element>
     <Element name='section-category'>
       <Category/>
       </Element>
@@ -62,9 +65,7 @@ return (
         <CubeProducts/>
     </Element>*/}
 
-    <Element name='section-product'>
-        <Products/>
-    </Element>
+   
     <Element name='section-accordions'>
       <Accordions/>
     </Element>

@@ -23,8 +23,8 @@ function Products() {
   return (
 
     <div className='product-section' >
-        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'32px', textAlign:'center', color:'#102A43'}} >
-            WEED RECOMMEND
+        <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'24px', textAlign:'center', color:'#102A43'}} >
+            Best sellers weed recommend
         </motion.h1>
     <motion.div  className='products'>
        
@@ -32,11 +32,11 @@ function Products() {
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-     
+        spaceBetween={20}
         coverflowEffect={{
-          rotate: 50,
+          rotate: 30,
           stretch: 0,
-          depth: 100,
+          depth: 150,
           modifier: 1,
           slideShadows: false,
           
@@ -49,15 +49,15 @@ function Products() {
         className="mySwiper"
         breakpoints={{
           640: {
-            slidesPerView: 1,
+            slidesPerView: 3,
           
           },
           768: {
-            slidesPerView: 1,
+            slidesPerView: 3,
            
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             
           }
         }}
@@ -86,46 +86,51 @@ function Products() {
             price={12.99}
             image='grand_d.png'
             strain='sativa'
-            quantity='1/4'
+            quantity='1/4 or 7 grams'
 
             />
         </SwiperSlide>
         <SwiperSlide style={{}}>
         <Pricebox
-            name='this is other title'
+            name='Gummies'
             price={12.99}
-            image='sour_diesel.png'
+            image='nj_gummies.png'
             strain='indica'
+            quantity='pack of 20'
             />        </SwiperSlide>
         <SwiperSlide 
        >
         <Pricebox
-            name='this is other title'
+            name='Vape cart'
             price={12.99}
-            image='sour_diesel.png'
+            image='vape_cart.png'
             strain='hybrid'
+            quantity='one gram'
             />        </SwiperSlide>
         <SwiperSlide 
        >
         <Pricebox
-            name='this is other title'
+            name='House mix'
             price={12.99}
-            image='sour_diesel.png'
+            image='house_bud.png'
             strain='sativa'
+            quantity='7 grams'
             />        </SwiperSlide>
         <SwiperSlide >
         <Pricebox
-            name='this is other title'
+            name='Punch bar'
             price={12.99}
-            image='sour_diesel.png'
+            image='punch_bar.png'
             strain='sativa'
+            quantity='one bar'
             />        </SwiperSlide>
         <SwiperSlide >
         <Pricebox
-            name='this is other title'
+            name='Pre rolls pack'
             price={12.99}
-            image='sour_diesel.png'
+            image='nj_joint.png'
             strain='sativa'
+            quantity='5 one grams per pack'
             />        </SwiperSlide>
         <SwiperSlide >
         <Pricebox
@@ -160,7 +165,7 @@ function Products() {
 <Button size='lg'  style={{
         backgroundColor:'#D9E2EC',
         fontStyle:'italic',
-        fontSize:'20px',
+        fontSize:'18px',
         color:'#102A43',
         boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px'
       }}   variant='soft'>

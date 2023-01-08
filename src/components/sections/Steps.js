@@ -15,7 +15,7 @@ function Steps() {
         <div style={{display:'flex', flexDirection:'column'}}>
         <div className='steps_title' style={{}}>
    <div className='easy_steps'>
-        <h3>EASY steps for delivery</h3>
+        <h3>Easy steps for delivery</h3>
         </div>
       
         
@@ -36,7 +36,7 @@ function Steps() {
         
                 
                 <div>
-              <h5 style={{fontStyle:'italic', textAlign:'left', paddingBottom:'5px'}}> ADD TO CART</h5>
+              <h5 style={{fontStyle:'italic', textAlign:'left', paddingBottom:'5px'}}> Add to cart</h5>
               <p>Browse our online store and select your product for cart. cart will be reset if user reloads or closes the application</p>
               </div>
             {/*<p style={{paddingTop:'9px'}}>Explore and browse our store for your favorite cannabis products in every categlory</p>*/}
@@ -49,7 +49,7 @@ function Steps() {
             <motion.div className='steps_icon' >
 <CreditScoreOutlinedIcon style={{paddingRight:'12px',color:'#334E68'}}/>
              <div style={{display:'flex', flexDirection:'column'}}>
-              <h5 style={{fontStyle:'italic',textAlign:'left',paddingBottom:'5px'}}>CHECKOUT</h5>
+              <h5 style={{fontStyle:'italic',textAlign:'left',paddingBottom:'5px'}}>Checkout</h5>
               <p>Click checkout button and fill forms to checkout. Payment menu will be prompt and select pick up or delivery</p>
               </div>
             </motion.div>
@@ -64,7 +64,7 @@ function Steps() {
    
             <div style={{display:'flex', flexDirection:'column'}}>
                     <h5 style={{fontStyle:'italic', textAlign:'left',paddingBottom:'5px'}}>
-                        DELIVERIED</h5>
+                        Delivered</h5>
                         <p>Congrats! you have completed the nessesary forms and payment has been processes. Your order will be processed and deliveried within 24hrs</p>
                         </div>
                         </motion.div>

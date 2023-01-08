@@ -65,7 +65,7 @@ function UserdataForm() {
   return (
       <Box onSubmit={handleSubmit}
 >
-    <div className='checkout-item' style={{margin:'0 25%', }} >
+    <div className='checkout-item' style={{ }} >
 
     <div className="checkout__left">
          {basket?.length === 0 ? (
@@ -77,14 +77,9 @@ function UserdataForm() {
       
         <div className='checkout-swiper' >
 {/*<Slider  {...settings} >*/}
-<Swiper
-slidesPerView={2}
-spaceBetween={30}
-
-className="mySwiper"
->
         {basket.map(item => (
-<SwiperSlide>
+<div style={{}}>
+
            
             <CheckoutProduct 
             name={item.name}
@@ -96,16 +91,43 @@ className="mySwiper"
                 />
                 
             
-         </SwiperSlide>
+      
+                </div>
                 ))}
+                <div style={{
+            marginTop:'15px',
+            
+                display:'flex', 
+                flexDirection:'column', 
+                justifyContent:'center', 
+                alignItems:'center'
+            }} 
+            className='sub_pay'>
+
+        {basket.length > 0 && (
+                
+                <div 
+                    className="checkout__right">
+
+                    <div className='subtotal-checkout'>
+                    <Subtotal />
+                    </div>
+
+
+  
+                
+     
+                    </div>
+            )}              
+
+</div>
                 {/*</Slider>*/}
-                </Swiper>
         </div>
         
     )}
 </div>
 
-<div style={{display:'flex', flexDirection:'column', backgroundColor:'#F7F7F8', padding:'20px'  }}>
+<div style={{display:'flex', flexDirection:'column', backgroundColor:'#F0F4F8', padding:'20px', borderRadius:'20px'  }}>
 <h2 style={{paddingBottom:'20px',fontSize:'18px'}}>fill this form!</h2>
 <Box
 
@@ -177,33 +199,7 @@ value={notes}
 </Box>
 </div>
 
-<div style={{
-            marginTop:'15px',
-            
-                display:'flex', 
-                flexDirection:'column', 
-                justifyContent:'center', 
-                alignItems:'center'
-            }} 
-            className='sub_pay'>
 
-        {basket.length > 0 && (
-                
-                <div 
-                    className="checkout__right">
-
-                    <div className='subtotal-checkout'>
-                    <Subtotal />
-                    </div>
-
-
-  
-                
-     
-                    </div>
-            )}              
-
-</div>
 
 </div>
 </Box>

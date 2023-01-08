@@ -29,7 +29,13 @@ function Category() {
 
 
 
+  const [, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
   const [products1, setProducts1] = useState(null)
+  const [allProducts, setAllProducts] = useState(null)
+  const [sativa, setSativa] = useState(null)
+  const [indica, setIndica] = useState(null)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -38,17 +44,37 @@ function Category() {
 
       if (response.ok) {
         setProducts1(json)
+        setAllProducts(json)
+        setSativa(json.filter((product) => {
+          return product.strain == 'sativa'
+        }))
+        setIndica(json.filter((product) => {
+          return product.strain == 'indica'
+        }))
+        console.log(products1)
       }
     }
 
     fetchProducts()
   }, [])
-  const renderProducts = () => {
-    return 
+  
+  const showAllProducts = () => {
+    setProducts1(allProducts)
+    forceUpdate()
   }
+
+  const showSativa = () => {
+    setProducts1(sativa)
+    forceUpdate()
+  }
+
+  const showIndica = () => {
+    setProducts1(indica)
+  }
+
   return (
     <div className='category_section'>
-      <h1>PRODUCT FILTER</h1>
+      <h1>Quickly browse through a variety of products</h1>
     
       <motion.div
  
@@ -117,7 +143,7 @@ function Category() {
         [`& .${radioClasses.checked}`]: {
           [`& .${radioClasses.action}`]: {
             inset: -1,
-            border: '4px solid #0081EB'
+           // border: '4px solid #0081EB'
             
           },
         },
@@ -145,7 +171,7 @@ function Category() {
        bgcolor: '#E12D39',
       border:'none',
 
-       boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px',
+       boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
        display: 'flex',
        flexDirection: 'column',
        alignItems: 'center',
@@ -156,9 +182,9 @@ function Category() {
      }}
      
    >
-     <Radio value='All' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}}  />} />
-     <StorefrontIcon variant="soft" sx={{ color:'#000' }} />
-     <FormLabel ><h3>View all</h3></FormLabel>
+     <Radio onClick={() => showAllProducts()} value='All' checkedIcon={<CheckCircleRoundedIcon style={{color:'#18981D', backgroundColor:'#ffffff'}}  />} />
+     <StorefrontIcon variant="soft" sx={{ color:'#0C008C' }} />
+     <FormLabel ><h3>view all</h3></FormLabel>
    </Sheet>
         <Sheet
           variant="outlined"
@@ -178,15 +204,15 @@ function Category() {
             flexDirection:'column'
           }}
         >
-          <Radio value='Flowers' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
-          <SpaIcon variant="soft" sx={{ color:'#33EB00' }} />
-          <FormLabel ><h3>Flowers</h3></FormLabel>
+          <Radio onClick={() => showSativa()} value='Flowers' checkedIcon={<CheckCircleRoundedIcon style={{color:'#18981D', backgroundColor:'#ffffff'}} />} />
+          <SpaIcon variant="soft" sx={{ color:'#51CA58' }} />
+          <FormLabel ><h3>flowers</h3></FormLabel>
         </Sheet>
         <Sheet
      
      variant="outlined"
      sx={{
-       borderRadius: '0px',
+       borderRadius: '5px',
        bgcolor: '#E12D39',
       border:'none',
        boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
@@ -199,15 +225,15 @@ function Category() {
        maxHeight: 60
      }}
    >
-     <Radio value='Edibles' checkedIcon={<CheckCircleRoundedIcon  style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
-     <CookieIcon variant="soft" sx={{  color:'#EBB800' }} />
-     <FormLabel ><h3>Edibles</h3></FormLabel>
+     <Radio value='Edibles' checkedIcon={<CheckCircleRoundedIcon  style={{color:'#18981D', backgroundColor:'#ffffff'}} />} />
+     <CookieIcon variant="soft" sx={{  color:'#F7C948' }} />
+     <FormLabel ><h3>edibles</h3></FormLabel>
    </Sheet>
    <Sheet
      
-     variant="outlined"
+     variant="solid"
      sx={{
-       borderRadius: '0px',
+       borderRadius: '5px',
        bgcolor: '#E12D39',
       
        boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
@@ -221,15 +247,15 @@ function Category() {
        maxHeight: 60
      }}
    >
-     <Radio value='Concentrates' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}} />} />
-     <InvertColorsIcon variant="soft" sx={{  color:'#D61EFF' }} />
-     <FormLabel ><h3>Concentrates</h3></FormLabel>
+     <Radio value='Concentrates' checkedIcon={<CheckCircleRoundedIcon style={{color:'#18981D', backgroundColor:'#ffffff'}} />} />
+     <InvertColorsIcon variant="soft" sx={{  color:'#A2A5FC' }} />
+     <FormLabel ><h3>concentrates</h3></FormLabel>
    </Sheet>
    <Sheet
      
-     variant="outlined"
+     variant="solid"
      sx={{
-       borderRadius: '0px',
+       borderRadius: '5px',
        bgcolor: '#E12D39',
 
        boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
@@ -242,9 +268,9 @@ function Category() {
        maxHeight: 60
      }}
    >
-     <Radio value='Other' checkedIcon={<CheckCircleRoundedIcon style={{color:'#0081EB', backgroundColor:'#ffffff'}}/>} />
-     <CategoryIcon variant="soft" sx={{  color:'#00EBB8' }} />
-     <FormLabel onClick={{}} ><h3>Other</h3></FormLabel>
+     <Radio value='Other' checkedIcon={<CheckCircleRoundedIcon style={{color:'#18981D', backgroundColor:'#ffffff'}}/>} />
+     <CategoryIcon variant="soft" sx={{  color:'#8EEDC7' }} />
+     <FormLabel onClick={{}} ><h3>other</h3></FormLabel>
    </Sheet>
   
     

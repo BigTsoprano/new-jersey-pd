@@ -18,7 +18,7 @@ and (orientation: landscape) {
 /* For Mobile Phones Portrait or Landscape View */
 @media screen and (max-device-width: 640px) {
     .hero-section{
-        height:65vh;
+        height:55vh;
         width: 100%;
         h1{
         margin-left: 0px;
@@ -28,11 +28,13 @@ and (orientation: landscape) {
     }
     }
 .hero-image{
-    background-position: 120px 180px;
-    background-size: 350px;
+    background-position: -20px 80px;
+    background-size: 450px;
 }
 .hero_btn{
-    margin:0 auto;
+bottom:58%;
+white-space: nowrap;
+right:15%;
 }
 .hero-slogans{
     z-index: 999;
@@ -40,7 +42,7 @@ and (orientation: landscape) {
     flex-direction: column;
    // margin: 0 -80px;
   margin: 40px 30px;
-    padding-left: 0px;
+  margin-left:20%;
     h1{
         font-size: 26px;
     }
@@ -55,47 +57,45 @@ and (orientation: landscape) {
         --button-horizontal-padding: 23px;
          }
 }
+.hero_main_text{
+    right:20%;
+    top:18%;
+}
+.hero_type{
+    top:15%;
+}
 
 
- .steps_section{
-     height:40vh;
-     justify-content: center;
-     padding: 0px 30px;
-     p{
-        margin-top: 10px;
-     }
- }
- .steps_wrapper{
-     display:flex;
-     flex-direction: column;
-     align-items: flex-start;
-     margin-top: 10px;
-     //margin:0 5px;
- }
- .steps_wrap{
-    // flex-direction: column !important;
-    padding-left: 0 !important;
-    margin-top: 30px;
- }
- .step_three{
-     //margin-right: 40px;
- }
- .steps_icon{
-     display: flex;
-     justify-content: space-evenly;
- }
+
  .banner-wrap{
-    height: 45vh;
- 
-   background-position: 0px 50px;
-   background-size: cover;
+   // height: 45vh;
+ width:100%;
+ display: flex;
+ background-position: 0px 50px;
+ justify-content: center;
+ right:90px;
+  
+}
+.banner_img{
+   // background-position: 0px 50px !important;
+   // background-size: cover;
+   left:80%;
+   img{
+      // width:220px !important;
+   }
 }
 .banner{
   // margin:0 20px;
-    padding-bottom: 10px !important;
-   justify-content: center;
-   display:flex;
-   margin: 0px 30px; 
+   // padding-bottom: 10px !important;
+   //justify-content: center;
+  // display:flex;
+  // margin: 0px 30px; 
+  padding: 30px;
+  margin: 0 auto;
+  right:8%;
+  //text-align: center;
+ // width:100%;
+ //left: 13%;
 
     h3{
         font-size: 26px;
@@ -120,6 +120,13 @@ and (orientation: landscape) {
     margin-left: 0px !important;
     
      }
+}
+.steps_wrapper{
+    justify-content: center;
+    flex-direction: column;
+    img{
+        height:auto;
+    }
 }
 .products{
     .swiper{
@@ -176,5 +183,17 @@ justify-content: center;
 }
 .footer_two_group{
     padding-top:30px;
+}
+.bye_wrapper{
+    width:330px;
+    //justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    h1{
+        font-size: 18px !important;
+    }
+}
+.bye_banner_button{
+white-space: nowrap;
 }
 }

@@ -114,9 +114,9 @@ function NavBar(props) {
   transition={{duration: .5, type:'spring', stiffness: 50}}
   className='navbar-title'>
           <h4 >
-             NewJersey
+             newjersey
           </h4>
-          <p>PotDelivery</p>
+          <p>potdelivery</p>
           </motion.div>
         </Typography>
         <motion.div 	     

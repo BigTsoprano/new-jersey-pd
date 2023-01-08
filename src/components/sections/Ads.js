@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+import Button from '@mui/joy/Button';
+
 
 function Ads() {
 
@@ -12,9 +12,9 @@ function Ads() {
         <motion.div viewport={{once:false}} initial={{x:'-10vw'}}   whileInView={{x:0}}
   transition={{ type: 'tween', duration: .4, delay: .3 }}   className='ads_two'>
     <motion.div className='ads_two_button'> 
-    <AwesomeButton  type='primary' >
+    <Button style={{backgroundColor:'#1D0EBE', color:'#fff'}} variant='solid' size='lg' >
   <h3 style={{fontStyle:'italic', whiteSpace:'nowrap', fontSize:'18px'}}>ORDER DELIVERY</h3>
-</AwesomeButton></motion.div></motion.div> 
+</Button></motion.div></motion.div> 
         <motion.div 
         initial={{x:'10vw'}} 
   whileInView={{x:0}}

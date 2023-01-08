@@ -9,17 +9,18 @@ const {name, review} = reviewItem;
 
   return (
     <div className='reviewbox'>
-        <div className='review_avatar'>
-        <Avatar src='review_1.png' />
+        <div className='review_description'>
+          <h2 style={{fontSize:'45px', color:'#334E68'}}>"</h2>
+        <p >{review}</p>
         </div>
-        <div className='review_name'>
+
+        <div style={{display:'flex', flexDirection:'row', alignItems:'center',justifyContent:'flex-start'}} className='review_name_avatar'>
+        <Avatar size='sm' src='review_1.png' />
         <h2>{name}</h2>
         </div>
-        <div className='review_description'>
-        <p>{review}</p>
-        </div>
+      
         <div className='review_stars'>
-        <Rating name="size-medium" defaultValue={5} />
+        <Rating size='small' name="size-small" defaultValue={5} />
         </div>
     </div>
   )

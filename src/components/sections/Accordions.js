@@ -130,17 +130,17 @@ function Accordions() {
     <div  className='q-a'>
     <div className="faq_container">
       <motion.div in={open} onClick={handleOpen} onChange={handleClose}  whileHover={{ scale: 1.0 }} >
-      <motion.div initial={{x:'-90vw'}} 
+      <motion.div initial={{x:'-20vw'}} 
         viewport={{once:false}}
         whileInView={{x:0}}
         transition={{duration:.4, type:'spring', delay:.1, stiffness: 50}}
         className='bye_wrapper'>
         <div className='bye_banner_wrap'>
-            <h1 style={{fontSize:'24px'}}>Have questions?! We got answers!</h1>
+            <h1 style={{fontSize:'24px', color:'#102A43', fontStyle:'italic'}}>Have questions?! We got answers!</h1>
             </div>
             <div className='bye_banner_button'>
-<Button style={{backgroundColor:'#1D0EBE'}} size='lg' variant="solid" onClick={handleClick}>
-    <h3>LEARN MORE</h3>
+<Button style={{backgroundColor:'#1D0EBE', fontStyle:'italic', fontSize:'20px', color:'#fff'}} size='lg' variant="solid" onClick={handleClick}>
+   Learn more
 </Button>
            
         </div>
