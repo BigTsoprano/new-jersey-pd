@@ -39,7 +39,7 @@ return (
 
 {/*<Carticon/>*/}
 
-<NavBar/>
+<NavBar />
 
     <Element name='section-home'>
       <ReactCursorPosition>

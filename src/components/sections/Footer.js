@@ -7,8 +7,8 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import EmailIcon from '@mui/icons-material/Email';
 import TextField from '@mui/joy/TextField';
 import { motion } from 'framer-motion';
-import { AwesomeButton } from 'react-awesome-button';
-import 'react-awesome-button/dist/styles.css';
+import Button from '@mui/joy/Button';
+
 
 function Footer() {
   return (
@@ -17,33 +17,33 @@ function Footer() {
       <div className='footer_three_sections'>
         <div className='footer_one'>
           <div className='footer_title'>
-          <h3>NewJersey</h3><h4>POTDELIVERY</h4>
+          <h3>newjersey</h3><h4>potdelivery</h4>
           </div>
           <div>
-            <IconButton><FacebookIcon style={{color:'#ffffff'}}/></IconButton>
-            <IconButton><InstagramIcon style={{color:'#ffffff'}}/></IconButton>
-            <IconButton><TwitterIcon style={{color:'#ffffff'}}/></IconButton>
-            <IconButton><YouTubeIcon style={{color:'#ffffff'}}/></IconButton>
+            <IconButton><FacebookIcon style={{color:'#F0F4F8'}}/></IconButton>
+            <IconButton><InstagramIcon style={{color:'#F0F4F8'}}/></IconButton>
+            <IconButton><TwitterIcon style={{color:'#F0F4F8'}}/></IconButton>
+            <IconButton><YouTubeIcon style={{color:'#F0F4F8'}}/></IconButton>
             </div>
         </div>
         <div className='footer_two'>
           <div className='footer_two_group'>
             <div className='footer_resource'>
-              <h5>RESOURCES</h5>
+              <h5>Resources</h5>
               <ul>
-                <li>HOME</li>
-                <li>ABOUT US</li>
-                <li>ALL PRODUCTS</li>
-                <li>FAQ</li>
-                <li>TERMS AND CONDITIONS</li>
+                <li>Home</li>
+                <li>About us</li>
+                <li>All products</li>
+                <li>Faq</li>
+                <li>Terms and conditions</li>
               </ul>
               </div>
               <div className='footer_contact'>
-                <h5>CONTACT</h5>
+                <h5>Contact</h5>
                 <ul>
                   <li>(201)328-7539</li>
                   <li>support@newjerseypd.com</li>
-                  <li>LOGIN/SIGNUP</li>
+                  <li>Login/signup</li>
                 </ul>
               </div>
           </div>
@@ -55,9 +55,9 @@ function Footer() {
             <EmailIcon/> 
             <TextField label="Stay up to date with our specials!" size="md" placeholder="Enter email address" variant="outlined" sx={{  width:'100%' }}/>
             </div>
-    <AwesomeButton style={{ backgroundColor:'#009B4E', borderRadius:'40px'}} variant="contained" >
-  <h3 style={{ fontStyle:'italic'}}>CLICK TO SIGN UP</h3>
-</AwesomeButton>
+    <Button size='sm' style={{ backgroundColor:'#1D0EBE', borderRadius:'5px', fontStyle:'italic', fontSize:'14px', color:'#F0F4F8', marginLeft:'30px',boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px'}} variant="contained" >
+  CLICK TO SIGN UP
+</Button>
     </div>
             </div>
       </div>

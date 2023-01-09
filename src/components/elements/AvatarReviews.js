@@ -52,7 +52,7 @@ export default function GroupedAvatars() {
       <Avatar  style={{ boxShadow:'3px 3px 0 #000'}} key={avatar.alt} {...avatar} /> 
       ))}
 
-      {!!surplus && <Avatar  style={{ boxShadow:'3px 3px 0 #000',marginLeft:'-5px',fontSize:'18px', backgroundColor:'rgb(255, 210, 25)', fontWeight:'550'}}>{surplus}+</Avatar>}
+      {!!surplus && <Avatar  style={{ boxShadow:'3px 3px 0 #102A43',marginLeft:'-5px',fontSize:'18px', backgroundColor:'#BCCCDC', fontWeight:'550'}}>{surplus}+</Avatar>}
     </AvatarGroup>
   );
 }

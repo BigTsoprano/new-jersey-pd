@@ -58,9 +58,14 @@ function NavBar(props) {
     boxShadow: 'none !important',
     transition: 'top 0.3s',
     top:'0',
+      right:'0',
     height:'10vh',
+    width: '-webkit-fill-available',
+    borderBottom:'solid 1px #102A43',
     // Override media queries injected by theme.mixins.toolbar
     background:'#18981D',
+    zIndex:'999', 
+ 
     '@media all': {
      
      // boxShadow: '0 10px 50px 0 rgb(63 2 176 / 40%)',
@@ -86,13 +91,14 @@ function NavBar(props) {
     <HideOnScroll>
   
 
-    <AppBar  style={{position:'fixed',
-       width: '-webkit-fill-available',
+    <AppBar  style={{
+       position:'fixed',
        //margin: '0 90px',
-        zIndex:'999', 
-        //boxShadow:'5px 5px 0 #000000',
+       background:'#18981D',
         
-        borderBottom:'solid 1px #000',
+        //boxShadow:'5px 5px 0 #000000',
+       
+       
 
       
         }}    elevation={0}

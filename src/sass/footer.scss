@@ -2,7 +2,7 @@
     height: 55vh;
     position: relative;
     font-family: futura-pt, sans-serif;
-border-top: solid 5px #000;
+border-top: solid 2px #102A43;
     background-color: rgb(255, 210, 25);
     //background:linear-gradient(180deg,#292929,transparent 100%);
     //background:linear-gradient(20deg,#505050,transparent 10%);
@@ -28,14 +28,14 @@ border-top: solid 5px #000;
         padding-top: 5px;
         font-weight: 550;
         font-style: italic;
-        color:#fff;
+        color:#F0F4F8;
         font-size: 14px;
 
     }
     h5{
         font-size: 16px;
         font-style: italic;
-        color:#fff;
+        color:#F0F4F8;
     }
     
 }
@@ -54,31 +54,17 @@ border-top: solid 5px #000;
 }
 .footer_contact{
     margin: 0 0 0 20px;
-    color:#fff;
+    color:#F0F4F8;
 }
 .footer_special{
    // margin-top: 0px;
 
-   color:#fff;
+   color:#F0F4F8;
    h3{
-    color:#fff;
+    color:#F0F4F8;
     font-size: 12px;
    }
-    .aws-btn {
-        --button-default-height: 38px;
-       // --button-default-font-size: 24px;
-        --button-default-border-radius: 10px;
-        --button-horizontal-padding: 12px;
-        --button-raise-level: 6px;
-        --button-hover-pressure: 1.25;
-        --transform-speed: 0.15s;
-        --button-primary-color: #3B13A8;
-        --button-primary-color-dark: #181818;
-        --button-primary-color-light: #000000;
-        --button-primary-color-hover: #009b4e;
-        --button-primary-color-active: #009b4e;
-        --button-primary-border: 3px solid transparent;
-    }
+   
 }
 .footer_title{
     display: flex;
@@ -88,6 +74,6 @@ border-top: solid 5px #000;
     }
     h4{
         font-style: italic;
-        color:#fff;
+        color:#F0F4F8;
     }
 }

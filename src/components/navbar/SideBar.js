@@ -16,7 +16,9 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 const MyBox = styled(Box)({    
         backgroundColor: '#F7C948',
         height: '100vh',
-        overflow:'auto',
+        overflow:'hidden',
+        
+        
        
 });
 

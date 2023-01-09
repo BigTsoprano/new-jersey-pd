@@ -133,7 +133,7 @@ function Pricebox(priceboxItem) {
 
     
     <motion.div  style={{marginTop:'-10px'}}>
-<Button variant="plain" style={{color:'#486581'}} onClick={() => setVisible(!isVisible)} >
+<Button variant="plain" style={{color:'#3525E6'}} onClick={() => setVisible(!isVisible)} >
 Learn more
      </Button>
 
@@ -156,7 +156,7 @@ Learn more
  
        
         
-        <Button  onClick={addToBasket} variant="solid" sx={{backgroundColor:'#1D0EBE', color:'#fff', marginTop:'-10px'}}>
+        <Button size='md' onClick={addToBasket} variant="solid" sx={{backgroundColor:'#C4C6FF', color:'#102A43', marginTop:'-10px'}}>
           
   
       ${price} <AddShoppingCartIcon  style={{ fontSize:'15px' }}/>

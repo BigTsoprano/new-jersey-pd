@@ -39,7 +39,7 @@ function Herobox() {
 
        
         <motion.div whileHover={{scale:1.05}} whileTap={{scale:1}} className='hero_btn' style={{}}>
-       <Button size="lg" variant='solid' style={{backgroundColor:'#1D0EBE', color:'#fff',        boxShadow:' rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px', fontSize:'20px',  fontStyle:'italic'}} >
+       <Button size="lg" variant='solid' style={{backgroundColor:'#1D0EBE', color:'#F0F4F8',        boxShadow:' rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px', fontSize:'20px',  fontStyle:'italic'}} >
          Order delivery now
          </Button>
       </motion.div>
