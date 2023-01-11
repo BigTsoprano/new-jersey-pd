@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^5.3.4",
     "react-router-link": "^2.0.2",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.8",
     "react-switch": "^7.0.0",
     "react-typed": "^1.2.0",
