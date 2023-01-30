@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 //import { Pagination } from "swiper";
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import SpaIcon from '@mui/icons-material/Spa';
@@ -10,11 +10,11 @@ import CookieIcon from '@mui/icons-material/Cookie';
 import InvertColorsIcon from '@mui/icons-material/InvertColors';
 import CategoryIcon from '@mui/icons-material/Category';
 import { motion } from 'framer-motion';
-import LinearProgress from '@mui/material/LinearProgress';
+//import LinearProgress from '@mui/material/LinearProgress';
 import Pricebox from '../elements/Pricebox';
 //import { useFetch } from '../../hooks/useFetch';
-import { AwesomeButton } from "react-awesome-button";
-import Avatar from '@mui/joy/Avatar';
+//import { AwesomeButton } from "react-awesome-button";
+//import Avatar from '@mui/joy/Avatar';
 import FormLabel from '@mui/joy/FormLabel';
 import Radio, { radioClasses } from '@mui/joy/Radio';
 import RadioGroup from '@mui/joy/RadioGroup';
@@ -287,11 +287,11 @@ function Category() {
         loop={true}
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
             spaceBetween: 20
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 40
           },
           1024: {
@@ -305,7 +305,7 @@ function Category() {
           {products1 && products1.map((product) => 
            
         <SwiperSlide>  
-           <div className='products-box2' >
+           <div className='products-box2'  style={{borderRadius:'10px'}}>
            <Pricebox 
              key={product.id}
             name={product.name}

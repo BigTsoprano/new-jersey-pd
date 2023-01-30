@@ -15,22 +15,12 @@ class Gmaps extends Component{
   return (
     <div className='gmap_section'>
         
-        <div className='maps_content'>
-          
-        <div className='gmap_hours'>
-          <h1>Our store hours, online orders are available 24hrs</h1>
-          <ul>
-            <li><AccessTimeIcon size='sm'/> 9am - 9pm mon-thurs</li>
-            <li><AccessTimeIcon size='sm'/> 9am - 8pm friday</li>
-            <li><AccessTimeIcon size='sm'/> 10am - 7pm saturday</li>
-            <li><AccessTimeIcon size='sm'/> 10am - 5pm sunday</li>
-          </ul>
-        </div>
        
+       <div className='g-wrapper' style={{width:'100%',height:'70%', position:'relative', top:'15%', left:'10%'}}>
         <Map
         className='gmap_map'
         google = {this.props.google}
-        style={{width:'65vh', height:'50vh', display:'flex', margin:'30px 100px', borderRadius:'10px',boxShadow: 'rgba(0, 0, 0, 0.15) 0px 3px 3px 0px'}}
+        style={{ width:'50%', minWidth:'300px', borderRadius:'10px',boxShadow: 'rgba(0, 0, 0, 0.15) 0px 3px 3px 0px'}}
         zoom={10}
         initialCenter={{
           lat: 40.330388,
@@ -54,11 +44,17 @@ class Gmaps extends Component{
           fillOpacity={0.2}
           />
         </Map>
-  
-
-        
         </div>
-      
+        <div className='gmap_hours'>
+          <h1>Our store hours, online orders are available 24hrs</h1>
+          <ul>
+            <li><AccessTimeIcon size='sm'/> 9am - 9pm mon-thurs</li>
+            <li><AccessTimeIcon size='sm'/> 9am - 8pm friday</li>
+            <li><AccessTimeIcon size='sm'/> 10am - 7pm saturday</li>
+            <li><AccessTimeIcon size='sm'/> 10am - 5pm sunday</li>
+          </ul>
+        </div>
+        
         </div>
   )
 }

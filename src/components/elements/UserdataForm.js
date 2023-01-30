@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+//import TextField from '@mui/material/TextField';
 import { useUserdataContext } from '../../hooks/useUserdataContext';
 //mport { Streetview } from '@mui/icons-material';
 import { useStateValue } from "../cart/StateProvider";
 import CheckoutProduct from '../cart/CheckoutProduct';
-import { Swiper, SwiperSlide } from "swiper/react";
+//import { Swiper, SwiperSlide } from "swiper/react";
+import Input from '@mui/joy/Input';
+import Textarea from '@mui/joy/Textarea';
+import ForwardIcon from '@mui/icons-material/Forward';
+
+import Button from '@mui/joy/Button';
+
 import Subtotal from '../cart/Subtotal';
 
 function UserdataForm() {
@@ -127,8 +133,8 @@ function UserdataForm() {
     )}
 </div>
 
-<div style={{display:'flex', flexDirection:'column', backgroundColor:'#F0F4F8', padding:'20px', borderRadius:'20px'  }}>
-<h2 style={{paddingBottom:'20px',fontSize:'18px'}}>fill this form!</h2>
+<div style={{display:'flex', minWidth:'350px', flexDirection:'column', backgroundColor:'#F0F4F8', padding:'0 20px', borderRadius:'5px',boxShadow: 'rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px', marginBottom:'60px', paddingBottom:'12px'  }}>
+<h2 style={{paddingTop:'12px',fontSize:'18px',}}>fill this form!</h2>
 <Box
 
 component="form"
@@ -136,39 +142,41 @@ sx={{ display: 'flex', flexWrap: 'wrap', flexDirection:'column', overflow: 'auto
 noValidate
 autoComplete="on"
 style={{
-
+paddingTop:'20px'
 }}
 >
+<div style={{paddingBottom:'12px'}}>
 
+<Input id="outlined-basic" size='lg' placeholder="full name" variant="outlined"  
 
-<TextField id="outlined-basic" size='sm' label="Full Name" variant="outlined"  
-style={{paddingBottom:'10px'}} 
 onChange={(e) => setTitle(e.target.value) }
 value={title}
 />
+</div>
 
 
 
 
-
-
-<TextField id="outlined-basic" label="Number" variant="outlined" 
+<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', paddingBottom:'12px'}}>
+<Input id="outlined-basic" placeholder='phone #' size='sm' variant="outlined" 
 style={{paddingBottom:'10px'}}   
 onChange={(e) => setNumber(e.target.value) }
 value={number}
 />
-<TextField id="outlined-basic" label="Email" variant="outlined"
+<Input id="outlined-basic" placeholder='email address' size='sm' variant="outlined"
 style={{paddingBottom:'10px'}} 
 onChange={(e) => setEmail(e.target.value)}
 value={email} />
-
-<TextField id="outlined-basic" label="Street" variant="outlined"
+</div>
+<div style={{paddingBottom:'12px'}}>
+<Input id="outlined-basic" placeholder='street address' variant="outlined"
 style={{paddingBottom:'10px'}} 
 onChange={(e) => setStreet(e.target.value)}
 value={street}
 />
-
-<TextField id="outlined-basic" label="Zip code" variant="outlined"
+</div>
+<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around'}}>
+<Input id="outlined-basic" placeholder='zip code' size='sm' variant="outlined"
 style={{paddingBottom:'10px'}}   
 onChange={(e) => setZip(e.target.value)}
 value={zip}
@@ -176,17 +184,15 @@ value={zip}
 
 
 
-<TextField id="outlined-basic" label="County" variant="outlined" 
+<Input id="outlined-basic" placeholder='county' size='sm' variant="outlined" 
 style={{paddingBottom:'10px'}} 
 onChange={(e) => setCounty(e.target.value)}
 value={county}
 />
-
-<TextField
-sx={{ m: 1, width: '45ch' }}
+</div>
+<div style={{padding:'20px 12px'}}>
+<Textarea placeholder="Placeholder" minRows={3} 
 id="outlined-multiline-static"
-label="Additional Notes"
-multiline
 size="large"
 rows={4}
 defaultValue="Leave us a note!"
@@ -194,8 +200,8 @@ onChange={(e) => setNotes(e.target.value)}
 value={notes}
 />
 
-
-<button>add title</button>
+</div>
+<Button variant="solid" style={{backgroundColor:'#1D0EBE', color:'#fff', fontSize:'18px'}}>checkout <ForwardIcon/></Button>
 </Box>
 </div>
 

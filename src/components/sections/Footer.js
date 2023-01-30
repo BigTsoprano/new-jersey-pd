@@ -4,17 +4,34 @@ import IconButton from '@mui/material/IconButton';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import EmailIcon from '@mui/icons-material/Email';
-import TextField from '@mui/joy/TextField';
-import { motion } from 'framer-motion';
-import Button from '@mui/joy/Button';
-
+import FormControl from '@mui/joy/FormControl';
+import FormLabel from '@mui/joy/FormLabel';
+import FormHelperText from '@mui/joy/FormHelperText';
+import Input from '@mui/joy/Input';
+import Button from '@mui/joy/Button'
 
 function Footer() {
+  const [data, setData] = React.useState({
+    email: '',
+    status: 'initial',
+  });
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setData((current) => ({ ...current, status: 'loading' }));
+    try {
+      // Replace timeout with real backend operation
+      setTimeout(() => {
+        setData({ email: '', status: 'sent' });
+      }, 1500);
+    } catch (error) {
+      setData((current) => ({ ...current, status: 'failure' }));
+    }
+  };
   return (
     <div className='footer-section'>
       <div className='footer_backdrop'></div>
-      <div className='footer_three_sections'>
+      <div style={{position:'relative'}} className='footer_three_sections'>
         <div className='footer_one'>
           <div className='footer_title'>
           <h3>newjersey</h3><h4>potdelivery</h4>
@@ -51,13 +68,54 @@ function Footer() {
         <div className='footer_three'>
         
 <div className='footer_special'>
-            <div style={{paddingBottom:'20px', display:'flex', flexDirection:'rox'}} >
-            <EmailIcon/> 
-            <TextField label="Stay up to date with our specials!" size="md" placeholder="Enter email address" variant="outlined" sx={{  width:'100%' }}/>
-            </div>
-    <Button size='sm' style={{ backgroundColor:'#1D0EBE', borderRadius:'5px', fontStyle:'italic', fontSize:'14px', color:'#F0F4F8', marginLeft:'30px',boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px'}} variant="contained" >
-  CLICK TO SIGN UP
-</Button>
+<form onSubmit={handleSubmit} id="demo">
+      <FormControl>
+        <FormLabel
+          sx={(theme) => ({
+            '--FormLabel-color': theme.vars.palette.primary.plainColor,
+          })}
+        >
+         product newsletter
+        </FormLabel>
+        <Input
+          sx={{ '--Input-decorator-childHeight': '45px' }}
+          placeholder="email@email.com"
+          type="email"
+          required
+          value={data.email}
+          onChange={(event) =>
+            setData({ email: event.target.value, status: 'initial' })
+          }
+          error={data.status === 'failure'}
+          endDecorator={
+            <Button
+              variant="solid"
+             
+              loading={data.status === 'loading'}
+              type="submit"
+              sx={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 ,  backgroundColor:"#1D0EBE"}}
+            >
+              Subscribe
+            </Button>
+          }
+        />
+        {data.status === 'failure' && (
+          <FormHelperText
+            sx={(theme) => ({ color: theme.vars.palette.danger[400] })}
+          >
+            Oops! something went wrong, please try again later.
+          </FormHelperText>
+        )}
+
+        {data.status === 'sent' && (
+          <FormHelperText
+            sx={(theme) => ({ color: '#102A43' })}
+          >
+            You are all set!
+          </FormHelperText>
+        )}
+      </FormControl>
+    </form>
     </div>
             </div>
       </div>

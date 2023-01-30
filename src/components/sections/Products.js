@@ -2,7 +2,7 @@ import {Link} from 'react-router-dom';
 import React, { useRef, useState } from "react";
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import Button from '@mui/joy/Button';
-import Stack from '@mui/material/Stack';
+//import Stack from '@mui/material/Stack';
 import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,10 +18,20 @@ import Pricebox from '../elements/Pricebox';
 
 
 function Products() {
-
+  const swiperParameters = {
+    
+    effect: "coverflow",
+    loop: true,
+    
+    centeredSlides: true,
+    slidesPerView: "auto",
+    breakpoints: { 768: {} 
+  },
+ 
+  };
 
   return (
-
+    
     <div className='product-section' >
         <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'24px', textAlign:'center', color:'#102A43'}} >
             Best sellers weed recommend
@@ -29,7 +39,6 @@ function Products() {
     <motion.div  className='products'>
        
 <Swiper
-        effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
         spaceBetween={20}
@@ -42,14 +51,17 @@ function Products() {
           
      
         }}
+        {...swiperParameters}
         loop={true}
-
+        centeredSlides={true}
         pagination={false}
         modules={[EffectCoverflow, Pagination]}
         className="mySwiper"
         breakpoints={{
           640: {
-            slidesPerView: 3,
+            slidesPerView: 'auto',
+            centeredSlides: true,
+         
           
           },
           768: {
@@ -73,7 +85,7 @@ function Products() {
        price={11.99}
        image="sour_diesel.png"
        strain='sativa'
-       quantity='1/8 oz. or 3.5 grams'
+       quantity='3.5 grams'
       thc='18%'
       cbd='0%'
        />
@@ -86,7 +98,7 @@ function Products() {
             price={12.99}
             image='grand_d.png'
             strain='sativa'
-            quantity='1/4 or 7 grams'
+            quantity='7 grams'
 
             />
         </SwiperSlide>
@@ -106,7 +118,8 @@ function Products() {
             image='vape_cart.png'
             strain='hybrid'
             quantity='one gram'
-            />        </SwiperSlide>
+            />        
+            </SwiperSlide>
         <SwiperSlide 
        >
         <Pricebox
@@ -161,11 +174,11 @@ function Products() {
         
             }} 
             to='/all-products' >
-              <div className='pricebox-button'>
+              <motion.div viewport={{ once: false }} initial={{scale:1}} whileInView={{scale:1.1}}  transition={{type:"spring",duration: 3, bounce: 0.6}} className='pricebox-button'>
 <Button size='lg'  style={{
         backgroundColor:'#D9E2EC',
         fontStyle:'italic',
-        fontSize:'18px',
+        fontSize:'16px',
         color:'#102A43',
         boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px'
       }}   variant='soft'>
@@ -175,7 +188,7 @@ Browse all products
 
 <KeyboardArrowRight />
 </Button>
-</div>
+</motion.div>
 </Link>
 
 </div>

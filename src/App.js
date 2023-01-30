@@ -5,6 +5,7 @@ import "./App.scss";
 import AllProducts from './pages/AllProducts';
 import {  Switch, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from 'framer-motion'; 
+import Terms from './pages/Terms';
 
 
 function App() {
@@ -26,6 +27,10 @@ const location = useLocation();
       <Route path='/admin-page' exact>
         <AdminPage/>
       </Route>
+<Route path='/terms' exact>
+        <Terms/>
+      </Route>
+
     </Switch>
     </AnimatePresence>
 

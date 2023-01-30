@@ -35,9 +35,8 @@ function ItemScroll() {
         <motion.div className='item_wrap'   variants={marqueeVariants}
           animate="animate">
         <h1>
-            Let's Work Together. Let's Work Together. Let's Work Together. Let's
-            Work Together. Let's Work Together. Let's Work Together. Let's Work
-            Together
+        The best weed dispensary in the neighborhood. 420 sale everyday $. 15% off new customers. It’s legal for a reason. All products
+        lab tested for quality and safety. 100% satisfaction guaranteed. 100% organic. 100% natural. 100% legal. 100% safe. 100%
           </h1>
 </motion.div>
     </motion.div>

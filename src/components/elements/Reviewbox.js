@@ -10,7 +10,7 @@ const {name, review} = reviewItem;
   return (
     <div className='reviewbox'>
         <div className='review_description'>
-          <h2 style={{fontSize:'45px', color:'#334E68'}}>"</h2>
+          <h2 style={{fontSize:'45px', color:'#829AB1'}}>"</h2>
         <p >{review}</p>
         </div>
 

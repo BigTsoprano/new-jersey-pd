@@ -6,17 +6,18 @@ import UserdataForm from '../elements/UserdataForm';
 import { useStateValue } from "../cart/StateProvider";
 import { styled } from '@mui/styles';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
+//import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { motion } from 'framer-motion';
 import IconButton from '@mui/joy/IconButton';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 
 
   const MyBox = styled(Box)({    
-    backgroundColor: '#099F32',
+    backgroundColor: '#D9E2EC',
     height: 'auto',
    
-    border: 'solid 3px #000'
+    border: 'solid 1px #000'
 });
 
 function CheckoutBar() {
@@ -74,8 +75,10 @@ style={{color:'#fff', backgroundColor:'#1D0EBE', position:'fixed', zIndex:'999',
           role="presentation"
          
         >
-            <button style={{textAlign:'center'}}  onClick={toggleDrawer(anchor, false)}
-          onKeyDown={toggleDrawer(anchor, false)} onClose={toggleDrawer(anchor, false)}> close here</button>
+                <IconButton color='error' variant="plain" onClick={toggleDrawer(anchor, false)}  onKeyDown={toggleDrawer(anchor, false)} 
+                style={{marginLeft:'20px',marginTop:'20px'}} >
+<CancelIcon size="lg" sx={{color:'#CF1124'}}/>
+</IconButton>
             <UserdataForm/>
         </MyBox>
           

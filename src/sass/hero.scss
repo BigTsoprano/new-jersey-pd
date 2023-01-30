@@ -24,7 +24,7 @@ border-bottom: solid 2px #102A43;
 
 .hero-image{
 
-  background-image: url(/images/hero_final3.png); 
+  background-image: url(/images/hero_final.png); 
   background-size: 800px;
   background-repeat :no-repeat;
   background-position: center center;
@@ -32,7 +32,7 @@ border-bottom: solid 2px #102A43;
   top: 0px;
   bottom: 60px;
   left: 0;
-  right: 10px;
+  right: 0px;
   z-index: 3;
 }
 .hero-slogans{
@@ -110,7 +110,7 @@ border-bottom: solid 2px #102A43;
 .hero_btn{
   position: fixed;
   bottom: 40%;
-  right: 40%;
+  right: 41%;
   z-index: 0;
 }
 .hero_reviews{
