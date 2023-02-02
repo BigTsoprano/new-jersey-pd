@@ -1,7 +1,7 @@
 import React from 'react';
 import Typed from "react-typed";
 import Button from '@mui/joy/Button';
-
+import {Link} from 'react-router-dom';
 
 import { motion } from 'framer-motion';
 import AvatarReviews from './AvatarReviews';
@@ -39,9 +39,11 @@ function Herobox() {
 
        
         <motion.div  whileHover={{scale:1.05}} whileTap={{scale:1}} className='hero_btn' style={{}}>
+          <Link to='/all-products'>
        <Button size="lg" variant='solid' style={{backgroundColor:'#1D0EBE', color:'#F0F4F8',        boxShadow:' rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px', fontSize:'20px',  fontStyle:'italic'}} >
          Order delivery now
          </Button>
+         </Link>
       </motion.div>
         
        <div className='hero_reviews' style={{}}>

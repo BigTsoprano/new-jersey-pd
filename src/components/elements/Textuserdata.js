@@ -2,11 +2,10 @@ import { useUserdataContext } from "../../hooks/useUserdataContext";
 //import { useState } from "react";
 //import { useStateValue } from "../cart/StateProvider";
 import { motion } from 'framer-motion';
+import React, { useState } from "react";
 
 
-
-const Textuserdata = ({userdata}) => {
-
+const Textuserdata = ({userdata,  columns }) => {
 
 const { dispatch } = useUserdataContext()
 
@@ -22,11 +21,11 @@ const { dispatch } = useUserdataContext()
     }
 
     return(
-        <motion.div whileHover={{ scale:1.05 }} className="userdata-title" 
+        <div className='order_table'>
+            
+       {/*<motion.div whileHover={{ scale:1.05 }} className="userdata-title" 
             style={{
-                display: 'flex',
-                margin: '30px',
-                border: 'solid 0px #000000',
+              
                 flexDirection: 'column', 
                 minWidth: '500px',
                 padding:'20px'
@@ -71,7 +70,50 @@ const { dispatch } = useUserdataContext()
             <button className='data_delete' onClick={handleClick} >
          delete
             </button>
-        </motion.div>
+                </motion.div>*/}
+
+<table style={{overflowX:'scroll'}}>
+        <tr>
+            <th>status</th>
+            <th>name</th>
+            <th>Order</th>
+          <th>price</th>
+            <th>quantity</th>
+            <th>phone number</th>
+          
+          <th>email</th>
+          <th>address</th>
+            <th>zip</th>
+          <th>county</th>
+          <th>additional notes</th>
+          <th>date</th>
+          <th>delete</th>
+
+        </tr>
+       
+        {userdata.arrayBasket.map((userdatas) => (
+                  <tr>
+                    <td>status</td>
+                    <td>{userdata.title}</td>
+                        <td>{userdatas.name}</td>
+                        <td>{userdatas.price}</td>
+                        <td>{userdatas.quantity}</td>
+                        <td>{userdata.number}</td>
+                        <td>{userdata.email}</td>
+                        <td>{userdata.street}</td>
+                        <td>{userdata.zip}</td>
+                        <td>{userdata.county}</td>
+                        <td>{userdata.notes}</td>
+                        <td>{userdata.createdAt}</td>
+                        <td><button onClick={handleClick} > delete</button></td>
+            
+</tr>
+                ))}
+       
+   
+      </table>
+    </div>
+         
     );
 }
 

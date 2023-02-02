@@ -27,7 +27,7 @@ function UserdataForm() {
     const [number, setNumber] = useState('')
     const [title, setTitle] = useState('')
     const [error, setError] = useState(null)
-    const [arrayBasket, setArrayBasket] = useState({})    
+    const [arrayBasket, setArrayBasket] = useState()    
 
 
 
@@ -62,10 +62,15 @@ function UserdataForm() {
             setCounty('')
             setNotes('')
             setError(null)
-            setArrayBasket({})
+            setArrayBasket()
             console.log('new title added', json)
             dispatch({type: 'CREATE_USERDATA', payload: json})
         }
+        
+    }
+ const clearBasket = () => {
+        setArrayBasket(false)
+
     }
 
   return (
@@ -201,7 +206,7 @@ value={notes}
 />
 
 </div>
-<Button variant="solid" style={{backgroundColor:'#1D0EBE', color:'#fff', fontSize:'18px'}}>checkout <ForwardIcon/></Button>
+<Button onClick={handleSubmit} variant="solid" style={{backgroundColor:'#1D0EBE', color:'#fff', fontSize:'18px'}}>checkout <ForwardIcon/></Button>
 </Box>
 </div>
 

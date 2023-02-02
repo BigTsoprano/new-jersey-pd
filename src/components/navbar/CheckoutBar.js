@@ -21,7 +21,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
 });
 
 function CheckoutBar() {
-    const [{ basket }] = useStateValue();
+    const [{ basket }, dispatch] = useStateValue();
 
 const [state, setState] = React.useState({
 

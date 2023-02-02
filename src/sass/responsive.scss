@@ -203,4 +203,23 @@ white-space: nowrap;
 .g-wrapper{
    
 }
+.product_filter{
+    margin-left:0px;
+}
+.product_filter2{
+
+    
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+}
+
+.checkout-item{
+  display: flex;
+  flex-direction: column;
+}
+.checkout__left{
+    display: flex;
+    
+}
 }

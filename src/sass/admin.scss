@@ -1,0 +1,38 @@
+
+   // display: flex;
+   table {
+    
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  table td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+ 
+  
+  table tr:hover {background-color: #9FB3C8;}
+  
+  table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #627D98;
+    color: white;
+  }
+ 
+
+.admin_section{
+    height: auto;
+    position: relative;
+    width: 100%;
+    background-color: #F0F4F8;
+    z-index: 999;
+}
+.order_table{
+    display: flex;
+    flex-direction: column;
+    overflow-x: scroll;
+}

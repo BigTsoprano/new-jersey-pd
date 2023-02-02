@@ -36,6 +36,9 @@ function AllProducts() {
   const [allProducts, setAllProducts] = useState(null)
   const [sativa, setSativa] = useState(null)
   const [indica, setIndica] = useState(null)
+  const [flower, setFlower] = useState(null)
+  const [edible, setEdible] = useState(null)
+  const [concentrate, setConcentrate] = useState(null)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -50,6 +53,15 @@ function AllProducts() {
         }))
         setIndica(json.filter((product) => {
           return product.strain == 'indica'
+        }))
+        setFlower(json.filter((product) => {
+          return product.type == 'flower'
+        }))
+        setEdible(json.filter((product) => {
+          return product.type == 'edible'
+        }))
+        setConcentrate(json.filter((product) => {
+          return product.type == 'vape'
         }))
         console.log(products1)
       }
@@ -70,6 +82,24 @@ function AllProducts() {
 
   const showIndica = () => {
     setProducts1(indica)
+  }
+
+  const showFlower = () => {
+    setProducts1(flower)
+  }
+
+  const showEdible = () => {
+    setProducts1(edible)
+  }
+
+  const handleEdible = () => {
+    setProducts1(edible)
+    setOpen(false);
+    setOpens(false);
+  }
+
+  const showConcentrate = () => {
+    setProducts1(concentrate)
   }
 
   const [show, setShow] = useState(false);
@@ -125,6 +155,7 @@ const handleChange2 = (event) => {
 <RestartAltIcon sx={{color:'#fff'}}/>
     </IconButton>
     </motion.div>
+    <div className='product_filter2'>
 <div style={{}}>
 <FormControl>
   <div className="flower_radio">
@@ -140,7 +171,7 @@ const handleChange2 = (event) => {
         onChange={handleChange}
         sx={{ my: 1 }}
       >
-        <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}} onClick={showAllProducts} value="all flowers" label="all flowers" />
+        <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}} onClick={showFlower} value="all flowers" label="all flowers" />
         <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showSativa} value="sativa" label="sativa" />
         <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showIndica} value="indica" label="indica" />
       </RadioGroup>
@@ -164,18 +195,18 @@ const handleChange2 = (event) => {
     onChange={handleChange2}
     sx={{ my: 1 }}
   >
-     <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}} onClick={showAllProducts} value="all flowers" label="all concentrates" />
-        <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showSativa} value="sativa" label="vape pens" />
-        <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showIndica} value="indica" label="oil dabs" />
+      <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}} onClick={showConcentrate} value="all flowers" label="all concentrates" />
+      <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showConcentrate} value="sativa" label="vape pens" />
+      <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showIndica} value="indica" label="oil dabs" />
       </RadioGroup>
  
   )}
 
   </FormControl>
   <div className='edibles_radio'>
-  <Button><CookieIcon sx={{color:'#DE911D', fontSize:'20px', paddingRight:'3px'}}/><p>Edibles</p></Button>
+  <Button onClick={handleEdible}><CookieIcon sx={{color:'#DE911D', fontSize:'20px', paddingRight:'3px'}}/><p>Edibles</p></Button>
 </div>
-
+</div>
   </div>
   )}
 <div style={{display:'flex', flexDirection:'row', height:'auto', flexWrap:'wrap', justifyContent:'center'}}>

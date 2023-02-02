@@ -5,6 +5,7 @@ import {useEffect, useState} from 'react';
 import Textuserdata from '../components/elements/Textuserdata';
 import { useUserdataContext } from '../hooks/useUserdataContext';
 import { motion } from 'framer-motion';
+import Footer from '../components/sections/Footer';
 
 
 
@@ -37,19 +38,19 @@ function AdminPage() {
  
     exit="exit" style={{backgroundColor:'#ffffff', height:'auto', position:'relative', paddingTop:'50px'}}>
         <NavBar></NavBar>
-        <div style={{marginTop:'100px'}} >
+        <div className='admin_section' style={{marginTop:'100px'}} >
 
         <h1 style={{textAlign:'center'}}>
             order history
             </h1>
             </div>
-            <div className='pricetest_box' style={{display:'flex', flexWrap:'wrap', justifyContent:'center'}}>
+            <div className='pricetest_box' style={{display:'flex', flexWrap:'wrap', flexDirection:'column', overflowX:'scroll', minHeight:'60vh', height:'auto'}}>
         {userdata && userdata.map((userdata) => (
            <Textuserdata key={userdata._id} userdata={userdata}/>
 
         ))}
         </div>
-            
+            <Footer></Footer>
         </div>
   )
 }

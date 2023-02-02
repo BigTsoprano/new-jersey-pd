@@ -1,5 +1,5 @@
 import React from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from '@mui/joy/Button';
 
 import { motion } from 'framer-motion';
@@ -25,11 +25,13 @@ export default function Banner () {
    </div>
    </div>
    <div  className='banner-button' style={{marginTop:'20px'}}>
+<Link to='/all-products'>
    <Button variant='solid' style={{marginLeft:'45px', backgroundColor:'#1D0EBE',boxShadow: 'rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px'}} size='md'>
      <h2 style={{color:'#fff'}}>
 Order now!
 </h2>
       </Button> 
+      </Link>
                           </div>
     </div>
     </motion.div>
