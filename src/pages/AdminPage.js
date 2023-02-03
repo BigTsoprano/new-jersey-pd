@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/navbar/NavBar';
 import {useEffect, useState} from 'react';
-
+import UserdataForm from '../components/elements/UserdataForm';
 import Textuserdata from '../components/elements/Textuserdata';
 import { useUserdataContext } from '../hooks/useUserdataContext';
 import { motion } from 'framer-motion';

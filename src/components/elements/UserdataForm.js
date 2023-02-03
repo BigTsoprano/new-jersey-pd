@@ -18,7 +18,13 @@ function UserdataForm() {
 
     const [{ basket }] = useStateValue();
 
-    const {dispatch} = useUserdataContext()
+    const removeAll = () => {
+        dispatch({
+            type: "REMOVE_ALL",
+        })
+    }
+
+     const {dispatch} = useUserdataContext()
     const [zip, setZip] = useState('')
     const [county, setCounty] = useState('')
     const [notes, setNotes] = useState('')
@@ -26,8 +32,8 @@ function UserdataForm() {
     const [street, setStreet] = useState('')
     const [number, setNumber] = useState('')
     const [title, setTitle] = useState('')
-    const [error, setError] = useState(null)
-    const [arrayBasket, setArrayBasket] = useState()    
+ const [error, setError] = useState('')
+    const [arrayBasket, setArrayBasket] = useState({})    
 
 
 
@@ -61,20 +67,18 @@ function UserdataForm() {
             setZip('')
             setCounty('')
             setNotes('')
-            setError(null)
-            setArrayBasket()
+            setError('')
+            setArrayBasket({})
             console.log('new title added', json)
             dispatch({type: 'CREATE_USERDATA', payload: json})
         }
         
     }
- const clearBasket = () => {
-        setArrayBasket(false)
 
-    }
 
   return (
-      <Box onSubmit={handleSubmit}
+      <Box 
+       onSubmit={handleSubmit}
 >
     <div className='checkout-item' style={{ }} >
 
@@ -97,7 +101,7 @@ function UserdataForm() {
             price={item.price}
             image={item.image}
             quantity={item.quantity}
-            onChange={(e) => setArrayBasket(e.target.value) }
+             onChange={(e) => setArrayBasket(e.target.value) }
             value={arrayBasket}
                 />
                 
@@ -206,7 +210,7 @@ value={notes}
 />
 
 </div>
-<Button onClick={handleSubmit} variant="solid" style={{backgroundColor:'#1D0EBE', color:'#fff', fontSize:'18px'}}>checkout <ForwardIcon/></Button>
+<button  style={{backgroundColor:'#1D0EBE', color:'#fff', fontSize:'18px'}}>checkout </button>
 </Box>
 </div>
 

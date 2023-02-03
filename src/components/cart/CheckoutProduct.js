@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 
 function CheckoutProduct({ id, name, price, image, quantity}) {
 
-  const [{ basket }, dispatch] = useStateValue();
+  const [ dispatch] = useStateValue();
 
   const removeFromBasket = () => {
       dispatch({

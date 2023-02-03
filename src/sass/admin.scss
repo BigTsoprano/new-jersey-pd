@@ -1,27 +1,7 @@
 
    // display: flex;
-   table {
-    
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  table td, #customers th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
- 
-  
-  table tr:hover {background-color: #9FB3C8;}
-  
-  table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: #627D98;
-    color: white;
-  }
+
+
  
 
 .admin_section{
@@ -35,4 +15,24 @@
     display: flex;
     flex-direction: column;
     overflow-x: scroll;
+}
+.data_name{
+  display:flex;
+  flex-direction: column;
+}
+.data_number{
+  display:flex;
+  flex-direction: column;
+}
+.admin_data{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+ // margin: 0 30px;;
+}
+.admin_email{
+  display: flex;
+  flex-direction: column;
+
 }

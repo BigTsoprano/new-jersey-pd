@@ -14,7 +14,7 @@ export default function Banner () {
   <div className='banner-wrap' > 
   <div className='banner_img'> 
   <motion.img animate={{ rotate: 6 }}   transition={{  duration: 2, repeat: Infinity, repeatType: "reverse",ease: "linear" }}
- src="./hot_deal.png" alt="" style={{}}/>
+ src="./hot_deal.png" alt="" style={{width: '100px', height:'auto'}}/>
  </div>
     <motion.div className='banner' initial={{scale:.3}} whileInView={{scale:1}} viewport={{ once: true }} transition={{type:'tween',  duration: .3, delay:.1}}>
       <div style={{display:'flex', justifyContent:'center' ,flexDirection:' column'}}>

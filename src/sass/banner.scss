@@ -36,10 +36,7 @@ border-radius: 20px;
   bottom: 45%;
   left: 35%;
   z-index: 999;
-  img{
-    width:100px;
-    height: auto;
-  }
+
 }
 .banner {
   background-color: #FCE588;
@@ -73,7 +70,7 @@ max-width: 350px;
   display: flex;
   //justify-content: flex-start;
   //padding-left: 30px;
-  font-size: 18px;
+  font-size:20px;
   //padding-right: 10px;
   font-style: italic;
   margin-left:20px;
@@ -81,7 +78,7 @@ max-width: 350px;
   color:#102A43;
   }
   h2{
-    font-size: 18px;
+    font-size: 20px;
     font-style: italic;
     //padding: 5px 10px;
    
@@ -93,7 +90,7 @@ max-width: 350px;
   font-size: 16px;
   box-shadow: none;
  // text-align: left;
- color:#243B53;
+ color:#334E68;
   
   font-weight: 500;
   }

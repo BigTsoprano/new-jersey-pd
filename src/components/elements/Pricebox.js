@@ -12,17 +12,22 @@ import Modal from '@mui/joy/Modal';
 //import Typography from '@mui/joy/Typography';
 //import Sheet from '@mui/joy/Sheet';
 import ModalDialog from '@mui/joy/ModalDialog';
+import LinearProgress from '@mui/material/LinearProgress';
+import CancelIcon from '@mui/icons-material/Cancel';
 
 //import Typography from '@mui/material/Typography';
 
-
-function Pricebox({ price, image, name, id, strain, quantity, thc, cbd }) {
+ 
+function Pricebox({ price, image, name, id, strain, quantity, thc, cbd, description }) {
   
 
 const [open, setOpen] = useState(false);
 
 
-   
+   const handleClick = () => {
+    setOpen(false);
+    addToBasket();
+  };
 
     const [{ basket }, dispatch] = useStateValue([]);
 
@@ -111,16 +116,48 @@ Learn more
      
           
           <motion.div className='product_modal' >
-            <button className='modal_exit' onClick={() => setOpen(false)} style={{ backgroundColor:'transparent', border:'none', cursor:'pointer'}}>X</button>
-       <motion.img style={{width:'auto', maxHeight:'160px'}} whileHover={{}} src={image} alt=''/>
+       
+            <button className='modal_exit' onClick={() => setOpen(false)} style={{ backgroundColor:'transparent', border:'none', cursor:'pointer'}}><CancelIcon color='error'></CancelIcon></button>
+       <div className="modal_two">
+       <motion.img className="modal_img" style={{}} whileHover={{}} src={image} alt=''/>
+       <div className='learn_more'>
+        <div className="title_strain">
        <h1>{name}</h1>
-        <p>hey heysjdlhflasdhfjldsahflajs sdalfh ljsdafh jlsdhf sdljafh sdljafh sdaljfh</p>
-        <p></p>
+       
+
+       <p className='pricebox-strain' >{strain}</p>
+       </div>
+       <Rating name="size-medium" defaultValue={5} />
+       <div className="modal_quantity">
+       <p>{quantity}</p>
+       </div>
+       <div className="modal_price">
+        <p >${price}</p>
+        
+        </div>
+        <div className="thc_cbd">
+        <div className="modal_thc">
+        <p>THC: {thc}%</p>
+        <LinearProgress sx={{height:'10px', borderRadius:'10px',backgroundColor:'#BCCCDC'}} variant="determinate" value={thc} />
+        </div>
+        <div className="modal_cbd">
+        <p>CBD: {cbd}%</p>
+        <LinearProgress sx={{height:'10px', borderRadius:'10px', backgroundColor:'#BCCCDC', color:'#000'}} variant="determinate" value={cbd} />
+        </div>
+        </div>
+        <div className="modal_description">
+        <p>{description}</p>
+        </div>
+        <motion.div  className="modal_button">
+     <Button onClick={handleClick} style={{backgroundColor:'#1D0EBE',color:'#F0F4F8',boxShadow:' rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px'}}>add to cart</Button>
+        </motion.div>
+        </div>
+        </div>
         </motion.div>
         </ModalDialog>
       </Modal>
       </motion.div>
-
+      
 
 
      

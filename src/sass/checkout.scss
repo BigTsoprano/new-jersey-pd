@@ -47,5 +47,9 @@
     width:10%;
   }
 }
-
-
+.fill_form{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-bottom: 12px;
+}

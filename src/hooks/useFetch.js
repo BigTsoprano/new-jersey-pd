@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 
 export const useFetch = (url) => {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([]) //null
     const [isPending, setIsPending] = useState(false)
-    const [error, setError] = useState(null)
+    const [error, setError] = useState('') //null
 
     useEffect(() => {
         const controller = new AbortController()
@@ -20,7 +20,7 @@ export const useFetch = (url) => {
     
                 setIsPending(false)
                 setData(json)
-                setError(null)
+                setError('')
             } catch (err) {
                 if (err.name === "AbortError") {
                     console.log('the fetch was aborted')

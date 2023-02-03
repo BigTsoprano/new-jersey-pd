@@ -86,8 +86,9 @@ function Products() {
        image="sour_diesel.png"
        strain='sativa'
        quantity='3.5 grams'
-      thc='18%'
-      cbd='0%'
+      thc={18}
+      cbd={20}
+      description='Sour Diesel is a popular sativa strain known for its uplifting, energizing effects and signature diesel aroma. Its commonly used to treat depression, pain and stress. Growing requires dry outdoor climate, with a 77-day flowering time. Sour Diesel has been a legendary strain since the early 1990s.'
        />
           
          
@@ -97,8 +98,11 @@ function Products() {
             name='Grand Daddy Purp'
             price={12.99}
             image='grand_d.png'
-            strain='sativa'
+            strain='indica'
             quantity='7 grams'
+            thc={17}
+            cbd={21}
+            description='Granddaddy Purple is a popular indica strain with a complex grape and berry aroma. Its a cross of Mendo Purps, Skunk, and Afghanistan and is used to treat pain, stress, insomnia, appetite loss, and muscle spasms. Flowers have a 60-day flowering time indoors and are deep purple with white crystal resin.'
 
             />
         </SwiperSlide>
@@ -147,17 +151,25 @@ function Products() {
             />        </SwiperSlide>
         <SwiperSlide >
         <Pricebox
-            name='this is other title'
-            price={12.99}
-            image='sour_diesel.png'
-            strain='sativa'
+       name='Sour Diesel'
+       price={89.99}
+       image="sour_diesel.png"
+       strain='sativa'
+       quantity='7 grams'
+      thc={18}
+      cbd={20}
+      description='Sour Diesel is a popular sativa strain known for its uplifting, energizing effects and signature diesel aroma. Its commonly used to treat depression, pain and stress. Growing requires dry outdoor climate, with a 77-day flowering time. Sour Diesel has been a legendary strain since the early 1990s.'
             />        </SwiperSlide>
         <SwiperSlide >
         <Pricebox
-            name='this is other title'
-            price={12.99}
-            image='sour_diesel.png'
-            strain='sativa'
+         name='Grand Daddy Purp'
+         price={12.99}
+         image='grand_d.png'
+         strain='indica'
+         quantity='3.5 grams'
+         thc={17}
+         cbd={21}
+         description='Granddaddy Purple is a popular indica strain with a complex grape and berry aroma. Its a cross of Mendo Purps, Skunk, and Afghanistan and is used to treat pain, stress, insomnia, appetite loss, and muscle spasms. Flowers have a 60-day flowering time indoors and are deep purple with white crystal resin.'
             />
         </SwiperSlide>
       </Swiper>

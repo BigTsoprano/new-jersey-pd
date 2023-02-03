@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import React, { useState } from "react";
 
 
-const Textuserdata = ({userdata,  columns }) => {
+const Textuserdata = ({userdata}) => {
 
 const { dispatch } = useUserdataContext()
 
@@ -20,9 +20,42 @@ const { dispatch } = useUserdataContext()
         }
     }
 
+
     return(
         <div className='order_table'>
-            
+      
+       
+
+        <div className="admin_data">
+      
+        <div className='data_name' >
+            <p>name</p>
+            <p>{userdata.title}</p>
+        </div>
+        <div className='data_number'>
+            <p>phone number</p>
+            <p>{userdata.number}</p>
+
+        </div>
+        <div className='data_email'>
+            <p>email</p>
+            <p>{userdata.email}</p>
+            </div>
+            <div className="data_items">
+                <p>items</p>
+                
+             <button onClick={handleClick}>
+                Delete
+             </button>
+
+<div>
+      
+</div>
+            </div>
+        </div>
+
+
+
        {/*<motion.div whileHover={{ scale:1.05 }} className="userdata-title" 
             style={{
               
@@ -72,7 +105,7 @@ const { dispatch } = useUserdataContext()
             </button>
                 </motion.div>*/}
 
-<table style={{overflowX:'scroll'}}>
+{/*<table>
         <tr>
             <th>status</th>
             <th>name</th>
@@ -111,7 +144,7 @@ const { dispatch } = useUserdataContext()
                 ))}
        
    
-      </table>
+      </table>*/}
     </div>
          
     );
