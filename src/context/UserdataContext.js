@@ -6,15 +6,15 @@ export const userdataReducer = (state, action) => {
     switch (action.type) {
         case 'SET_USERDATA':
             return {
-                userdata: action.payload
+                ...state, userdata: action.payload
             }
         case 'CREATE_USERDATA': 
             return {
-                userdata: [action.payload, ...state.userdata]
+                ...state, userdata: action.payload
             }
         case 'DELETE_USERDATA':
             return {
-                userdata: state.userdata.filter((u) => u._id !== action.payload._id)
+                 userdata: state.userdata.filter((u) => u._id !== action.payload._id)
             }
             default: 
                 return state

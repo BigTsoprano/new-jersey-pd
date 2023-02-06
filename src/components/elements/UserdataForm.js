@@ -18,11 +18,11 @@ function UserdataForm() {
 
     const [{ basket }] = useStateValue();
 
-    const removeAll = () => {
-        dispatch({
-            type: "REMOVE_ALL",
-        })
-    }
+    // const removeAll = () => {
+    //     dispatch({
+    //         type: "REMOVE_ALL",
+    //     })
+    // }
 
      const {dispatch} = useUserdataContext()
     const [zip, setZip] = useState('')
@@ -32,8 +32,8 @@ function UserdataForm() {
     const [street, setStreet] = useState('')
     const [number, setNumber] = useState('')
     const [title, setTitle] = useState('')
- const [error, setError] = useState('')
-    const [arrayBasket, setArrayBasket] = useState({})    
+    const [error, setError] = useState('')
+    const [arrayBasket, setArrayBasket] = useState([])    
 
 
 
@@ -59,7 +59,8 @@ function UserdataForm() {
             setError(json.error)
         }
         if (response.ok) {
-           
+            
+            dispatch({type: 'CREATE_USERDATA', payload: json})
             setTitle('')
             setNumber('')
             setStreet('')
@@ -68,9 +69,9 @@ function UserdataForm() {
             setCounty('')
             setNotes('')
             setError('')
-            setArrayBasket({})
+            setArrayBasket([])
             console.log('new title added', json)
-            dispatch({type: 'CREATE_USERDATA', payload: json})
+            // removeAll()
         }
         
     }
@@ -83,7 +84,7 @@ function UserdataForm() {
     <div className='checkout-item' style={{ }} >
 
     <div className="checkout__left">
-         {basket?.length === 0 ? (
+         {arrayBasket?.length === 0 ? (
              <div className='checkout__shopping'>
             <h2 style={{fontSize:'24px'}}>Your Shopping Cart Is Empty</h2>
                 </div>
@@ -92,7 +93,7 @@ function UserdataForm() {
       
         <div className='checkout-swiper' >
 {/*<Slider  {...settings} >*/}
-        {basket.map(item => (
+        {arrayBasket.map(item => (
 <div style={{}}>
 
            
@@ -101,8 +102,8 @@ function UserdataForm() {
             price={item.price}
             image={item.image}
             quantity={item.quantity}
-             onChange={(e) => setArrayBasket(e.target.value) }
-            value={arrayBasket}
+            //  onChange={(e) => setArrayBasket(e.target.value) }
+            // value={arrayBasket}
                 />
                 
             
@@ -119,7 +120,7 @@ function UserdataForm() {
             }} 
             className='sub_pay'>
 
-        {basket.length > 0 && (
+        {arrayBasket.length > 0 && (
                 
                 <div 
                     className="checkout__right">

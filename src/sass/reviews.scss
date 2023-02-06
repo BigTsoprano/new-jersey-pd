@@ -1,6 +1,6 @@
 .reviews-section{
     position: relative;
-    height: 65vh;
+    height: auto;
     background-color: #F0F4F8;
     z-index: 2;
     h1{
@@ -140,4 +140,15 @@ text-align: center;
     font-size: 16px;
     color:#243B53;
   }
+}
+.leave_review{
+  width:50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  //height:30vh;
+  //padding: 0px 0px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+border-radius: 10px;
 }

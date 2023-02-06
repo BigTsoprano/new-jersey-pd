@@ -20,38 +20,88 @@ const { dispatch } = useUserdataContext()
         }
     }
 
+    const [show, setShow] = useState(false);
+
+const open = () => {
+    setShow(!show);
+}
+
 
     return(
         <div className='order_table'>
-      
-       
+     
 
         <div className="admin_data">
       
+
+       
         <div className='data_name' >
             <p>name</p>
-            <p>{userdata.title}</p>
+            <h3>{userdata.title}</h3>
         </div>
+       
         <div className='data_number'>
             <p>phone number</p>
-            <p>{userdata.number}</p>
+            <h3>{userdata.number}</h3>
 
         </div>
         <div className='data_email'>
             <p>email</p>
-            <p>{userdata.email}</p>
+            <h3>{userdata.email}</h3>
             </div>
             <div className="data_items">
                 <p>items</p>
+                {userdata.arrayBasket.map((userdatas) => (
+                         <h3>*{userdatas.name}</h3>
+                ))}           
+          </div>
+          <div className="data_price">
+            <p>price</p>
+            {userdata.arrayBasket.map((userdatas) => (
+                         <h3>${userdatas.price}</h3>
+                ))}      
+    </div>
+    <div className="data_quantity">
+            <p>quantity</p>
+            {userdata.arrayBasket.map((userdatas) => (
+                            <h3>{userdatas.quantity}</h3>
+                ))}
+    </div>
+    <div style={{display:'flex', flexDirection:'column'}}>
+        <button  onClick={open}>view more</button>
+        <div >
+        {show && (
+    <div className="view_more">
+      
+    <div className="data_street">
                 
-             <button onClick={handleClick}>
+            <p>address</p>
+            <h3>{userdata.street}</h3>
+    </div>
+    <div className="data_zip">
+                
+            <p>zip</p>
+            <h3>{userdata.zip}</h3>
+    </div>
+    <div className="data_county">
+
+            <p>county</p>
+            <h3>{userdata.county}</h3>
+    </div> 
+    <div className='data_create' >
+            <p>created</p>
+            <h3>{userdata.createdAt}</h3>
+        </div>
+    </div> )}
+    </div>
+    </div>
+<div>
+<button onClick={handleClick}>
                 Delete
              </button>
-
-<div>
-      
 </div>
-            </div>
+             
+             <h1>{userdata.reviewName}</h1>
         </div>
 
 

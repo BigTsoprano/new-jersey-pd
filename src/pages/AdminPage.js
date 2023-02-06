@@ -14,6 +14,8 @@ function AdminPage() {
 
 
 
+
+
     useEffect(() => {
     const fetchUserdatas = async () => {
     const response = await fetch('/api/Userdata')
@@ -34,17 +36,18 @@ function AdminPage() {
         }
       }
   return (
-    <div  variants={containerVariants}
+    <div  className='admin_page' variants={containerVariants}
  
-    exit="exit" style={{backgroundColor:'#ffffff', height:'auto', position:'relative', paddingTop:'50px'}}>
+    exit="exit" style={{ height:'auto', position:'relative', paddingTop:'50px'}}>
         <NavBar></NavBar>
         <div className='admin_section' style={{marginTop:'100px'}} >
 
         <h1 style={{textAlign:'center'}}>
             order history
             </h1>
+       
             </div>
-            <div className='pricetest_box' style={{display:'flex', flexWrap:'wrap', flexDirection:'column', overflowX:'scroll', minHeight:'60vh', height:'auto'}}>
+            <div className='pricetest_box' style={{}}>
         {userdata && userdata.map((userdata) => (
            <Textuserdata key={userdata._id} userdata={userdata}/>
 
