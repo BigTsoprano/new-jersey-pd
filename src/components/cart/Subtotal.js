@@ -15,11 +15,11 @@ function Subtotal() {
         
         renderText={(value) => (
             <>
-            <div style={{textAlign:'left', display:'flex', flexDirection:'row', alignItems:'center', whiteSpace:'nowrap'}} >
+            <div className='subtotal_wrap'  >
                 
-            <p style={{ fontSize:'16px'}}>Grande Total: </p>
+            <p >Grande Total: </p>
            { /*<p style={{fontSize:'16px'}}>({basket.length}):  </p>*/}
-            <p style={{fontStyle:'italic'}} ><strong>{` ${value} `}</strong></p>
+            <p  ><strong>{` ${value} `}</strong></p>
             </div>
             </>
         )}

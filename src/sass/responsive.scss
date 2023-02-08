@@ -92,11 +92,12 @@ right:21%;
   // margin:0 20px;
    // padding-bottom: 10px !important;
    //justify-content: center;
-  // display:flex;
+   display:flex;
   // margin: 0px 30px; 
   padding: 20px;
-  margin: 0 auto;
+  margin: 0 auto !important;
   right:5%;
+
   //text-align: center;
  // width:100%;
  //left: 13%;
@@ -169,14 +170,11 @@ justify-content: center;
 }
 .ads_two{
     height: 30vh;
-    .aws-btn {
-        --button-default-height: 56px;
-        --button-horizontal-padding: 23px;
-         }
+
 }
 .ads_two_button{
-    right:30%;
-    top:70%;
+    right:5%;
+    top:40%;
 }
 .footer_three_sections{
     flex-direction: column;

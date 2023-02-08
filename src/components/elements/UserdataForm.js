@@ -211,7 +211,7 @@ value={notes}
 />
 
 </div>
-<button  style={{backgroundColor:'#1D0EBE', color:'#fff', fontSize:'18px'}}>checkout </button>
+<button className='userdata_btn' >checkout </button>
 </Box>
 </div>
 

@@ -14,36 +14,24 @@ import Accordions from '../components/sections/Accordions';
 import Footer from '../components/sections/Footer';
 import Steps from '../components/sections/Steps';
 import Category from '../components/sections/Category';
-import { motion } from 'framer-motion';
 import Gmaps from '../components/sections/Gmaps';
-import Reviews from '../components/sections/Reviews';
 //import Byebanner from '../components/sections/Byebanner';
 import CheckoutBar from '../components/navbar/CheckoutBar';
 import ItemScroll from '../components/sections/ItemScroll';
-import { AnimatePresence } from 'framer-motion';
+
 import Modal from '../components/sections/Modal';
 
 
 function HomePage() {
-  const containerVariants = {
- 
-    exit: {
-      x: '-100vw', 
-      transition: {ease: 'easeInOut'}
-    }
-  }
+
 
 
 
 
 return (
 
-<motion.div   variants={containerVariants}
+<>
 
-    exit="exit" >
-
-  <Modal >
-  </Modal>
 
 
 {/*<Carticon/>*/}
@@ -70,9 +58,6 @@ return (
       </Element>
    
 
-  { /* <Element name='section-cube'>
-        <CubeProducts/>
-    </Element>*/}
 
    
     <Element name='section-accordions'>
@@ -80,9 +65,6 @@ return (
     </Element>
 
      
-    <Element name='section-review'>
-      <Reviews/>
-    </Element>
 
    
     
@@ -110,11 +92,13 @@ return (
     </Element>
     
 
+    <Modal >
+  </Modal>
 <CheckoutBar/>
 
 
 
-</motion.div>
+</>
   );
 }
 

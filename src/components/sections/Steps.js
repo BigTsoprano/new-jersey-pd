@@ -4,6 +4,7 @@ import CreditScoreOutlinedIcon from '@mui/icons-material/CreditScoreOutlined';
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 //import IconButton from '@mui/joy/IconButton';
 import { motion } from 'framer-motion';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 ////import Button from '@mui/joy/Button';
 
 function Steps() {
@@ -65,10 +66,12 @@ function Steps() {
                        </div>
             </motion.div>
             </div>
-            <motion.img initial={{scale:.6}}
+            <motion.div initial={{scale:.6}}
             whileInView={{scale:1}}
-            transition={{type:'spring', duration:.7, delay:.4}}
+            transition={{type:'spring', duration:.7, delay:.4}}>
+            <LazyLoadImage 
             src='step_new.png' alt=''/>
+            </motion.div>
             </div>
         </div>
   );

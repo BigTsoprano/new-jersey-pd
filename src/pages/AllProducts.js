@@ -4,7 +4,7 @@ import NavBar from '../components/navbar/NavBar';
 import { motion } from 'framer-motion';
 //import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
 import Pricebox from '../components/elements/Pricebox';
-import { useFetch } from '../hooks/useFetch'
+//import { useFetch } from '../hooks/useFetch'
 import Footer from '../components/sections/Footer';
 
 import SpaIcon from '@mui/icons-material/Spa';
@@ -24,7 +24,6 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 //import NavBar from '../components/navbar/NavBar';
 import CookieIcon from '@mui/icons-material/Cookie';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
-
 
 
 function AllProducts() {
@@ -49,19 +48,19 @@ function AllProducts() {
         setProducts1(json)
         setAllProducts(json)
         setSativa(json.filter((product) => {
-          return product.strain == 'sativa'
+          return product.strain === 'sativa'
         }))
         setIndica(json.filter((product) => {
-          return product.strain == 'indica'
+          return product.strain ==='indica'
         }))
         setFlower(json.filter((product) => {
-          return product.type == 'flower'
+          return product.type === 'flower'
         }))
         setEdible(json.filter((product) => {
-          return product.type == 'edible'
+          return product.type === 'edible'
         }))
         setConcentrate(json.filter((product) => {
-          return product.type == 'vape'
+          return product.type === 'vape'
         }))
         console.log(products1)
       }

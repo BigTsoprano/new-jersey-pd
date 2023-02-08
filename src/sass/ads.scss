@@ -11,37 +11,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#089F32;
+
 }
 .ads_one{
-  height: 60vh;
+  height: 100%;
   width: 100%;
 display: flex;
   background-color:#009B4E;
-  background-image: url(/images/ads_one.png); 
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+
+  img{
+    height: 100%;
+    width: 100%;
+  }
   //border: solid 3px #000 ;
-  box-shadow: 1px 3px 7px 2px rgba(57, 63, 72, 0.3);
+  //box-shadow: 1px 3px 7px 2px rgba(57, 63, 72, 0.3);
 }
 .ads_one_background{
 
 }
 .ads_two{
-  height: 60vh;
+  height: 100%;
   width: 100%;
+  img{
+  height: 100%;
+  width: 100%;
+  }
   //border: solid 3px #000 ;
   //box-shadow: 10px 10px 0 #000;
   box-shadow: 1px 3px 7px 2px rgba(57, 63, 72, 0.3);
   display: flex;
-    background-image: url(/images/ads_two.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-  background-position: center;
+
 
 }
 .ads_two_button{
   position: absolute;
   top: 75%;
-  right: 50%;
+  right: 68%;
 }

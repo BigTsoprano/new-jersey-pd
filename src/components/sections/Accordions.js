@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion } from 'framer-motion';
-import Fade from '@mui/material/Fade';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
+
 import Slide from '@mui/material/Slide';
 import Button from '@mui/joy/Button';
 
@@ -121,7 +119,7 @@ function Accordions() {
   </motion.div>
   </div>
   );
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 

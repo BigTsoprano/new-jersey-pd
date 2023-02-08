@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Avatar from '@mui/joy/Avatar';
 import AvatarGroup from '@mui/joy/AvatarGroup';
-import { motion } from 'framer-motion';
+
 
 
 function clampAvatars(avatars, options = { max: 5 }) {
@@ -17,7 +17,7 @@ function clampAvatars(avatars, options = { max: 5 }) {
   return { avatars: avatars.slice(0, maxAvatars).reverse(), surplus };
 }
 
-export default function GroupedAvatars() {
+export default function AvatarReviews() {
   const dataFromTheServer = {
     people: [
       {

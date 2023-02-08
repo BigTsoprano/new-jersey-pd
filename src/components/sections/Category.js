@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 //import { Pagination } from "swiper";
 //import {Link} from 'react-router-dom';
-
+import "swiper/css";
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import SpaIcon from '@mui/icons-material/Spa';
 import CookieIcon from '@mui/icons-material/Cookie';
 import InvertColorsIcon from '@mui/icons-material/InvertColors';
-import CategoryIcon from '@mui/icons-material/Category';
+//import CategoryIcon from '@mui/icons-material/Category';
 import { motion } from 'framer-motion';
 //import LinearProgress from '@mui/material/LinearProgress';
 import Pricebox from '../elements/Pricebox';
@@ -29,8 +29,8 @@ function Category() {
 
 
 
-  const [, updateState] = React.useState();
-  const forceUpdate = React.useCallback(() => updateState({}), []);
+  const [, updateState] = useState();
+ 
 
   const [products1, setProducts1] = useState(null)
   const [allProducts, setAllProducts] = useState(null)
@@ -56,7 +56,7 @@ function Category() {
         setConcentrate(json.filter((product) => {
           return product.type == 'vape'
         }))
-        console.log(products1)
+       
       }
     }
 
@@ -65,12 +65,12 @@ function Category() {
   
   const showAllProducts = () => {
     setProducts1(allProducts)
-    forceUpdate()
+ 
   }
 
   const showFlower = () => {
     setProducts1(flower)
-    forceUpdate()
+
   }
 
   const showEdible = () => {
@@ -92,54 +92,7 @@ function Category() {
       whileInView={{ scale:1}}
       className='category_list'>
 
-    {/*    <motion.div onClick={() => setUrl('http://localhost:3000/njpd')}  whileHover={{scale:1.14, rotate:5}} className='shop_all'>
-          <motion.div  initial={{scale: 3.5}} className='shop_icon'>
-<StorefrontIcon size='large' style={{color:'#ffffff'}}/>
-</motion.div>
-    <h3>Shop all</h3>
-        </motion.div>
-       
-        <Link to='/all-products'>
-
-        <motion.div whileHover={{scale:1.14, rotate:5}} className='category_flowers'>
-        <motion.div  initial={{scale: 2.5}}>
-<SpaIcon size='large' style={{color:'#ffffff'}}/>
-</motion.div>
-<h3>Flowers</h3>
-
-        </motion.div>
-        </Link>
-        <Link to='/all-products'>
-
-        <motion.div whileHover={{scale:1.14, rotate:5}} className='category_edibles'>
-        <motion.div  initial={{scale: 3}}>
-<CookieIcon size='large' style={{color:'#ffffff'}}/>
-</motion.div>
-<h3>Edibles</h3>
-
-        </motion.div>
-</Link>
-<Link to='/all-products'>
-
-        <motion.div whileHover={{scale:1.14, rotate:5}} className='category_concentrates'
-        >
-            <motion.div  initial={{scale: 3}}>
-<InvertColorsIcon size='large' style={{color:'#ffffff'}}/>
-</motion.div>
-<h3>concentrates</h3>
-        </motion.div>
-        </Link>
-        <Link to='/all-products'>
-
-        <motion.div whileHover={{scale:1.14, rotate:5}} className='category_misc'>
-        <motion.div  initial={{scale: 3}}>
-<CategoryIcon size='large' style={{color:'#ffffff'}}/>
-</motion.div>
-<h3>Other</h3>
-
-        </motion.div>
-        </Link>
-  </div>*/}
+   
 <RadioGroup
       aria-label="platform"
       defaultValue="All"
@@ -294,9 +247,9 @@ function Category() {
           {products1 && products1.map((product) => 
            
         <SwiperSlide>  
-           <div className='products-box2'  style={{borderRadius:'10px'}}>
+           <div className='products-box2' key={product._id} style={{borderRadius:'10px'}}>
            <Pricebox 
-             key={product.id}
+             key={product._id}
             name={product.name}
             price={product.price}
             image={product.image}

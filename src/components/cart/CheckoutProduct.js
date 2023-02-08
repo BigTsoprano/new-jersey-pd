@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 
 function CheckoutProduct({ id, name, price, image, quantity}) {
 
-  const [ dispatch] = useStateValue();
+  const [{basket}, dispatch] = useStateValue();
 
   const removeFromBasket = () => {
       dispatch({
@@ -20,8 +20,8 @@ function CheckoutProduct({ id, name, price, image, quantity}) {
   
 
 return (
-  <div className='checkout_product_section' style={{display:'flex', flexDirection:'column',  whiteSpace:'nowrap', padding: '10px 20px', borderBottom:'solid 1px #000'}}>
-  <div style={{display:'flex', flexDirection:'row', justifyContent:'space-between'}}>
+  <div className='checkout_product_section' >
+  <div className='checkout_product_box' >
           <img alt="complex" src={image} />
     
            <h4>
@@ -36,7 +36,7 @@ return (
           <p>
               {id}
               </p>
-            <div style={{display:'flex', flexDirection:'column'}}>
+            <div className='checkout_q_p'>
 
             <p>{quantity}</p>
             <p>

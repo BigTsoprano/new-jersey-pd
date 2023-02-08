@@ -65,7 +65,7 @@ function SideBar() {
       
   {['left'].map((anchor) => (
     <React.Fragment key={anchor}>
-    <IconButton
+    <IconButton onClick={toggleDrawer(anchor, true)}
     className='icon_menu'
     edge="start"
    
@@ -73,7 +73,7 @@ function SideBar() {
     sx={{ mr: 2 }}
     style={{marginLeft:'10px', boxShadow:'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset', backgroundColor:'#D9E2EC'}} 
   >
-<MenuSharpIcon sx={{color:'#1D0EBE'}} onClick={toggleDrawer(anchor, true)} /> 
+<MenuSharpIcon sx={{color:'#1D0EBE'}}  /> 
     </IconButton>      
     <Drawer
    
@@ -88,8 +88,8 @@ function SideBar() {
           onClick={toggleDrawer(anchor, false)}
           onKeyDown={toggleDrawer(anchor, false)}
         >
-          <div style={{margin: '20px 0px 0px 20px'}} onClick={toggleDrawer(anchor, false)}>
-            <IconButton color='error'>
+          <div style={{margin: '20px 0px 0px 20px'}} >
+            <IconButton onClick={toggleDrawer(anchor, false)} color='error'>
           <CancelIcon sx={{fontSize: 30}}/>
           </IconButton>
           </div>

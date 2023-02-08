@@ -3,21 +3,21 @@ import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import "./App.scss";
 import AllProducts from './pages/AllProducts';
-import {  Switch, Route, useLocation } from "react-router-dom";
-import { AnimatePresence } from 'framer-motion'; 
+import {  Switch, Route } from "react-router-dom";
+
 import Terms from './pages/Terms';
 
 
 function App() {
 
-const location = useLocation();
+
 
 
   return (
   <>
   
-    <AnimatePresence>
-    <Switch location={location} key={location.key}  >
+
+    <Switch   >
       <Route path='/' exact>
         <HomePage/>
       </Route>
@@ -32,7 +32,7 @@ const location = useLocation();
       </Route>
 
     </Switch>
-    </AnimatePresence>
+
 
     </>
 

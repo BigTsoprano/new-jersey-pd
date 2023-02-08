@@ -43,6 +43,12 @@
       
 }
 .checkout_product_section{
+display: flex;
+flex-direction: column;
+white-space: nowrap;
+padding: 10px 20px;
+border-bottom: solid 1px #000;
+
   img{
     width:10%;
   }
@@ -52,4 +58,33 @@
   flex-direction: row;
   justify-content: space-around;
   padding-bottom: 12px;
+}
+.checkout_product_box{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.checkout_q_p{
+  display: flex;
+  flex-direction: column;
+}
+.subtotal_wrap{
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+  p{
+    font-size: 16px;
+    font-style: italic;
+  }
+}
+.userdata_btn{
+  background-color: #1D0EBE;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 550;
+  border-radius: 10px;
+  padding: 6px 0;
+  border:none;
 }

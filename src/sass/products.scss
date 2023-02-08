@@ -132,6 +132,11 @@ justify-content: center;
     border-radius: 5px;
     width: 50px;
     height: auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  
    // margin: 0 auto;
     p{
         text-align: center;
@@ -184,12 +189,12 @@ height: auto;
 }
 .modal_exit{
  display: flex;
-
+border:none;
+cursor: pointer;
 }
 .cart_btn{
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-
-
+  //box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
       border-radius: 10px;
 }
 .cart_btn:active{
@@ -276,4 +281,48 @@ p{
 justify-content: flex-end;  
 position: relative;
 
+}
+
+.pricebox_wrap{
+  display: flex;
+  flex-direction: column;
+}
+.pricebox_img{
+  height: 200px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #E6E6FF;
+
+
+
+}
+
+.swiper_content_wrap{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.swiper_content_wrapper{
+  display:flex;
+}
+.pricebox_rating{
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  p{
+    white-space: nowrap;
+  }
+}
+.modal_wrapper{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top:12px;
+}
+.modal_container{
+  margin-top: -10px;
 }

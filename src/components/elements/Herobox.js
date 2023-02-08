@@ -18,8 +18,8 @@ function Herobox() {
     
   return (
     <div className='hero-slogans'>
-       <div className='hero_type' style={{}}>
-          <p style={{position:'fixed'}}> 
+       <div className='hero_type' >
+          <p > 
          Cannabis&nbsp;
          <Typed 
            strings={heroStrings}
@@ -33,27 +33,29 @@ function Herobox() {
          </Typed>
        </p>
        </div>
-      <div className='hero_main_text' style={{}}>
-        <h1 style={{textAlign:'center'}}>WEED DELIVERY <br/>TO YOUR DOOR.</h1>
+      <div className='hero_main_text' >
+        <h1 >WEED DELIVERY <br/>TO YOUR DOOR.</h1>
         </div>
 
        
         <motion.div  whileHover={{scale:1.05}} whileTap={{scale:1}} className='hero_btn' style={{}}>
           <Link to='/all-products'>
-       <Button size="lg" variant='solid' style={{backgroundColor:'#1D0EBE', color:'#F0F4F8',        boxShadow:' rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px', fontSize:'20px',  fontStyle:'italic'}} >
+       <Button size="lg" variant='solid' style={{
+        backgroundColor:'#1D0EBE',
+       color:'#F0F4F8',
+       boxShadow:' rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px',
+       fontSize:'20px',
+       fontStyle:'italic'}} >
          Order delivery now
          </Button>
          </Link>
       </motion.div>
         
-       <div className='hero_reviews' style={{}}>
-       <h4 style={{padding:'10px 10px', color:'#000', fontSize:'18px', fontStyle:'italic', fontWeight:'550', color:'#BCCCDC'}}>Satistfied customers</h4>
-      <AvatarReviews style={{ zIndex:'100',}}/>
+       <div className='hero_reviews' >
+       <h4 >Satistfied customers</h4>
+      <AvatarReviews style={{ zIndex:'100'}}/>
       </div>
-      {/*<motion.div whileHover={{scale:1.2}} style={{color:'#000', display:'flex', flexDirection:'row', padding:' 5px 0'}}>
-    <LocalShippingOutlinedIcon sx={{fontSize:'28px'}} /> <h4 style={{paddingLeft:'10px', whiteSpace:'nowrap'}}>Order now and get your product within 24/hrs</h4>
-      </motion.div>
-     */}
+  
       </div>
   )
 }

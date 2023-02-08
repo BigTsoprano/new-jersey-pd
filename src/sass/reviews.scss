@@ -1,6 +1,6 @@
 .reviews-section{
     position: relative;
-    height: auto;
+    height: 120vh;
     background-color: #F0F4F8;
     z-index: 2;
     h1{
@@ -104,7 +104,7 @@
 }
 .reviewbox{
    height: auto;
-   width: 100%;
+   //width: 100%;
    margin:20px;
    display: flex;
    flex-direction: column;
@@ -143,12 +143,31 @@ text-align: center;
 }
 .leave_review{
   width:50%;
+  height: auto;
+  background-color: #FAFEFF;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
+ // margin-top: -20px;
+  //padding-bottom: 30px;
   //height:30vh;
   //padding: 0px 0px;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 border-radius: 10px;
+h1{
+  text-align: left;
+  padding-top: 0px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  font-size: 18px;
+  color:#102A43;
+  font-style: italic;
+}
+}
+.review_contain{
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 350px;
 }
