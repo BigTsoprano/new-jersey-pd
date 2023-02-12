@@ -76,6 +76,7 @@ function UserdataForm() {
         
     }
 
+    const [show, setShow] = useState(false);
 
   return (
       <Box 
@@ -211,13 +212,19 @@ value={notes}
 />
 
 </div>
-<button className='userdata_btn' >checkout </button>
+<button onClick={() => setShow(true)} className='userdata_btn' >checkout </button>
+{show && (
+<div>
+    <p>your order has been placed!</p>
+    </div>)}
+
 </Box>
 </div>
 
 
 
 </div>
+
 </Box>
 
   )

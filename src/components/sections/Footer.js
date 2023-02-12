@@ -8,7 +8,9 @@ import FormControl from '@mui/joy/FormControl';
 import FormLabel from '@mui/joy/FormLabel';
 import FormHelperText from '@mui/joy/FormHelperText';
 import Input from '@mui/joy/Input';
-import Button from '@mui/joy/Button'
+import Button from '@mui/joy/Button';
+import {Link} from 'react-router-dom';
+
 
 function Footer() {
   const [data, setData] = React.useState({
@@ -48,19 +50,21 @@ function Footer() {
             <div className='footer_resource'>
               <h5>Resources</h5>
               <ul>
-                <li>Home</li>
-                <li>About us</li>
-                <li>All products</li>
+                <Link to='/'><li>Home</li></Link>
+               
+              <Link to='/all-products'><li>All products</li></Link>
+                
+
                 <li>Faq</li>
-                <li>Terms and conditions</li>
+              
               </ul>
               </div>
               <div className='footer_contact'>
                 <h5>Contact</h5>
                 <ul>
-                  <li>(201)328-7539</li>
-                  <li>support@newjerseypd.com</li>
-                  <li>Login/signup</li>
+                  <li>(201)xxx-xxxx</li>
+                  <li>xxxxx@newjerseypd.com</li>
+                
                 </ul>
               </div>
           </div>

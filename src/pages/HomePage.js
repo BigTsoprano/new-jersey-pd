@@ -8,7 +8,7 @@ import Products from '../components/sections/Products';
 //import CubeProducts from '../components/sections/CubeProducts';
 //import Pricetest from '../components/sections/Pricetest';
 //import Carticon from '../components/cart/Carticon';
-import Ads from '../components/sections/Ads';
+//import Ads from '../components/sections/Ads';
 //import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
 import Accordions from '../components/sections/Accordions';
 import Footer from '../components/sections/Footer';
@@ -83,9 +83,7 @@ return (
 <Element name='section-itemscroll'>
      <ItemScroll/>
    </Element>
-<Element name='section-ads'>
-      <Ads/>
-    </Element>
+
    
     <Element name='section-footer'>
     <Footer/>

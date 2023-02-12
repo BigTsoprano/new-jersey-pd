@@ -17,7 +17,7 @@ import CancelIcon from '@mui/icons-material/Cancel';
     backgroundColor: '#D9E2EC',
     height: 'auto',
    
-    border: 'solid 1px #000'
+   
 });
 
 function CheckoutBar() {

@@ -3,9 +3,8 @@ import HomePage from './pages/HomePage';
 import AdminPage from './pages/AdminPage';
 import "./App.scss";
 import AllProducts from './pages/AllProducts';
-import {  Switch, Route } from "react-router-dom";
+import {  Switch, Route, BrowserRouter } from "react-router-dom";
 
-import Terms from './pages/Terms';
 
 
 function App() {
@@ -14,9 +13,8 @@ function App() {
 
 
   return (
-  <>
-  
-
+ 
+<BrowserRouter>
     <Switch   >
       <Route path='/' exact>
         <HomePage/>
@@ -27,14 +25,13 @@ function App() {
       <Route path='/admin-page' exact>
         <AdminPage/>
       </Route>
-<Route path='/terms' exact>
-        <Terms/>
-      </Route>
+
 
     </Switch>
 
+</BrowserRouter>
 
-    </>
+ 
 
 
   );

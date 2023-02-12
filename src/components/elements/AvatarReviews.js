@@ -22,7 +22,7 @@ export default function AvatarReviews() {
     people: [
       {
         alt: 'Remy Sharp',
-        src: 'review_1.png',
+        src: 'review_2.png',
       },
       {
         alt: 'Travis Howard',
@@ -30,11 +30,11 @@ export default function AvatarReviews() {
       },
       {
         alt: 'Agnes Walker',
-        src: 'review_3.png',
+        src: 'review_2.png',
       },
       {
         alt: 'Trevor Henderson',
-        src: 'review_4.png',
+        src: 'review_2.png',
       },
     ],
     total: 24,

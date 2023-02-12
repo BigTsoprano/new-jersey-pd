@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import {Map, GoogleApiWrapper, Circle} from 'google-maps-react';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import LazyLoad from 'react-lazy-load';
 
 
 class Gmaps extends Component{
@@ -17,6 +18,7 @@ class Gmaps extends Component{
         
        
        <div className='g-wrapper' style={{width:'100%',height:'70%', position:'relative', top:'15%', left:'10%'}}>
+       <LazyLoad >
         <Map
         className='gmap_map'
         google = {this.props.google}
@@ -44,6 +46,7 @@ class Gmaps extends Component{
           fillOpacity={0.2}
           />
         </Map>
+        </LazyLoad>
         </div>
         <div className='gmap_hours'>
           <h1>Our store hours, online orders are available 24hrs</h1>

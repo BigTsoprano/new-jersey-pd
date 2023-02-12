@@ -6,11 +6,12 @@ import Button from '@mui/joy/Button';
 import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { A11y } from "swiper";
+import EffectCarousel from "./effect-carousel.esm.js";
+import "swiper/css";
+import "swiper/css/a11y";
 
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/autoplay";
-import { EffectCoverflow, Pagination} from "swiper";
+
 
 import Pricebox from '../elements/Pricebox';
 
@@ -19,15 +20,13 @@ import Pricebox from '../elements/Pricebox';
 
 function Products() {
   const swiperParameters = {
-    
-    effect: "coverflow",
+    modules: [A11y, EffectCarousel],
+    breakpoints: { 768: {} },
     loop: true,
-    
     centeredSlides: true,
+    spaceBetween: 90,
     slidesPerView: "auto",
-    breakpoints: { 768: {} 
-  },
- 
+    effect: "carousel",
   };
 
   return (
@@ -38,43 +37,8 @@ function Products() {
         </motion.h1>
     <motion.div  className='products'>
        
-<Swiper
-        grabCursor={true}
-        centeredSlides={true}
-        spaceBetween={20}
-        coverflowEffect={{
-          rotate: 30,
-          stretch: 0,
-          depth: 150,
-          modifier: 1,
-          slideShadows: false,
-          
-     
-        }}
-        {...swiperParameters}
-        loop={true}
-        centeredSlides={true}
-        pagination={false}
-        modules={[EffectCoverflow, Pagination]}
-        className="mySwiper"
-        breakpoints={{
-          640: {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-         
-          
-          },
-          768: {
-            slidesPerView: 3,
-           
-          },
-          1024: {
-            slidesPerView: 4,
-            
-          }
-        }}
+    <Swiper {...swiperParameters}>
 
-      >
         
         <SwiperSlide  >
         

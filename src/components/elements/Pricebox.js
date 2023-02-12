@@ -92,12 +92,12 @@ const [open, setOpen] = useState(false);
  
 </div>
 
- <div className="pricebox_rating" >
+ {/*<div className="pricebox_rating" >
 
 <Rating name="size-small" defaultValue={5} size="small" />
 <p>{quantity} </p>
 
-</div>
+      </div>*/}
 <div  className='modal_wrapper' >
 
     
@@ -199,11 +199,11 @@ Learn more
        
         
         <Button size='md' onClick={addToBasket} variant="solid" 
-        style={{backgroundColor:'#C4C6FF', color:'#102A43', marginTop:'-10px'}} >
+        style={{backgroundColor:'#C4C6FF', color:'#102A43', marginTop:'-10px', fontSize:'18px'}} >
           
   
-      ${price} <AddShoppingCartIcon  style={{ fontSize:'18px', 
-      paddingLeft:'3px' }}/>
+          <AddShoppingCartIcon  style={{ fontSize:'18px', 
+      paddingRight:'3px' }}/>{price}
     
       </Button>
       </motion.div>

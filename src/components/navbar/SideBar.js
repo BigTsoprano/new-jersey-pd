@@ -2,10 +2,10 @@ import React from 'react'
 import { motion } from "framer-motion";
 import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+//import Typography from '@mui/material/Typography';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 import { styled } from '@mui/styles';
 import {Link} from 'react-router-dom';
 import CancelIcon from '@mui/icons-material/Cancel';
@@ -108,9 +108,7 @@ function SideBar() {
             <motion.li className="item" variants={item} style={{paddingTop:'20px'}}>
             <a style={{display:'flex', alignItems:'center'}} to='/accordions' >FAQ<KeyboardArrowRightIcon/></a>
             </motion.li>
-            <motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
-            <Link style={{display:'flex', alignItems:'center'}} to='/all-products' >About us<KeyboardArrowRightIcon/></Link>
-</motion.li>
+          
 <motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
             <Link style={{display:'flex', alignItems:'center'}} to='/all-products' >Log in/sign up<KeyboardArrowRightIcon/></Link>
 </motion.li>

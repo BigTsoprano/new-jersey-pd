@@ -1,9 +1,10 @@
 import { useUserdataContext } from "../../hooks/useUserdataContext";
 //import { useState } from "react";
 //import { useStateValue } from "../cart/StateProvider";
-import { motion } from 'framer-motion';
+//import { motion } from 'framer-motion';
 import React, { useState } from "react";
-
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import { IconButton } from "@mui/joy";
 
 const Textuserdata = ({userdata}) => {
 
@@ -68,7 +69,7 @@ const open = () => {
                 ))}
     </div>
     <div style={{display:'flex', flexDirection:'column'}}>
-        <button  onClick={open}>view more</button>
+        <IconButton onClick={open}><ExpandCircleDownIcon/></IconButton>
         <div >
         {show && (
     <div className="view_more">
@@ -88,6 +89,10 @@ const open = () => {
             <p>county</p>
             <h3>{userdata.county}</h3>
     </div> 
+    <div className="data_notes">
+            <p>notes</p>
+            <h3>{userdata.notes}</h3>
+    </div>
     <div className='data_create' >
             <p>created</p>
             <h3>{userdata.createdAt}</h3>
