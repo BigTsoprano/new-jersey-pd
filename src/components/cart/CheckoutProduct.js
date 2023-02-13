@@ -38,8 +38,8 @@ return (
               </p>
             <div className='checkout_q_p'>
 
-            <p>{quantity}</p>
-            <p>#{count}</p>
+            <p>weight:{quantity}</p>
+            <p>quantity:{count}</p>
             <p>
         {price}
         </p>

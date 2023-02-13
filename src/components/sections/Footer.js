@@ -62,8 +62,8 @@ function Footer() {
               <div className='footer_contact'>
                 <h5>Contact</h5>
                 <ul>
-                  <li>(201)xxx-xxxx</li>
-                  <li>xxxxx@newjerseypd.com</li>
+                  <li>(201)328-7539</li>
+                  <li>shanonmcdonald@01ninjas.com</li>
                 
                 </ul>
               </div>

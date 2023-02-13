@@ -88,3 +88,19 @@ border-bottom: solid 1px #000;
   padding: 6px 0;
   border:none;
 }
+.phone_email{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+.zip_county{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 12px;
+}
+.date_time{
+  display:flex;
+  flex-direction: row;
+}

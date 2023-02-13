@@ -63,7 +63,7 @@ const [state, setState] = React.useState({
     <React.Fragment key={anchor}>
           <motion.div scale={{scale:1.3}} onClick={toggleDrawer(anchor, true)}> 
             <Button size="lg"
-style={{color:'#fff', backgroundColor:'#1D0EBE', position:'fixed', zIndex:'999', top:'89%', left:'3%', boxShadow: '#486581 0px 22px 70px 4px'}}  >
+style={{color:'#fff', backgroundColor:'#1D0EBE', position:'fixed', zIndex:'999', top:'89%', left:'3%', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px'}}  >
               <ShoppingCartOutlinedIcon size="lg" sx={{fontSize:'24px',color:'#fff'}}/> 
          {basket?.length}</Button></motion.div>
           <Drawer

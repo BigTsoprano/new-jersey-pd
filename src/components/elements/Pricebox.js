@@ -155,7 +155,7 @@ Learn more
           background: 'rgba(16,42,67,0.4)',
           backdropFilter: 'blur(10px) saturate(100%)', 
           display:'flex', justifyContent:'center', 
-          alignItems:'center'}}
+          alignItems:'center', overflowY:'scroll'}}
         >
      
           
@@ -224,6 +224,9 @@ Learn more
         <p>{description}</p>
         </div>
    
+        </div>
+        <div>
+
         </div>
         </div>
         </motion.div>

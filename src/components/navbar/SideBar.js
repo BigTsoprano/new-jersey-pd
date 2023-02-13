@@ -105,16 +105,15 @@ function SideBar() {
             <motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
             <Link style={{display:'flex', alignItems:'center'}} to='/all-products' >View products<KeyboardArrowRightIcon/></Link>
 </motion.li>
+       
             <motion.li className="item" variants={item} style={{paddingTop:'20px'}}>
-            <a style={{display:'flex', alignItems:'center'}} to='/accordions' >FAQ<KeyboardArrowRightIcon/></a>
+            <a style={{display:'flex', alignItems:'center'}} to='section-accordions' >FAQ<KeyboardArrowRightIcon/></a>
             </motion.li>
-          
+   
 <motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
             <Link style={{display:'flex', alignItems:'center'}} to='/all-products' >Log in/sign up<KeyboardArrowRightIcon/></Link>
 </motion.li>
-<motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
-            <Link style={{display:'flex', alignItems:'center'}} to='/all-products' >Terms and conditions<KeyboardArrowRightIcon/></Link>
-</motion.li>
+
           </motion.ul>
             </MyBox>
             

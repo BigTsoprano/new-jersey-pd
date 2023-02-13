@@ -30,6 +30,7 @@ and (orientation: landscape) {
 .hero-image{
     background-position: -30px 100px;
     background-size: 450px;
+    width:100% !important;
 }
 .hero_btn{
 bottom:58%;
@@ -96,7 +97,7 @@ right:21%;
   // margin: 0px 30px; 
   padding: 20px;
   margin: 0 auto !important;
-  right:5%;
+  right:7% !important;
 
   //text-align: center;
  // width:100%;
@@ -260,5 +261,30 @@ white-space: nowrap;
 }
 .admin_email{
     padding: 0 12px !important;
+}
+.product_modal{
+    height:auto !important;
+}
+.modal_two{
+    width: 100% !important;
+    flex-direction: column !important;
+}
+.phone_email{
+    flex-direction: column !important;
+}
+.zip_county{
+    flex-direction: column !important;
+}
+.date_time{
+    flex-direction: column !important;
+}
+.phone_padding{
+    padding-bottom: 12px !important;
+}
+.zip_padding{
+    padding-bottom: 12px !important;
+}
+.date_padding{
+    padding-bottom: 12px !important;
 }
 }

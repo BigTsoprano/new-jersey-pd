@@ -181,12 +181,14 @@ value={title}
 
 
 
-<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around', paddingBottom:'12px'}}>
+<div className='phone_email' >
+    <div className='phone_padding'>
 <Input id="outlined-basic" placeholder='phone #' size='sm' variant="outlined" 
 style={{paddingBottom:'10px'}}   
 onChange={(e) => setNumber(e.target.value) }
 value={number}
 />
+</div>
 <Input id="outlined-basic" placeholder='email address' size='sm' variant="outlined"
 style={{paddingBottom:'10px'}} 
 onChange={(e) => setEmail(e.target.value)}
@@ -199,13 +201,14 @@ onChange={(e) => setStreet(e.target.value)}
 value={street}
 />
 </div>
-<div style={{display:'flex',flexDirection:'row', justifyContent:'space-around'}}>
+<div className='zip_county' >
+    <div className='zip_padding'>
 <Input id="outlined-basic" placeholder='zip code' size='sm' variant="outlined"
 style={{paddingBottom:'10px'}}   
 onChange={(e) => setZip(e.target.value)}
 value={zip}
 />
-
+</div>
 
 
 <Input id="outlined-basic" placeholder='county' size='sm' variant="outlined" 
@@ -224,23 +227,25 @@ onChange={(e) => setNotes(e.target.value)}
 value={notes}
 />
 <div style={{paddingTop:'20px'}}>
-<p>pick-up date/time</p>
-<div style={{display:'flex', flexDirection:'row'}}>
+<p style={{paddingBottom:'9px'}} >pick-up date/time</p>
+<div className='date_time' >
+    <div className='date_padding'>
 <TextField
         id="date"
-        label="Birthday"
+        label="date"
         type="date"
         defaultValue="2017-05-24"
-        sx={{ width: 220 }}
+        sx={{ width: 220 , marginRight:'20px'}}
         InputLabelProps={{
           shrink: true,
         }}
         onChange={(e) => setDate(e.target.value)}
         value={date}
       />
+      </div>
       <TextField
         id="time"
-        label="Alarm clock"
+        label="time"
         type="time"
         defaultValue="07:30"
         InputLabelProps={{

@@ -124,7 +124,7 @@ function Accordions() {
   const handleClose = () => setOpen(false);
 
   return (
-    <section id='accordions'>
+    <section className="section-accordions" id='section-accordions'>
     <div  className='q-a'>
     <div className="faq_container">
       <motion.div in={open} onClick={handleOpen} onChange={handleClose}  whileHover={{ scale: 1.0 }} >

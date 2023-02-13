@@ -52,18 +52,23 @@ const open = () => {
             </div>
             <div className="data_items">
                 <p>items</p>
+   
                 {userdata.arrayBasket.map((userdatas) => (
                          <h3>*{userdatas.name}</h3>
-                ))}           
-          </div>
+                   
+                ))} 
+           
+                    </div>            
+        
           <div className="data_price">
             <p>price</p>
             {userdata.arrayBasket.map((userdatas) => (
                          <h3>${userdatas.price}</h3>
                 ))}      
     </div>
+   
     <div className="data_quantity">
-            <p>quantity</p>
+            <p>weight</p>
             {userdata.arrayBasket.map((userdatas) => (
                             <h3>{userdatas.quantity}</h3>
                 ))}
@@ -96,6 +101,13 @@ const open = () => {
     <div className='data_create' >
             <p>created</p>
             <h3>{userdata.createdAt}</h3>
+        </div>
+        <div>
+            <p>pick up time/date</p>
+            <h3>{userdata.date}</h3>
+        </div>
+        <div>
+            <h3>{userdata.time}</h3>
         </div>
     </div> )}
     </div>
