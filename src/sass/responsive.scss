@@ -263,7 +263,9 @@ white-space: nowrap;
     padding: 0 12px !important;
 }
 .product_modal{
-    height:auto !important;
+    height:80% !important;
+    overflow-y: scroll !important;
+    padding-top: 60px !important;
 }
 .modal_two{
     width: 100% !important;
