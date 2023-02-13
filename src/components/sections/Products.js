@@ -152,10 +152,10 @@ function Products() {
             to='/all-products' >
               <motion.div viewport={{ once: false }} initial={{scale:1}} whileInView={{scale:1.1}}  transition={{type:"spring",duration: 3, bounce: 0.6}} className='pricebox-button'>
 <Button size='lg'  style={{
-        backgroundColor:'#D9E2EC',
+        backgroundColor: '#1D0EBE',
         fontStyle:'italic',
         fontSize:'16px',
-        color:'#102A43',
+        color:'#F0F4F8',
         boxShadow: 'rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px'
       }}   variant='soft'>
     

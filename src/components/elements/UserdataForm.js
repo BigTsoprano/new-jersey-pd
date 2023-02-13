@@ -9,12 +9,18 @@ import CheckoutProduct from '../cart/CheckoutProduct';
 import Input from '@mui/joy/Input';
 import Textarea from '@mui/joy/Textarea';
 import ForwardIcon from '@mui/icons-material/Forward';
+import TextField from '@mui/material/TextField';
+
 
 import Button from '@mui/joy/Button';
 
 import Subtotal from '../cart/Subtotal';
 
 function UserdataForm() {
+
+
+ 
+    
 
     const [{ basket }] = useStateValue();
 
@@ -32,6 +38,9 @@ function UserdataForm() {
     const [street, setStreet] = useState('')
     const [number, setNumber] = useState('')
     const [title, setTitle] = useState('')
+   const [date, setDate] = useState('')
+   const [time, setTime] = useState('')
+
     const [error, setError] = useState('')
     const [arrayBasket, setArrayBasket] = useState([])    
 
@@ -44,7 +53,7 @@ function UserdataForm() {
     const handleSubmit = async (e) => {
         e.preventDefault()
             
-        const userdata = {title, number, street, email, zip, county, notes, arrayBasket}
+        const userdata = {title, number, street, email, zip, county, notes, arrayBasket,date,time}
 
         const response = await fetch('/api/Userdata', {
             method: 'POST',
@@ -61,6 +70,7 @@ function UserdataForm() {
         if (response.ok) {
             
             dispatch({type: 'CREATE_USERDATA', payload: json})
+      
             setTitle('')
             setNumber('')
             setStreet('')
@@ -68,6 +78,8 @@ function UserdataForm() {
             setZip('')
             setCounty('')
             setNotes('')
+            setDate('')
+            setTime('')
             setError('')
             setArrayBasket([])
             console.log('new title added', json)
@@ -103,6 +115,7 @@ function UserdataForm() {
             price={item.price}
             image={item.image}
             quantity={item.quantity}
+            count={item.count}
             //  onChange={(e) => setArrayBasket(e.target.value) }
             // value={arrayBasket}
                 />
@@ -210,6 +223,39 @@ defaultValue="Leave us a note!"
 onChange={(e) => setNotes(e.target.value)}
 value={notes}
 />
+<div style={{paddingTop:'20px'}}>
+<p>pick-up date/time</p>
+<div style={{display:'flex', flexDirection:'row'}}>
+<TextField
+        id="date"
+        label="Birthday"
+        type="date"
+        defaultValue="2017-05-24"
+        sx={{ width: 220 }}
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={(e) => setDate(e.target.value)}
+        value={date}
+      />
+      <TextField
+        id="time"
+        label="Alarm clock"
+        type="time"
+        defaultValue="07:30"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        inputProps={{
+          step: 300, // 5 min
+        }}
+        sx={{ width: 150 }}
+        onChange={(e) => setTime(e.target.value)}
+        value={time}
+      />
+</div>
+</div>
+
 
 </div>
 <button onClick={() => setShow(true)} className='userdata_btn' >checkout </button>

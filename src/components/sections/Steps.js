@@ -10,11 +10,7 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 function Steps() {
   return (
     <div className='steps_section'>
-      <div className='steps_wrapper'>
-     
-       
-        <div style={{display:'flex', flexDirection:'column'}}>
-        <div className='steps_title' style={{}}>
+          <div className='steps_title' style={{}}>
    <div className='easy_steps'>
         <h3>Easy steps for delivery</h3>
         </div>
@@ -23,6 +19,11 @@ function Steps() {
         <p style={{paddingTop:'5px ', fontSize:'16px', fontWeight:'500', paddingBottom:'10px'}}>Order online and we bring the products to you<br/>or select pick up at our store</p>
        
         </div>
+      <div className='steps_wrapper'>
+     
+       
+        <div style={{display:'flex', flexDirection:'column'}}>
+    
        <motion.div viewport={{ once: false }}
        initial={{ opacity:0, x:-100 }}
        whileInView={{ opacity: 1, x:0 }}

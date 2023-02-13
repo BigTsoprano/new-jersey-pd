@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 
   
 
-function CheckoutProduct({ id, name, price, image, quantity}) {
+function CheckoutProduct({ id, name, price, image, quantity, count}) {
 
   const [{basket}, dispatch] = useStateValue();
 
@@ -39,6 +39,7 @@ return (
             <div className='checkout_q_p'>
 
             <p>{quantity}</p>
+            <p>#{count}</p>
             <p>
         {price}
         </p>
