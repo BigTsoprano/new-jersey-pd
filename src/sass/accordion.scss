@@ -118,3 +118,14 @@
     }
    
 }
+
+  .faq_skeleton{
+    width: 100%;
+    height:auto;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 999;
+    background-color: #fff;
+    padding: 60px 20px;
+  }

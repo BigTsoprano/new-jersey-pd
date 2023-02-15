@@ -2,6 +2,7 @@ import React, {Suspense} from 'react';
 import Typed from "react-typed";
 import Button from '@mui/joy/Button';
 import {Link} from 'react-router-dom';
+import LinearProgress from '@mui/material/LinearProgress';
 
 import { motion } from 'framer-motion';
 
@@ -54,7 +55,7 @@ function Herobox() {
         
        <div className='hero_reviews' >
        <h4 >Satistfied customers</h4>
-       <Suspense fallback={<div>Loading...</div>}>
+       <Suspense fallback={<LinearProgress/>}>
       <AvatarReviews style={{ zIndex:'100'}}/>
       </Suspense>
       </div>

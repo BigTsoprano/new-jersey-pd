@@ -118,3 +118,13 @@ h2{
    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
       background-color: #FADB5F;
   }
+
+  .banner_skeleton{
+    background-color:#F0F4F8; 
+      width:100%; 
+      height:30vh; 
+      position:relative; 
+      z-index:999; 
+      display:flex;
+       align-items:center;
+  }

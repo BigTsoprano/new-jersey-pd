@@ -20,7 +20,8 @@ import RadioGroup from '@mui/joy/RadioGroup';
 import Sheet from '@mui/joy/Sheet';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
-
+import Skeleton from '@mui/material/Skeleton';
+import Box from '@mui/material/Box';
 const Pricebox = React.lazy(() => import('../elements/Pricebox'));
 
 
@@ -247,7 +248,21 @@ function Category() {
            
         <SwiperSlide>  
            <div className='products-box2' key={product._id} style={{borderRadius:'10px'}}>
-           <Suspense fallback={<div>Loading...</div>}>
+           <Suspense fallback={<Box sx={{bgcolor: '#E3E3E4', width: '100%' , height:'auto'}}>
+    <Skeleton sx={{borderRadius:'10px'}} variant="rectangular" width="100%" height={118} />
+
+              <Skeleton sx={{margin:'12px'}} width="60%" />
+              <Skeleton sx={{margin:'12px'}} width="40%" />
+             
+              <Skeleton variant="circular" width={40} height={40} sx={{margin:'20px'}} />
+<div style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly'}}>
+              <Skeleton sx={{borderRadius:'10px'}} variant="rectangular" width="20%" height={25} />
+              <Skeleton  sx={{borderRadius:'10px'}} variant="rectangular" width="20%" height={25} />
+
+              </div>
+              <Skeleton/>
+    
+    </Box>}>
            <Pricebox 
              key={product._id}
             name={product.name}

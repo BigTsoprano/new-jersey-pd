@@ -18,11 +18,13 @@ import Radio from '@mui/joy/Radio';
 import RadioGroup from '@mui/joy/RadioGroup';
 import InvertColorsIcon from '@mui/icons-material/InvertColors';
 import IconButton from '@mui/joy/IconButton';
-
+import CircularProgress from '@mui/material/CircularProgress';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 //import NavBar from '../components/navbar/NavBar';
 import CookieIcon from '@mui/icons-material/Cookie';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
+import Skeleton from '@mui/material/Skeleton';
+import Box from '@mui/material/Box';
 
 const Pricebox = React.lazy(() => import('../components/elements/Pricebox'));
 
@@ -212,7 +214,21 @@ const handleChange2 = (event) => {
         {products1 && products1.map(product => (
 <div style={{padding:'20px', display:"flex"}}>
           <div className='products-box' >
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={ <Box sx={{bgcolor: '#E3E3E4', width: '100%' , height:'auto'}}>
+    <Skeleton sx={{borderRadius:'10px'}} variant="rectangular" width="100%" height={118} />
+
+              <Skeleton sx={{margin:'12px'}} width="60%" />
+              <Skeleton sx={{margin:'12px'}} width="40%" />
+             
+              <Skeleton variant="circular" width={40} height={40} sx={{margin:'20px'}} />
+<div style={{display:'flex', flexDirection:'row', justifyContent:'space-evenly'}}>
+              <Skeleton sx={{borderRadius:'10px'}} variant="rectangular" width="20%" height={25} />
+              <Skeleton  sx={{borderRadius:'10px'}} variant="rectangular" width="20%" height={25} />
+
+              </div>
+              <Skeleton/>
+    
+    </Box>}>
             <Pricebox 
              key={product.id}
             name={product.name}

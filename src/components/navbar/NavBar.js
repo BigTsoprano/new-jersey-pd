@@ -1,34 +1,20 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import MoreIcon from '@mui/icons-material/MoreVert';
+
 import Slide from '@mui/material/Slide';
-import PropTypes from 'prop-types';
 import { motion  } from "framer-motion";
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-//import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import Fade from '@mui/material/Fade';
-import { ClassNames } from '@emotion/react';
+import CircularProgress from '@mui/material/CircularProgress';
 //import { makeStyles } from '@mui/styles';
-import SideBar from './SideBar';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import {Link} from 'react-router-dom';
 
-
+const SideBar = React.lazy(() => import('./SideBar'));
 
 
 
@@ -106,7 +92,9 @@ function NavBar(props) {
       <StyledToolbar>
   
      <motion.div animate={{scale:1}}>
+      <Suspense fallback={<CircularProgress/>}>
       <SideBar/>
+      </Suspense>
       </motion.div>
      
         

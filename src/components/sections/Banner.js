@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from '@mui/joy/Button';
+import {LazyLoadImage} from 'react-lazy-load-image-component';
 
 import { motion } from 'framer-motion';
 
@@ -12,10 +13,10 @@ export default function Banner () {
   return (
 <div className='banner_all'>
   <div className='banner-wrap' > 
-  <div className='banner_img'> 
-  <motion.img animate={{ rotate: 6 }}   transition={{  duration: 2, repeat: Infinity, repeatType: "reverse",ease: "linear" }}
+  <motion.div animate={{ rotate: 6 }}   transition={{  duration: 2, repeat: Infinity, repeatType: "reverse",ease: "linear" }} className='banner_img'> 
+  <LazyLoadImage 
  src="./hot_deal.png" alt="" style={{width: '100px', height:'auto'}}/>
- </div>
+ </motion.div>
     <motion.div className='banner' initial={{scale:.3}} whileInView={{scale:1}} viewport={{ once: true }} transition={{type:'tween',  duration: .3, delay:.1}}>
       <div style={{display:'flex', justifyContent:'center' ,flexDirection:' column'}}>
       <div className='banner-title' >
