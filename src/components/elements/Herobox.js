@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import Typed from "react-typed";
 import Button from '@mui/joy/Button';
 import {Link} from 'react-router-dom';
 
 import { motion } from 'framer-motion';
-import AvatarReviews from './AvatarReviews';
+
+const AvatarReviews = React.lazy(() => import('./AvatarReviews'));
 
 function Herobox() {
     const heroStrings = [
@@ -53,7 +54,9 @@ function Herobox() {
         
        <div className='hero_reviews' >
        <h4 >Satistfied customers</h4>
+       <Suspense fallback={<div>Loading...</div>}>
       <AvatarReviews style={{ zIndex:'100'}}/>
+      </Suspense>
       </div>
   
       </div>

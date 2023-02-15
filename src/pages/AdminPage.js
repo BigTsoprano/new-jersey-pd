@@ -1,12 +1,12 @@
-import React from 'react'
-import NavBar from '../components/navbar/NavBar';
-import {useEffect, useState} from 'react';
-import UserdataForm from '../components/elements/UserdataForm';
-import Textuserdata from '../components/elements/Textuserdata';
-import { useUserdataContext } from '../hooks/useUserdataContext';
-import { motion } from 'framer-motion';
-import Footer from '../components/sections/Footer';
 
+import NavBar from '../components/navbar/NavBar';
+import React, {Suspense, useEffect} from 'react';
+//import UserdataForm from '../components/elements/UserdataForm';
+import { useUserdataContext } from '../hooks/useUserdataContext';
+//import { motion } from 'framer-motion';
+const Footer = React.lazy(() => import('../components/sections/Footer'));
+
+const Textuserdata = React.lazy(() => import('../components/elements/Textuserdata'));
 
 
 function AdminPage() {
@@ -28,17 +28,10 @@ function AdminPage() {
         fetchUserdatas()
     }, [])
 
-    const containerVariants = {
-
-        exit: {
-          x: '-100vw',
-          transition: {ease: 'easeInOut'}
-        }
-      }
   return (
-    <div  className='admin_page' variants={containerVariants}
+    <div  className='admin_page'
  
-    exit="exit" style={{ height:'auto', position:'relative', paddingTop:'50px'}}>
+    style={{ height:'auto', position:'relative', paddingTop:'50px'}}>
         <NavBar></NavBar>
         <div className='admin_section' style={{marginTop:'100px'}} >
 
@@ -49,11 +42,14 @@ function AdminPage() {
             </div>
             <div className='pricetest_box' style={{}}>
         {userdata && userdata.map((userdata) => (
+            <Suspense fallback={<div>Loading...</div>}>
            <Textuserdata key={userdata._id} userdata={userdata}/>
-
+              </Suspense>
         ))}
         </div>
+        <Suspense fallback={<div>Loading...</div>}>
             <Footer></Footer>
+        </Suspense>
         </div>
   )
 }

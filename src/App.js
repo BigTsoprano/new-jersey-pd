@@ -1,11 +1,10 @@
 //import './App.css';
 import HomePage from './pages/HomePage';
-import AdminPage from './pages/AdminPage';
+import React, { Suspense } from 'react';
 import "./App.scss";
-import AllProducts from './pages/AllProducts';
 import {  Switch, Route, BrowserRouter } from "react-router-dom";
-
-
+import AllProducts from './pages/AllProducts';
+const AdminPage = React.lazy(() => import('./pages/AdminPage'));
 
 function App() {
 
@@ -13,7 +12,7 @@ function App() {
 
 
   return (
- 
+ <div>
 <BrowserRouter>
     <Switch   >
       <Route path='/' exact>
@@ -23,7 +22,9 @@ function App() {
         <AllProducts/>
       </Route>
       <Route path='/admin-page' exact>
+        <Suspense fallback={<div>Loading...</div>}>
         <AdminPage/>
+        </Suspense>
       </Route>
 
 
@@ -31,7 +32,7 @@ function App() {
 
 </BrowserRouter>
 
- 
+</div>
 
 
   );

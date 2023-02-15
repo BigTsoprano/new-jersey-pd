@@ -1,9 +1,8 @@
-import React, { useEffect, useState} from 'react';
+import React, { Suspense, useEffect, useState} from 'react';
 import NavBar from '../components/navbar/NavBar';
 //import Products from '../components/sections/Products';
 import { motion } from 'framer-motion';
 //import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
-import Pricebox from '../components/elements/Pricebox';
 //import { useFetch } from '../hooks/useFetch'
 import Footer from '../components/sections/Footer';
 
@@ -25,6 +24,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CookieIcon from '@mui/icons-material/Cookie';
 import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
+const Pricebox = React.lazy(() => import('../components/elements/Pricebox'));
 
 function AllProducts() {
 
@@ -48,19 +48,19 @@ function AllProducts() {
         setProducts1(json)
         setAllProducts(json)
         setSativa(json.filter((product) => {
-          return product.strain === 'sativa'
+          return product.strain == 'sativa'
         }))
         setIndica(json.filter((product) => {
-          return product.strain ==='indica'
+          return product.strain == 'indica'
         }))
         setFlower(json.filter((product) => {
-          return product.type === 'flower'
+          return product.type == 'flower'
         }))
         setEdible(json.filter((product) => {
-          return product.type === 'edible'
+          return product.type == 'edible'
         }))
         setConcentrate(json.filter((product) => {
-          return product.type === 'vape'
+          return product.type == 'vape'
         }))
         console.log(products1)
       }
@@ -212,6 +212,7 @@ const handleChange2 = (event) => {
         {products1 && products1.map(product => (
 <div style={{padding:'20px', display:"flex"}}>
           <div className='products-box' >
+            <Suspense fallback={<div>Loading...</div>}>
             <Pricebox 
              key={product.id}
             name={product.name}
@@ -219,6 +220,7 @@ const handleChange2 = (event) => {
             image={product.image}
             strain={product.strain}
             /> 
+            </Suspense>
           </div>
 </div>
         ))}

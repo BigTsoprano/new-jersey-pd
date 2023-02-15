@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 //import { Pagination } from "swiper";
@@ -11,7 +11,6 @@ import InvertColorsIcon from '@mui/icons-material/InvertColors';
 //import CategoryIcon from '@mui/icons-material/Category';
 import { motion } from 'framer-motion';
 //import LinearProgress from '@mui/material/LinearProgress';
-import Pricebox from '../elements/Pricebox';
 //import { useFetch } from '../../hooks/useFetch';
 //import { AwesomeButton } from "react-awesome-button";
 //import Avatar from '@mui/joy/Avatar';
@@ -22,7 +21,7 @@ import Sheet from '@mui/joy/Sheet';
 import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 
 
-
+const Pricebox = React.lazy(() => import('../elements/Pricebox'));
 
 
 function Category() {
@@ -248,6 +247,7 @@ function Category() {
            
         <SwiperSlide>  
            <div className='products-box2' key={product._id} style={{borderRadius:'10px'}}>
+           <Suspense fallback={<div>Loading...</div>}>
            <Pricebox 
              key={product._id}
             name={product.name}
@@ -255,7 +255,7 @@ function Category() {
             image={product.image}
             strain={product.strain}
             /> 
-  
+            </Suspense>
       </div>
       </SwiperSlide>
  
