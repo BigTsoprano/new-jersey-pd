@@ -14,11 +14,7 @@ import { motion } from 'framer-motion';
 //import { useFetch } from '../../hooks/useFetch';
 //import { AwesomeButton } from "react-awesome-button";
 //import Avatar from '@mui/joy/Avatar';
-import FormLabel from '@mui/joy/FormLabel';
-import Radio, { radioClasses } from '@mui/joy/Radio';
-import RadioGroup from '@mui/joy/RadioGroup';
-import Sheet from '@mui/joy/Sheet';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
+
 
 import Skeleton from '@mui/material/Skeleton';
 import Box from '@mui/material/Box';
@@ -29,7 +25,7 @@ function Category() {
 
 
 
-  const [, updateState] = useState();
+  //const [, updateState] = useState();
  
 
   const [products1, setProducts1] = useState(null)
@@ -92,131 +88,23 @@ function Category() {
       whileInView={{ scale:1}}
       className='category_list'>
 
-   
-<RadioGroup
-      aria-label="platform"
-      defaultValue="All"
-      overlay
-      name="platform"
-      className='radio_group_icons'
-      sx={{
-        
-        gap: 3,
-        [`& .${radioClasses.checked}`]: {
-          [`& .${radioClasses.action}`]: {
-            inset: -1,
-           // border: '4px solid #0081EB'
-            
-          },
-        },
+<button onClick={showAllProducts} className="cat_button">
+  <StorefrontIcon/>
+  <h3>view all</h3>
+</button>
+<button onClick={showFlower} className="cat_button">
+  <SpaIcon/>
+  <h3>flowers</h3>
+</button>
+<button onClick={showEdible} className="cat_button">
+  <CookieIcon/>
+  <h3>edibles</h3>
+</button>
+<button onClick={showConcentrate} className="cat_button">
+  <InvertColorsIcon/>
+  <h3>concentrates</h3>
+</button>
 
-      
-        [`& .${radioClasses.radio}`]: {
-          display: 'contents',
-          '& > svg': {
-            zIndex: 2,
-            position: 'absolute',
-            top: '-8px',
-            right: '-8px',
-            bgcolor: 'background.body',
-            borderRadius: '50%',
-          },
-        },
-      }}
-    >
-      
-         <Sheet
-     
-     variant="solid"
-     sx={{
-       borderRadius: '5px',
-       bgcolor: '#E12D39',
-      border:'none',
-
-       boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
-       display: 'flex',
-       flexDirection: 'column',
-       alignItems: 'center',
-       gap: 0,
-       p: 1,
-       minWidth: 120,
-       maxHeight: 60
-     }}
-     
-   >
-     <Radio onClick={() => showAllProducts()} value='All' checkedIcon={<CheckCircleRoundedIcon style={{color:'#18981D', backgroundColor:'#ffffff'}}  />} />
-     <StorefrontIcon variant="soft" sx={{ color:'#0C008C' }} />
-     <FormLabel ><h3>view all</h3></FormLabel>
-   </Sheet>
-        <Sheet
-          variant="outlined"
-          sx={{
-            borderRadius: '5px',
-            bgcolor: '#E12D39',
-            boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
-            border:'none',
-            display: 'flex',
-         
-            alignItems: 'center',
-            gap: 0,
-            p: 1,
-            minWidth: 120,
-            maxHeight: 60,
-      
-            flexDirection:'column'
-          }}
-        >
-          <Radio onClick={() => showFlower()} value='Flowers' checkedIcon={<CheckCircleRoundedIcon style={{color:'#18981D', backgroundColor:'#ffffff'}} />} />
-          <SpaIcon variant="soft" sx={{ color:'#51CA58' }} />
-          <FormLabel ><h3>flowers</h3></FormLabel>
-        </Sheet>
-        <Sheet
-     
-     variant="outlined"
-     sx={{
-       borderRadius: '5px',
-       bgcolor: '#E12D39',
-      border:'none',
-       boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
-       display: 'flex',
-       flexDirection: 'column',
-       alignItems: 'center',
-       gap: 0,
-       p: 1,
-       minWidth: 120,
-       maxHeight: 60
-     }}
-   >
-     <Radio onClick={() => showEdible()} value='Edibles' checkedIcon={<CheckCircleRoundedIcon  style={{color:'#18981D', backgroundColor:'#ffffff'}} />} />
-     <CookieIcon variant="soft" sx={{  color:'#F7C948' }} />
-     <FormLabel ><h3>edibles</h3></FormLabel>
-   </Sheet>
-   <Sheet
-     
-     variant="solid"
-     sx={{
-       borderRadius: '5px',
-       bgcolor: '#E12D39',
-      
-       boxShadow: 'rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset',
-       display: 'flex',
-       flexDirection: 'column',
-       alignItems: 'center',
-       justifyContent:'center',
-       gap: 0,
-       p: 1,
-       minWidth: 120,
-       maxHeight: 60
-     }}
-   >
-     <Radio onClick={() => showConcentrate()} value='Concentrates' checkedIcon={<CheckCircleRoundedIcon style={{color:'#18981D', backgroundColor:'#ffffff'}} />} />
-     <InvertColorsIcon variant="soft" sx={{  color:'#A2A5FC' }} />
-     <FormLabel ><h3>concentrates</h3></FormLabel>
-   </Sheet>
-  
-  
-    
-    </RadioGroup>
     </motion.div>
 
 

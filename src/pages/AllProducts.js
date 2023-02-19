@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 //import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
 //import { useFetch } from '../hooks/useFetch'
 import Footer from '../components/sections/Footer';
-
+import Slider from '@mui/material/Slider';
 import SpaIcon from '@mui/icons-material/Spa';
 //import LinearProgress from '@mui/material/LinearProgress';
 import SortIcon from '@mui/icons-material/Sort';
@@ -40,6 +40,7 @@ function AllProducts() {
   const [flower, setFlower] = useState(null)
   const [edible, setEdible] = useState(null)
   const [concentrate, setConcentrate] = useState(null)
+  const [price, setPrice] = useState([1,50])
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -49,19 +50,22 @@ function AllProducts() {
       if (response.ok) {
         setProducts1(json)
         setAllProducts(json)
-        setSativa(json.filter((product) => {
+        setProducts1(allProducts.filter((product) => {
+          return product.price >= price[0] && product.price <= price[1]
+        }))
+        setSativa(products1.filter((product) => {
           return product.strain == 'sativa'
         }))
-        setIndica(json.filter((product) => {
+        setIndica(products1.filter((product) => {
           return product.strain == 'indica'
         }))
-        setFlower(json.filter((product) => {
+        setFlower(products1.filter((product) => {
           return product.type == 'flower'
         }))
-        setEdible(json.filter((product) => {
+        setEdible(products1.filter((product) => {
           return product.type == 'edible'
         }))
-        setConcentrate(json.filter((product) => {
+        setConcentrate(products1.filter((product) => {
           return product.type == 'vape'
         }))
         console.log(products1)
@@ -69,10 +73,11 @@ function AllProducts() {
     }
 
     fetchProducts()
-  }, [])
+  }, [price])
   
   const showAllProducts = () => {
     setProducts1(allProducts)
+    setPrice([1,50])
 
   }
 
@@ -137,15 +142,34 @@ const [values,setValues] = React.useState('concentrates');
 
 const handleChange = (event) => {
   setValue(event.target.value);
-};
+}
 
 const handleChange2 = (event) => {
   setValues(event.target.value);
-};
+}
+
+
+const rangeSelector = (event, newValue) => {
+  setPrice(newValue)
+}
+
 
   return (
 <section className='section-wrapper' style={{height:'auto'}}>
   <NavBar/>
+  <div styles={{height: '50px', width: '50px'}}>
+    <h3>Price</h3>
+    <Slider
+      getAriaLabel={() => 'Minimum distance'}
+      style={{ height: 10, width: 200, marginLeft: 30, marginTop: 20 }}
+      value={price}
+      onChange={rangeSelector}
+      valueLabelDisplay="auto"
+      getAriaValueText={() => `$`}
+      disableSwap
+    />
+    <p>Price ${price[0]} - ${price[1]}</p>
+  </div>
   <motion.div whileTap={{scale:.95}} className='allproduct_filter_btn' >
   <Button  style={{backgroundColor:'#BCCCDC', color:'#102A43',boxShadow: 'rgba(0, 0, 0, 0.35) 2.4px 2.4px 3.2px', fontStyle:'italic'}} onClick={() => setShow(!show)} ><SortIcon/><p>Filter </p></Button>
   </motion.div>

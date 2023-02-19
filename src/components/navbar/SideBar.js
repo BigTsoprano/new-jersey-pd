@@ -111,7 +111,10 @@ function SideBar() {
             </motion.li>
    
 <motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
-            <Link style={{display:'flex', alignItems:'center'}} to='/all-products' >Log in/sign up<KeyboardArrowRightIcon/></Link>
+            <Link style={{display:'flex', alignItems:'center'}} to='/login' >Log in<KeyboardArrowRightIcon/></Link>
+</motion.li>
+<motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
+            <Link style={{display:'flex', alignItems:'center'}} to='/signup' >sign up<KeyboardArrowRightIcon/></Link>
 </motion.li>
 
           </motion.ul>

@@ -111,11 +111,11 @@ return (
         <Products />
       </Suspense>
     </Element>
-    <Element name='section-category'>
+   <Element name='section-category'>
 <Suspense fallback={<div className='product_skeleton'>
         <div>
         <Skeleton variant="text" animation="wave" sx={{ fontSize: '1rem' }} />
-      {/* For other variants, adjust the size with `width` and `height` */}
+     
       <Skeleton variant="circular" width={40} height={40} />
       <Skeleton variant="text" animation="wave" sx={{ fontSize: '1rem' }}/>
       <Skeleton variant="rectangular" animation="wave" width={210} height={60} />
@@ -123,7 +123,7 @@ return (
       </div>
       <div>
       <Skeleton variant="text" sx={{ fontSize: '1rem' }} />
-      {/* For other variants, adjust the size with `width` and `height` */}
+      
       <Skeleton variant="circular" width={40} height={40} />
       <Skeleton variant="text" animation="wave" sx={{ fontSize: '1rem' }}/>
       <Skeleton variant="rectangular" width={210} height={60} />
@@ -131,7 +131,7 @@ return (
       </div>
       <div>
         <Skeleton variant="text" animation="wave" sx={{ fontSize: '1rem' }} />
-      {/* For other variants, adjust the size with `width` and `height` */}
+   
       <Skeleton variant="circular" width={40} height={40} />
       <Skeleton variant="text" animation="wave" sx={{ fontSize: '1rem' }}/>
       <Skeleton variant="rectangular"  width={210} height={60} />
