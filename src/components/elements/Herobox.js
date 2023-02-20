@@ -36,7 +36,7 @@ function Herobox() {
        </p>
        </div>
       <div className='hero_main_text' >
-        <h1 >WEED DELIVERY <br/>TO YOUR DOOR.</h1>
+        <h1 >Your canna<br/>slogan goes here.</h1>
         </div>
 
        

@@ -106,11 +106,10 @@ function NavBar(props) {
         >
           <motion.div   initial={{x:'-100vw'}} animate={{x:0}}
   transition={{duration: .5, type:'spring', stiffness: 50}}
+  viewport={{ once: true }}
   className='navbar-title'>
-          <h4 >
-             newjersey
-          </h4>
-          <p>potdelivery</p>
+          <img src="ninjas_logo.png" alt="logo" style={{width:'40px', height:'auto', paddingRight:'3px'}}/>
+          <p>01ninjas</p>
           </motion.div>
         </Typography>
         <motion.div 	     

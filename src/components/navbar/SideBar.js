@@ -10,7 +10,8 @@ import { styled } from '@mui/styles';
 import {Link} from 'react-router-dom';
 import CancelIcon from '@mui/icons-material/Cancel';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-
+import { useLogout } from '../../hooks/useLogout';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 const MyBox = styled(Box)({    
@@ -24,6 +25,12 @@ const MyBox = styled(Box)({
 
 function SideBar() {
 
+  const { logout } = useLogout();
+  const { user } = useAuthContext();
+
+  const handleClick = () => {
+    logout();
+  }
     const [state, setState] = React.useState({
    
         left: false,
@@ -109,15 +116,23 @@ function SideBar() {
             <motion.li className="item" variants={item} style={{paddingTop:'20px'}}>
             <a style={{display:'flex', alignItems:'center'}} to='section-accordions' >FAQ<KeyboardArrowRightIcon/></a>
             </motion.li>
-   
-<motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
-            <Link style={{display:'flex', alignItems:'center'}} to='/login' >Log in<KeyboardArrowRightIcon/></Link>
-</motion.li>
-<motion.li className="item" variants={item} style={{paddingTop:'20px'}}> 
-            <Link style={{display:'flex', alignItems:'center'}} to='/signup' >sign up<KeyboardArrowRightIcon/></Link>
-</motion.li>
+            </motion.ul>
 
-          </motion.ul>
+   {user && (
+   <div  style={{paddingTop:'20px'}}> 
+ <span>{user.email}</span>
+            <button style={{display:'flex', alignItems:'center'}} onClick={handleClick} >logout<KeyboardArrowRightIcon/></button>
+</div>
+    )}
+{!user && (
+<div  style={{paddingTop:'20px'}}> 
+            <Link style={{display:'flex', alignItems:'center'}} to='/login' >Log in<KeyboardArrowRightIcon/></Link>
+
+
+            <Link style={{display:'flex', alignItems:'center'}} to='/signup' >sign up<KeyboardArrowRightIcon/></Link>
+</div>
+    )}
+          
             </MyBox>
             
       </Drawer>

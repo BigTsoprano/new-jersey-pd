@@ -1,5 +1,6 @@
 import React, { useState, Suspense } from 'react';
-import {motion} from 'framer-motion';
+import { useLogin } from '../hooks/useLogin';
+//import {motion} from 'framer-motion';
 const NavBar = React.lazy(() => import('../components/navbar/NavBar'));
 const Footer = React.lazy(() => import('../components/sections/Footer'));
 
@@ -7,11 +8,12 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const { login, error, isLoading } = useLogin()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        console.log(email, password)
+       await login(email, password)
     }
 
     return (
@@ -40,7 +42,8 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
             />
-            <button className='login_btn'> log in</button>
+            <button disabled={isLoading} className='login_btn'> log in</button>
+            {error && <p> {error}</p> }
             <div className='login_redirect'>
                 <p>Don't have an account ? </p>
                 <a>create account</a>
