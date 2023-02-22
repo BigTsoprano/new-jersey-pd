@@ -1,19 +1,18 @@
 //import './App.css';
 import HomePage from './pages/HomePage';
-import React, { Suspense } from 'react';
+import React from 'react';
 import "./App.scss";
-import {  Switch, Route, BrowserRouter } from "react-router-dom";
+import {  Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
 import LinearProgress from '@mui/material/LinearProgress';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-
-const AllProducts = React.lazy(() => import('./pages/AllProducts'));
-const AdminPage = React.lazy(() => import('./pages/AdminPage'));
-
+import AllProducts from './pages/AllProducts';
+import AdminPage from './pages/AdminPage';
+import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
 
-
+const { user } = useAuthContext()
 
 
   return (
@@ -24,20 +23,16 @@ function App() {
         <HomePage/>
       </Route>
       <Route path='/all-products' exact>
-        <Suspense fallback={<LinearProgress/>}>
         <AllProducts/>
-        </Suspense>
       </Route>
       <Route path='/admin-page' exact>
-        <Suspense fallback={<LinearProgress/>}>
-        <AdminPage/>
-        </Suspense>
+       {user ? <AdminPage/> : <Redirect to='/login'/>}
       </Route>
       <Route path='/login' exact>
-        <Login/>
+        {!user ? <Login/> : <Redirect to='/admin-page'/>}
       </Route>
       <Route path='/signup' exact>
-        <Signup/>
+       {!user ? <Signup/> : <Redirect to='/admin-page'/>}
       </Route>
 
 

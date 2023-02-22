@@ -5,14 +5,23 @@ import { useUserdataContext } from "../../hooks/useUserdataContext";
 import React, { useState } from "react";
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import { IconButton } from "@mui/joy";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const Textuserdata = ({userdata}) => {
+
+    const { user } = useAuthContext()
 
 const { dispatch } = useUserdataContext()
 
     const handleClick = async () => {
+        if (!user) {
+            return
+        }
         const response = await fetch('/api/Userdata/' + userdata._id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
         })
         const json = await response.json()
 

@@ -87,7 +87,7 @@ function Category() {
       transition={{duration:.6, delay:.4, type:'spring'}}
       whileInView={{ scale:1}}
       className='category_list'>
-
+<div className="cat_row1">
 <button onClick={showAllProducts} className="cat_button">
   <StorefrontIcon/>
   <h3>view all</h3>
@@ -96,6 +96,8 @@ function Category() {
   <SpaIcon/>
   <h3>flowers</h3>
 </button>
+</div>
+<div className='cat_row2'>
 <button onClick={showEdible} className="cat_button">
   <CookieIcon/>
   <h3>edibles</h3>
@@ -104,7 +106,7 @@ function Category() {
   <InvertColorsIcon/>
   <h3>concentrates</h3>
 </button>
-
+</div>
     </motion.div>
 
 

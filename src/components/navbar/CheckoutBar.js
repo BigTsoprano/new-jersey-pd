@@ -10,6 +10,8 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { motion } from 'framer-motion';
 import IconButton from '@mui/joy/IconButton';
 import CancelIcon from '@mui/icons-material/Cancel';
+import { useAuthContext } from '../../hooks/useAuthContext';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -57,6 +59,8 @@ const [state, setState] = React.useState({
     }
   };
 
+  const { user } = useAuthContext();
+
   return (
     <div>
  {['bottom'].map((anchor) => (
@@ -79,7 +83,7 @@ style={{color:'#fff', backgroundColor:'#1D0EBE', position:'fixed', zIndex:'999',
                 style={{marginLeft:'20px',marginTop:'20px'}} >
 <CancelIcon size="lg" sx={{color:'#CF1124'}}/>
 </IconButton>
-            <UserdataForm/>
+            {user ? <UserdataForm/> : <Redirect to="/login" />}
         </MyBox>
           
           </Drawer>

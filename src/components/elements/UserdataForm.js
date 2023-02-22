@@ -10,6 +10,7 @@ import Input from '@mui/joy/Input';
 import Textarea from '@mui/joy/Textarea';
 import ForwardIcon from '@mui/icons-material/Forward';
 import TextField from '@mui/material/TextField';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 
 import Button from '@mui/joy/Button';
@@ -30,6 +31,7 @@ function UserdataForm() {
     //     })
     // }
 
+    const {user} = useAuthContext()
      const {dispatch} = useUserdataContext()
     const [zip, setZip] = useState('')
     const [county, setCounty] = useState('')
@@ -52,6 +54,11 @@ function UserdataForm() {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+
+        if (!user) {
+            setError('You must be logged in to create a userdata')
+            return
+        }
             
         const userdata = {title, number, street, email, zip, county, notes, arrayBasket,date,time}
 
@@ -59,7 +66,8 @@ function UserdataForm() {
             method: 'POST',
             body: JSON.stringify(userdata),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
         })
         const json = await response.json()

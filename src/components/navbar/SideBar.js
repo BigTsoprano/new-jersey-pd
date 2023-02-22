@@ -125,12 +125,14 @@ function SideBar() {
 </div>
     )}
 {!user && (
-<div  style={{paddingTop:'20px'}}> 
-            <Link style={{display:'flex', alignItems:'center'}} to='/login' >Log in<KeyboardArrowRightIcon/></Link>
-
-
-            <Link style={{display:'flex', alignItems:'center'}} to='/signup' >sign up<KeyboardArrowRightIcon/></Link>
-</div>
+<motion.div  style={{paddingTop:'20px', paddingLeft:'20px'}}> 
+<motion.button className='login_button' initial={{scale:0}} whileInView={{scale:1}} transition={{delay:.6, duration:.3}} viewport={{once:false}}>
+            <Link style={{display:'flex', alignItems:'center'}} to='/login' >Log in</Link>
+            </motion.button>
+<motion.button initial={{scale:0}} whileInView={{scale:1}} transition={{delay:.8, duration:.3}} viewport={{once:false}}>
+            <Link style={{display:'flex', alignItems:'center'}} to='/signup' >sign up</Link>
+            </motion.button>
+</motion.div>
     )}
           
             </MyBox>

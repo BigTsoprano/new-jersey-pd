@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Element } from "react-scroll";
 import ReactCursorPosition from "react-cursor-position";
+import { Redirect } from "react-router-dom";
 
 import Herosection from '../components/sections/Herosection';
 //import CubeProducts from '../components/sections/CubeProducts';

@@ -109,7 +109,7 @@ function NavBar(props) {
   viewport={{ once: true }}
   className='navbar-title'>
           <img src="ninjas_logo.png" alt="logo" style={{width:'40px', height:'auto', paddingRight:'3px'}}/>
-          <p>01ninjas</p>
+          <p>Your brand</p>
           </motion.div>
         </Typography>
         <motion.div 	     
