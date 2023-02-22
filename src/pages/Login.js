@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, Suspense, Link } from 'react';
 import { useLogin } from '../hooks/useLogin';
 //import {motion} from 'framer-motion';
 const NavBar = React.lazy(() => import('../components/navbar/NavBar'));
@@ -46,7 +46,7 @@ const Login = () => {
             {error && <p> {error}</p> }
             <div className='login_redirect'>
                 <p>Don't have an account ? </p>
-                <a>create account</a>
+        <a href='/signup'>create an account</a>
             </div>
             </div>
             </form>

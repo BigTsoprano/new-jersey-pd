@@ -48,7 +48,7 @@ const Signup = () => {
             {error && <div className='error'><p> {error}</p> </div>}
             <div className='signup_redirect'>
                 <p>Already have an account ? </p>
-                <a>log in</a>
+                <a href='/login'>log in</a>
                 </div>
             </div>
             </form>
