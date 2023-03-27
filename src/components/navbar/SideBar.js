@@ -120,16 +120,16 @@ function SideBar() {
 
    {user && (
    <div  style={{paddingTop:'20px'}}> 
- <span>{user.email}</span>
+ <span style={{fontSize:'18px', fontWeight:''}}>{user.email}</span>
             <button style={{display:'flex', alignItems:'center'}} onClick={handleClick} >logout<KeyboardArrowRightIcon/></button>
 </div>
     )}
 {!user && (
 <motion.div  style={{paddingTop:'20px', paddingLeft:'20px'}}> 
 <motion.button className='login_button' initial={{scale:0}} whileInView={{scale:1}} transition={{delay:.6, duration:.3}} viewport={{once:false}}>
-            <Link style={{display:'flex', alignItems:'center'}} to='/login' >Log in</Link>
+            <Link style={{display:'flex', alignItems:'center'}} to='/login' >log in</Link>
             </motion.button>
-<motion.button initial={{scale:0}} whileInView={{scale:1}} transition={{delay:.8, duration:.3}} viewport={{once:false}}>
+<motion.button className='signup_sidebar' initial={{scale:0}} whileInView={{scale:1}} transition={{delay:.8, duration:.3}} viewport={{once:false}}>
             <Link style={{display:'flex', alignItems:'center'}} to='/signup' >sign up</Link>
             </motion.button>
 </motion.div>

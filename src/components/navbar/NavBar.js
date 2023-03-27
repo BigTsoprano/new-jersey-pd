@@ -104,13 +104,11 @@ function NavBar(props) {
           component="div"
           sx={{ flexGrow: 1, alignSelf: 'center' }}
         >
-          <motion.div   initial={{x:'-100vw'}} animate={{x:0}}
-  transition={{duration: .5, type:'spring', stiffness: 50}}
-  viewport={{ once: true }}
+          <div  
   className='navbar-title'>
           <img src="ninjas_logo.png" alt="logo" style={{width:'40px', height:'auto', paddingRight:'3px'}}/>
           <p>Your brand</p>
-          </motion.div>
+          </div>
         </Typography>
         <motion.div 	     
             whileTap={{ backgroundColor: '#D9E2EC' }}>

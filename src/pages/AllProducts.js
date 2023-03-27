@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState} from 'react';
 import NavBar from '../components/navbar/NavBar';
 //import Products from '../components/sections/Products';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 //import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
 //import { useFetch } from '../hooks/useFetch'
 import Footer from '../components/sections/Footer';
@@ -30,8 +30,7 @@ const Pricebox = React.lazy(() => import('../components/elements/Pricebox'));
 
 function AllProducts() {
 
-  //const [url, setUrl] = useState('http://localhost:3000/njpd')
-  
+
 
   const [products1, setProducts1] = useState(null)
   const [allProducts, setAllProducts] = useState(null)
@@ -53,6 +52,8 @@ function AllProducts() {
         setProducts1(allProducts.filter((product) => {
           return product.price >= price[0] && product.price <= price[1]
         }))
+
+
         setSativa(products1.filter((product) => {
           return product.strain == 'sativa'
         }))
@@ -152,88 +153,93 @@ const handleChange2 = (event) => {
 const rangeSelector = (event, newValue) => {
   setPrice(newValue)
 }
+const [visible, setVisible] = useState(false);
+
+const toggleVisible = () => {
+  setVisible(!visible);
+};
+
 
 
   return (
 <section className='section-wrapper' style={{height:'auto'}}>
   <NavBar/>
-  <div styles={{height: '50px', width: '50px'}}>
-    <h3>Price</h3>
-    <Slider
-      getAriaLabel={() => 'Minimum distance'}
-      style={{ height: 10, width: 200, marginLeft: 30, marginTop: 20 }}
-      value={price}
-      onChange={rangeSelector}
-      valueLabelDisplay="auto"
-      getAriaValueText={() => `$`}
-      disableSwap
-    />
-    <p>Price ${price[0]} - ${price[1]}</p>
-  </div>
-  <motion.div whileTap={{scale:.95}} className='allproduct_filter_btn' >
-  <Button  style={{backgroundColor:'#BCCCDC', color:'#102A43',boxShadow: 'rgba(0, 0, 0, 0.35) 2.4px 2.4px 3.2px', fontStyle:'italic'}} onClick={() => setShow(!show)} ><SortIcon/><p>Filter </p></Button>
-  </motion.div>
-  {show && (
-  <div className='product_filter'>
-    <motion.div whileTap={{ rotate: -390, scale: 1.2 }} className='allproduct_refresh'>
-    <IconButton variant="solid" onClick={refreshHandle} sx={{background:'#000'}}>
-<RestartAltIcon sx={{color:'#fff'}}/>
-    </IconButton>
-    </motion.div>
-    <div className='product_filter2'>
-<div style={{}}>
-<FormControl>
-  <div className="flower_radio">
-      <Button  onClick={handleOpen} >
-        <h2 style={{fontSize:'16px', fontWeight:'550', color:'#102A43',display:'flex', alignItems:'center', flexDirection:'row'}}><SpaIcon sx={{fontSize:'20px',paddingRight:'3px'}} style={{color:'#18981D'}}/>Flowers<KeyboardArrowDownIcon/></h2>
-       </Button>
-       </div>
-       {open && (
-      <RadioGroup
-        defaultValue="female"
-        name="controlled-radio-buttons-group"
-        value={value}
-        onChange={handleChange}
-        sx={{ my: 1 }}
-      >
-        <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}} onClick={showFlower} value="all flowers" label="all flowers" />
-        <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showSativa} value="sativa" label="sativa" />
-        <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showIndica} value="indica" label="indica" />
-      </RadioGroup>
-      )}
-    </FormControl>
-   
- 
+  <AnimatePresence>
+ {visible && (<motion.div    initial={{ x: 500 }}
+            animate={{
+             x: 0
+            }}
+            exit={{ x: 500}}
 
+         
+            transition={{ type: "spring", bounce: 0, duration: 0.6, delay:0.1, ease: 'linear' }} className='allproduct_filter'>
+  <button onClick={toggleVisible}>close</button> <button>clear filter</button>
+<h1>filter</h1>
+<div className='category_filter_flower'>
+<h2><SpaIcon sx={{fontSize:'20px',paddingRight:'3px'}} style={{color:'#18981D'}}/>Flowers</h2>
+<button onClick={showFlower}>all flowers</button>
+<button onClick={showSativa}>sativa</button>
+<button onClick={showIndica}   >indica</button>
 </div>
+<div>
+  <h2><InvertColorsIcon sx={{color:'#A2A5FC', fontSize:'20px', paddingRight:'3px'}}/>Concentrates</h2>
+  <button onClick={showConcentrate}>all concentrates</button>
+  <button onClick={showConcentrate}>shatter</button>
+  <button onClick={showIndica} >vapes</button>
+</div>
+<div>
+  <h2>Edibles</h2>
+  <button>all edibles</button>
+</div>
+<div styles={{display:'flex'}}>
+<p style={{paddingTop:'20px', fontWeight:'500'}}>Price filter: ${price[0]} - ${price[1]}</p>
+   <Slider
+     getAriaLabel={() => 'Minimum distance'}
+     style={{ height: 3, width: 200, marginLeft: 0, marginTop: 0 }}
+     value={price}
+     onChange={rangeSelector}
+     valueLabelDisplay="auto"
+     getAriaValueText={() => `$`}
+     disableSwap
+   />
+   
+ </div>
+ <div>
+ <button>price: $15+</button>
+ <button>price: $20+</button>
+ </div>
+</motion.div>)}
+</AnimatePresence>
 
-<FormControl>
-<div className='concentrates_radio'>
-  <Button onClick={handleOpens}><InvertColorsIcon sx={{color:'#A2A5FC', fontSize:'20px', paddingRight:'3px'}}/>
-  <h2 style={{fontSize:'16px', fontWeight:'550', color:'#102A43',display:'flex', alignItems:'center', flexDirection:'row'}}>Concentrates<KeyboardArrowDownIcon/></h2></Button>
-  </div>
-  {opens && (
-    <RadioGroup 
-    defaultValue="consentrates"
-    name="controlled-radio-buttons-group"
-    value={values}
-    onChange={handleChange2}
-    sx={{ my: 1 }}
-  >
-      <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}} onClick={showConcentrate} value="all flowers" label="all concentrates" />
-      <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showConcentrate} value="sativa" label="vape pens" />
-      <Radio style={{color:'#243B53', paddingTop:'12px', fontWeight:'500'}}  onClick={showIndica} value="indica" label="oil dabs" />
-      </RadioGroup>
+  
+  <button className='allproduct_filter_btn'    onClick={toggleVisible}><SortIcon/><p>Filter </p></button>
  
-  )}
+ 
 
-  </FormControl>
+  
+
+   <div style={{display:'flex', flexDirection:'column'}}>
+    <div className='product_filter2'>
+    <motion.button className='allproduct_refresh' whileTap={{ rotate: -390, scale: 1.2 }}  onClick={refreshHandle} sx={{background:'#000'}}>
+<RestartAltIcon sx={{color:'#fff'}}/>
+    </motion.button>
+
+   
+
+
+
   <div className='edibles_radio'>
   <Button onClick={handleEdible}><CookieIcon sx={{color:'#DE911D', fontSize:'20px', paddingRight:'3px'}}/><p>Edibles</p></Button>
 </div>
+
+
+
+
 </div>
-  </div>
-  )}
+
+ </div>
+
+ 
 <div style={{display:'flex', flexDirection:'row', height:'auto', flexWrap:'wrap', justifyContent:'center'}}>
         {products1 && products1.map(product => (
 <div style={{padding:'20px', display:"flex"}}>
@@ -264,6 +270,7 @@ const rangeSelector = (event, newValue) => {
           </div>
 </div>
         ))}
+        
         </div>
         <Footer/>
         <CheckoutBar/>

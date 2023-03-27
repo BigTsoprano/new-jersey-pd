@@ -48,7 +48,7 @@ function Herobox() {
        boxShadow:' rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px',
        fontSize:'20px',
        fontStyle:'italic'}} >
-         Order delivery now
+         View product catalog
          </Button>
          </Link>
       </motion.div>

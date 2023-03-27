@@ -169,4 +169,31 @@ a{
 .login_button{
     margin:12px;
     background-color: #1D0EBE;
+    color:#F0F4F8;
+    border-radius: 10px;
+    font-weight: 550;
+    border: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+.login_button:active{
+    box-shadow: none;
+    transition: 0.3s;
+}
+.signup_sidebar{
+    font-size: 16px;
+    font-weight: 550;
+    padding: 8px 12px;
+    background-color: #D9E2EC;
+    border-radius: 10px;
+    border: none;
+    color: #1D0EBE;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+}
+.signup_sidebar:active{
+    box-shadow: none;
+    transition: 0.3s;
 }
