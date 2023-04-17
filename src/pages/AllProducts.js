@@ -1,27 +1,12 @@
 import React, { Suspense, useEffect, useState } from "react";
 import NavBar from "../components/navbar/NavBar";
-//import Products from '../components/sections/Products';
 import { motion, AnimatePresence } from "framer-motion";
-//import SwipeableEdgeDrawer from '../components/navbar/SwipeableEdgeDrawer';
-//import { useFetch } from '../hooks/useFetch'
 import Footer from "../components/sections/Footer";
 import Slider from "@mui/material/Slider";
 import SpaIcon from "@mui/icons-material/Spa";
-//import LinearProgress from '@mui/material/LinearProgress';
 import SortIcon from "@mui/icons-material/Sort";
 import CheckoutBar from "../components/navbar/CheckoutBar";
-import Button from "@mui/joy/Button";
-import FormControl from "@mui/joy/FormControl";
-//import FormLabel from '@mui/joy/FormLabel';
-//import FormHelperText from '@mui/joy/FormHelperText';
-import Radio from "@mui/joy/Radio";
-import RadioGroup from "@mui/joy/RadioGroup";
 import InvertColorsIcon from "@mui/icons-material/InvertColors";
-import IconButton from "@mui/joy/IconButton";
-import CircularProgress from "@mui/material/CircularProgress";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-//import NavBar from '../components/navbar/NavBar';
-import CookieIcon from "@mui/icons-material/Cookie";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/material/Box";
@@ -31,11 +16,6 @@ const Pricebox = React.lazy(() => import("../components/elements/Pricebox"));
 function AllProducts() {
   const [products1, setProducts1] = useState(null);
   const [allProducts, setAllProducts] = useState(null);
-  const [sativa, setSativa] = useState(null);
-  const [indica, setIndica] = useState(null);
-  const [flower, setFlower] = useState(null);
-  const [edible, setEdible] = useState(null);
-  const [concentrate, setConcentrate] = useState(null);
   const [price, setPrice] = useState([1, 50]);
 
   useEffect(() => {
@@ -52,31 +32,6 @@ function AllProducts() {
           })
         );
 
-        setSativa(
-          products1.filter((product) => {
-            return product.strain == "sativa";
-          })
-        );
-        setIndica(
-          products1.filter((product) => {
-            return product.strain == "indica";
-          })
-        );
-        setFlower(
-          products1.filter((product) => {
-            return product.type == "flower";
-          })
-        );
-        setEdible(
-          products1.filter((product) => {
-            return product.type == "edible";
-          })
-        );
-        setConcentrate(
-          products1.filter((product) => {
-            return product.type == "vape";
-          })
-        );
         console.log(products1);
       }
     };
@@ -90,67 +45,27 @@ function AllProducts() {
   };
 
   const showSativa = () => {
-    setProducts1(sativa);
+    setProducts1(allProducts.filter((product) => product.strain === "sativa"));
   };
 
   const showIndica = () => {
-    setProducts1(indica);
+    setProducts1(allProducts.filter((product) => product.strain === "indica"));
   };
 
   const showFlower = () => {
-    setProducts1(flower);
+    setProducts1(allProducts.filter((product) => product.type === "flower"));
   };
 
   const showEdible = () => {
-    setProducts1(edible);
-  };
-
-  const handleEdible = () => {
-    setProducts1(edible);
-    setOpen(false);
-    setOpens(false);
+    setProducts1(allProducts.filter((product) => product.type === "edible"));
   };
 
   const showConcentrate = () => {
-    setProducts1(concentrate);
-  };
-
-  const [show, setShow] = useState(false);
-  const close = () => setShow(false);
-
-  const onClose = () => {
-    setShow(false);
-  };
-
-  const [open, setOpen] = useState(false);
-
-  const [opens, setOpens] = useState(false);
-
-  const handleOpen = () => {
-    setOpen(!open);
-    setOpens(false);
-  };
-
-  const handleOpens = () => {
-    setOpens(!opens);
-    setOpen(false);
+    setProducts1(allProducts.filter((product) => product.type === "vape"));
   };
 
   const refreshHandle = () => {
     showAllProducts();
-    setOpen(false);
-    setOpens(false);
-  };
-
-  const [value, setValue] = React.useState("female");
-  const [values, setValues] = React.useState("concentrates");
-
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  const handleChange2 = (event) => {
-    setValues(event.target.value);
   };
 
   const rangeSelector = (event, newValue) => {
@@ -161,7 +76,8 @@ function AllProducts() {
   const toggleVisible = () => {
     setVisible(!visible);
   };
-  const sortedProducts = products1 && [...products1].sort((a, b) => a.name.localeCompare(b.name));
+  const sortedProducts =
+    products1 && [...products1].sort((a, b) => a.name.localeCompare(b.name));
 
   const handleSort = () => {
     setProducts1(sortedProducts);
@@ -242,22 +158,20 @@ function AllProducts() {
           </motion.div>
         )}
       </AnimatePresence>
-<div style={{ display: "flex", flexDirection: "row" }}>
-      <button className="allproduct_filter_btn" onClick={toggleVisible}>
-        <SortIcon />
-        <p>Filter </p>
-      </button>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <button className="allproduct_filter_btn" onClick={toggleVisible}>
+          <SortIcon />
+          <p>Filter </p>
+        </button>
 
-    
-          <motion.button
-            className="allproduct_refresh"
-            whileTap={{ rotate: -390, scale: 1.2 }}
-            onClick={refreshHandle}
-            sx={{ background: "#000" ,}}
-          >
-            <RestartAltIcon sx={{ color: "#fff" }} />
-          </motion.button>
-        
+        <motion.button
+          className="allproduct_refresh"
+          whileTap={{ rotate: -390, scale: 1.2 }}
+          onClick={refreshHandle}
+          sx={{ background: "#000" }}
+        >
+          <RestartAltIcon sx={{ color: "#fff" }} />
+        </motion.button>
       </div>
 
       <div
