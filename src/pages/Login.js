@@ -27,6 +27,11 @@ const Login = () => {
         <form className="login_form" onSubmit={handleSubmit}>
             <h1>Welcome back!</h1>
             <p>Log in to your account, purchase historty and more</p>
+            <div style={{textAlign:'left'}}>
+            <p style={{fontWeight:'550', paddingTop:'12px'}}>Sample login credentials</p>
+            <p>email: canna@01ninjas.com</p>
+            <p>password: ilovecanna369</p>
+            </div>
             <div className='login_wrapper'>
             <label>Email:</label>
             <input

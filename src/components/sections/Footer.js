@@ -36,7 +36,7 @@ function Footer() {
       <div style={{position:'relative'}} className='footer_three_sections'>
         <div className='footer_one'>
           <div className='footer_title'>
-          <h3>cannabis.</h3><h4>01ninjas.com</h4>
+          <h3>demo.</h3><h4>01ninjas.com</h4>
           </div>
           <div>
             <IconButton><FacebookIcon style={{color:'#F0F4F8'}}/></IconButton>
@@ -63,7 +63,7 @@ function Footer() {
                 <h5>Contact</h5>
                 <ul>
                   <li>(201)328-7539</li>
-                  <li>shanonmcdonald@01ninjas.com</li>
+                  <li>shanon@01ninjas.com</li>
                 
                 </ul>
               </div>

@@ -20,6 +20,7 @@ import InvertColorsIcon from "@mui/icons-material/InvertColors";
 import IconButton from "@mui/joy/IconButton";
 import CircularProgress from "@mui/material/CircularProgress";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 //import NavBar from '../components/navbar/NavBar';
 import CookieIcon from "@mui/icons-material/Cookie";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
@@ -145,6 +146,12 @@ function AllProducts() {
     setProducts1(sortedProducts);
   };
 
+  const sortedProducts2 = products1 && [...products1].sort((a, b) => b.name.localeCompare(a.name));
+
+  const handleSort2 = () => {
+    setProducts1(sortedProducts2);
+  };
+
   useEffect(() => {
     if (allProducts) {
       setProducts1(allProducts.filter((product) => {
@@ -184,8 +191,18 @@ function AllProducts() {
             <button className="back_btn" onClick={() => setVisible(false)}><SubdirectoryArrowRightIcon style={{fontSize:'30px'}}/></button>
            
             </div>
+            <div style={{display:'flex', flexDirection:'column'}}>
+              <div style={{display:'flex', flexDirection:'row', alignItems:'center', padding:'5px'}}>
+              <ManageSearchIcon style={{ fontSize: "28px" }} />
+              <h2 style={{fontSize:'18px'}}>Product search</h2>
+              </div>
             <input className="input_search" id="outlined-basic" label="Outlined" variant="outlined" value={searchValue} onChange={handleSearchChange}/>
-
+            </div>
+            <div style={{marginTop:'12px'}}>
+         
+         <button className="allproduct_filter_btn2" onClick={handleSort}>sort a to z</button>
+         <button className="allproduct_filter_btn2" onClick={handleSort2}>sort z to a</button>
+       </div>
             <div className="category_filter_flower">
               <h2 style={{fontSize:'18px'}}>
                 <SpaIcon
@@ -218,9 +235,9 @@ function AllProducts() {
               </div>
             </div>
             <div>
-              <h2>
+              <h2 style={{fontSize:'18px', paddingTop:'20px'}}>
                 <CookieIcon
-                sx={{ fontSize:'18px'}}
+                sx={{ fontSize:'18px',paddingRight: "3px", color:'#F0B429'}}
                 />
                 Edibles</h2>
               <button className="allproduct_filter_btn2" onClick={showEdible}>all edibles</button>
@@ -239,11 +256,7 @@ function AllProducts() {
                 disableSwap
               />
             </div>
-            <div>
-              <button className="allproduct_filter_btn2">price: $15+</button>
-              <button className="allproduct_filter_btn2">price: $20+</button>
-              <button className="allproduct_filter_btn2" onClick={handleSort}>sort a to z</button>
-            </div>
+        
             <motion.button
             className="allproduct_refresh"
             whileTap={{ rotate: -390, scale: 1.0 }}

@@ -119,9 +119,9 @@ function SideBar() {
             </motion.ul>
 
    {user && (
-   <div  style={{paddingTop:'20px'}}> 
- <span style={{fontSize:'18px', fontWeight:''}}>{user.email}</span>
-            <button style={{display:'flex', alignItems:'center'}} onClick={handleClick} >logout<KeyboardArrowRightIcon/></button>
+   <div  style={{padding:'20px'}}> 
+ <span style={{fontSize:'18px', fontWeight:'550'}}>{user.email}</span>
+            <button className='logout_btn' style={{display:'flex', alignItems:'center'}} onClick={handleClick} >logout<KeyboardArrowRightIcon/></button>
 </div>
     )}
 {!user && (
