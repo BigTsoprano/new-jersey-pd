@@ -25,18 +25,20 @@ import CookieIcon from "@mui/icons-material/Cookie";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
 import Skeleton from "@mui/material/Skeleton";
 import Box from "@mui/material/Box";
+import SubdirectoryArrowRightIcon from '@mui/icons-material/SubdirectoryArrowRight';
 
 const Pricebox = React.lazy(() => import("../components/elements/Pricebox"));
 
 function AllProducts() {
-  const [products1, setProducts1] = useState(null);
+  const [products1, setProducts1] = useState('');
   const [allProducts, setAllProducts] = useState(null);
   const [sativa, setSativa] = useState(null);
   const [indica, setIndica] = useState(null);
-  const [flower, setFlower] = useState(null);
+  const [flower, setFlower] = useState('');
   const [edible, setEdible] = useState(null);
   const [concentrate, setConcentrate] = useState(null);
   const [price, setPrice] = useState([1, 50]);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -105,36 +107,20 @@ function AllProducts() {
     setProducts1(edible);
   };
 
-  const handleEdible = () => {
-    setProducts1(edible);
-    setOpen(false);
-    setOpens(false);
-  };
+
 
   const showConcentrate = () => {
     setProducts1(concentrate);
   };
 
-  const [show, setShow] = useState(false);
-  const close = () => setShow(false);
-
-  const onClose = () => {
-    setShow(false);
-  };
 
   const [open, setOpen] = useState(false);
 
   const [opens, setOpens] = useState(false);
 
-  const handleOpen = () => {
-    setOpen(!open);
-    setOpens(false);
-  };
 
-  const handleOpens = () => {
-    setOpens(!opens);
-    setOpen(false);
-  };
+
+
 
   const refreshHandle = () => {
     showAllProducts();
@@ -142,16 +128,7 @@ function AllProducts() {
     setOpens(false);
   };
 
-  const [value, setValue] = React.useState("female");
-  const [values, setValues] = React.useState("concentrates");
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
-
-  const handleChange2 = (event) => {
-    setValues(event.target.value);
-  };
 
   const rangeSelector = (event, newValue) => {
     setPrice(newValue);
@@ -159,6 +136,7 @@ function AllProducts() {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
+    showAllProducts();
     setVisible(!visible);
   };
   const sortedProducts = products1 && [...products1].sort((a, b) => a.name.localeCompare(b.name));
@@ -166,7 +144,23 @@ function AllProducts() {
   const handleSort = () => {
     setProducts1(sortedProducts);
   };
+
+  useEffect(() => {
+    if (allProducts) {
+      setProducts1(allProducts.filter((product) => {
+        return product.name.toLowerCase().includes(searchValue.toLowerCase());
+      }));
+    }
+  }, [allProducts, searchValue]);
+
+  const handleSearchChange = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+
   return (
+
+
     <section className="section-wrapper" style={{ height: "auto" }}>
       <NavBar />
       <AnimatePresence>
@@ -186,39 +180,50 @@ function AllProducts() {
             }}
             className="allproduct_filter"
           >
-            <button onClick={toggleVisible}>close</button>{" "}
-            <button>clear filter</button>
-            <h1>filter</h1>
+            <div>
+            <button className="back_btn" onClick={() => setVisible(false)}><SubdirectoryArrowRightIcon style={{fontSize:'30px'}}/></button>
+           
+            </div>
+            <input className="input_search" id="outlined-basic" label="Outlined" variant="outlined" value={searchValue} onChange={handleSearchChange}/>
+
             <div className="category_filter_flower">
-              <h2>
+              <h2 style={{fontSize:'18px'}}>
                 <SpaIcon
-                  sx={{ fontSize: "20px", paddingRight: "3px" }}
+                  sx={{ fontSize: "18px", paddingRight: "3px" }}
                   style={{ color: "#18981D" }}
                 />
                 Flowers
               </h2>
-              <button onClick={showFlower}>all flowers</button>
-              <button onClick={showSativa}>sativa</button>
-              <button onClick={showIndica}>indica</button>
+              <button className="allproduct_filter_btn2" onClick={showFlower}>all flowers</button>
+              <div style={{display:'flex', flexDirection:'row', }}>
+              <button  className="allproduct_filter_btn2" onClick={showSativa}>sativa</button>
+              <button className="allproduct_filter_btn2" onClick={showIndica}>indica</button>
+              </div>
             </div>
-            <div>
-              <h2>
+            <div style={{paddingTop:'20px'}}>
+              <h2 style={{fontSize:'18px'}}>
                 <InvertColorsIcon
                   sx={{
                     color: "#A2A5FC",
-                    fontSize: "20px",
+                    fontSize: "18px",
                     paddingRight: "3px",
                   }}
                 />
                 Concentrates
               </h2>
-              <button onClick={showConcentrate}>all concentrates</button>
-              <button onClick={showConcentrate}>shatter</button>
-              <button onClick={showIndica}>vapes</button>
+              <button className="allproduct_filter_btn2" onClick={showConcentrate}>all concentrates</button>
+              <div style={{display:'flex', flexDirection:'row'}}>
+              <button className="allproduct_filter_btn2" onClick={showConcentrate}>shatter</button>
+              <button className="allproduct_filter_btn2" onClick={showIndica}>vapes</button>
+              </div>
             </div>
             <div>
-              <h2>Edibles</h2>
-              <button>all edibles</button>
+              <h2>
+                <CookieIcon
+                sx={{ fontSize:'18px'}}
+                />
+                Edibles</h2>
+              <button className="allproduct_filter_btn2" onClick={showEdible}>all edibles</button>
             </div>
             <div styles={{ display: "flex" }}>
               <p style={{ paddingTop: "20px", fontWeight: "500" }}>
@@ -235,10 +240,18 @@ function AllProducts() {
               />
             </div>
             <div>
-              <button>price: $15+</button>
-              <button>price: $20+</button>
-              <button onClick={handleSort}>sort a to z</button>
+              <button className="allproduct_filter_btn2">price: $15+</button>
+              <button className="allproduct_filter_btn2">price: $20+</button>
+              <button className="allproduct_filter_btn2" onClick={handleSort}>sort a to z</button>
             </div>
+            <motion.button
+            className="allproduct_refresh"
+            whileTap={{ rotate: -390, scale: 1.0 }}
+            onClick={refreshHandle}
+            sx={{ background: "#000" }}
+          >
+            <RestartAltIcon sx={{ color: "#fff" }} />
+          </motion.button>
           </motion.div>
         )}
       </AnimatePresence>
@@ -249,14 +262,7 @@ function AllProducts() {
       </button>
 
     
-          <motion.button
-            className="allproduct_refresh"
-            whileTap={{ rotate: -390, scale: 1.2 }}
-            onClick={refreshHandle}
-            sx={{ background: "#000" ,}}
-          >
-            <RestartAltIcon sx={{ color: "#fff" }} />
-          </motion.button>
+       
         
       </div>
 
