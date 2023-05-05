@@ -343,6 +343,10 @@ function AllProducts() {
                     price={product.price}
                     image={product.image}
                     strain={product.strain}
+                    description={product.description}
+                    thc={product.thc}
+                    cbd={product.cbd}
+                    quantity={product.quantity}
                   />
                 </Suspense>
               </div>

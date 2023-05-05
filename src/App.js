@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import AllProducts from './pages/AllProducts';
 import AdminPage from './pages/AdminPage';
+import PricePage from '../src/components/elements/PricePage';
 import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
@@ -24,6 +25,9 @@ const { user } = useAuthContext()
       </Route>
       <Route path='/all-products' exact>
         <AllProducts/>
+      </Route>
+      <Route path='/product-page' exact>
+        <PricePage/>
       </Route>
       <Route path='/admin-page' exact>
        {user ? <AdminPage/> : <Redirect to='/login'/>}

@@ -32,6 +32,7 @@ function Products() {
   return (
     
     <div className='product-section' >
+        
         <motion.h1  style={{fontWeight:'600', fontStyle:'italic !important', fontFamily:'futura-pt, sans-serif', paddingTop:'20px', paddingBottom:'10px', fontSize:'24px', textAlign:'center', color:'#102A43'}} >
             Best sellers weed recommend
         </motion.h1>
